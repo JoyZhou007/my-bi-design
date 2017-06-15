@@ -1,0 +1,101 @@
+@charset "UTF-8";
+@import '../public.scss';
+/*==============================================
+
+    Time：2017.03.08
+
+    Explain：chat member
+
+==============================================*/
+.chat-member-photo{
+  margin-top:10px;
+  img{
+    width:300px;
+    height:300px;
+    border:1px solid rgba($c2-c,.5);
+    display: block;
+    margin: 0 auto;
+    @include newRadius(2);
+  }
+  .chat-member-name{
+    .chat-member-name-circle{
+      display: inline-block;
+      width:9px;
+      height:9px;
+      background: $c15-c;
+      @include newRadius(100);
+    }
+    .chat-member-name-circle-busy{
+      background: $c19-c-2;
+    }
+    .chat-member-name-circle-offline{
+      background: $write;
+      border: 1px solid rgba(145,147,171,.5);
+    }
+    text-align: center;
+    margin-top:10px;
+    margin-bottom: 10px;
+  }
+}
+.chat-member-place{
+  width:360px;
+  height:41px;
+  border-top:1px solid $c9-c;
+  margin-left:20px;
+  .font-calendar-location{
+    font-size: 12px;
+    position: relative;
+    top:15px;
+    margin-right:5px;
+    color: $b2-c;
+  }
+  .chat-member-place-placename{
+    line-height: 41px;
+  }
+  .chat-member-place-time{
+    margin-left:5px;
+    line-height: 41px;
+  }
+  .chat-member-place-view{
+    width:120px;
+    height:24px;
+    margin-top:8px;
+    background: $c3-c;
+    text-align: center;
+    line-height: 24px;
+    @include newRadius(2);
+    margin-right:10px;
+    cursor: pointer;
+  }
+  .icon1-but-chat-1{
+    font-size: 12px;
+    width:24px;
+    height:24px;
+    text-align: center;
+    line-height: 24px;
+    border:1px solid rgba($c2-c,.2);
+    @include newRadius(2);
+    margin-top: 7px;
+    cursor: pointer;
+    @include newTransition($time);
+    &:hover{
+      color: $b3-c;
+      border-color:rgba($b3-c,.2);
+    }
+  }
+}
+.ch-member-position{
+  width:360px;
+  border-top:1px solid $c9-c;
+  padding:10px 0 0 0;
+  margin-left:20px;
+  p{
+    margin-bottom:7px;
+    em{
+      width:200px;
+    }
+    span{
+      margin-left:4px;
+    }
+  }
+}

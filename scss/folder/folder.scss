@@ -1,0 +1,414 @@
+@charset "UTF-8";
+@import '../public';
+
+/*==============================================
+
+    Time：2017.02.16
+
+    Explain：folder
+
+==============================================*/
+
+.fo-header {
+  .fo-header-left {
+    width: 229px;
+    height: 40px;
+    margin-right: 18px;
+    border-right: 1px solid rgba($c9-c, .5);
+  }
+  .fo-header-icon {
+    border-right: 1px solid rgba($c9-c, .5);
+  }
+  .s-style1 {
+    width: 400px;
+  }
+}
+
+.fo-side {
+  width: 250px;
+  height: calc(100vh - 70px);
+  background-color: $write;
+  border-right: 1px solid rgba($b2-c, .5);
+  .side-message {
+    height: auto;
+    bottom: 90px;
+    background-color: rgba($black, .8);
+    p {
+      line-height: 1.2em;
+      margin-top: 8px;
+      padding-bottom: 5px;
+    }
+  }
+  ul {
+    height: calc(100% - 80px);
+    margin-top: 7px;
+    margin-right: 10px;
+    margin-left: 10px;
+    @include scrollbar();
+    li {
+      min-height: 40px;
+      margin-bottom: 10px;
+      padding-left: 10px;
+      cursor: pointer;
+      overflow: hidden;
+      @include newRadius(2);
+      @include newTransition($time);
+      span {
+        display: block;
+        &:first-child {
+          margin-top: 2px;
+        }
+        @include newTransition($time);
+      }
+      &:hover {
+        background-color: $b6-c;
+      }
+      &.current {
+        background-color: $main-c;
+        span {
+          &:first-child {
+            @include returnFontChangeF(1, 22);
+          }
+          &:last-child {
+            @include returnFontChangeF(1, 1);
+          }
+        }
+        &:hover {
+          span {
+            color: $write;
+          }
+        }
+      }
+      &.d-opacity {
+        opacity: 0.4;
+      }
+    }
+  }
+  .fo-side-file-process {
+    margin-left: 10px;
+    margin-right: 10px;
+    .fo-side-file {
+      line-height: 1em;
+      span:first-child {
+        color: $c17-c-38;
+      }
+      p {
+        margin-top: 2px;
+      }
+    }
+    em {
+      display: block;
+      height: 20px;
+      line-height: 20px;
+      background-color: rgba($c17-c-38, .5);
+      position: relative;
+      margin-bottom: 14px;
+      @include newRadius(20);
+      i {
+        &.fo-side-file-process-bg {
+          display: block;
+          width: 75%;
+          height: 20px;
+          background-color: $c17-c-38;
+          @include newRadius(20);
+        }
+        &.c2-f {
+          position: absolute;
+          left: 5px;
+          top: 1px;
+        }
+      }
+    }
+  }
+}
+
+.fo-right {
+  height: calc(100vh - 70px);
+  margin-left: 270px;
+  padding-right: 20px;
+  padding-top: 10px;
+}
+
+.fo-choose {
+  height: 40px;
+  background-color: $b2-c;
+  position: relative;
+  z-index: 12;
+  @include newRadius(2);
+  .fo-choose-check {
+    width: 10px;
+    height: 10px;
+    border: 1px solid $c2-c-1;
+    background-color: $write;
+    margin-top: 14px;
+    margin-left: 10px;
+    margin-right: 7px;
+    @include newRadius(2);
+    i {
+      background-color: $write;
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+  .fo-choose-selected {
+    border-color: rgba($b9-c, .5);
+    i {
+      background-color: $c2-c;
+    }
+  }
+  .fo-choose-all {
+    width: 210px;
+    margin-top: 11px;
+  }
+  .fo-se-type {
+    margin-top: 11px;
+    em {
+      display: block;
+      float: left;
+      padding-left: 8px;
+      padding-right: 8px;
+      line-height: 20px;
+      background-color: $b8-c;
+      margin-right: 10px;
+      cursor: pointer;
+      @include newRadius(2);
+      &.current {
+        background-color: $c1-c;
+      }
+    }
+  }
+  .fo-file-path {
+    margin-top: 12px;
+    margin-right: 60px;
+    a {
+      color: $write;
+      font-size: 12px;
+      margin-top: 2px;
+      &:first-child {
+        transform: scale(.3) rotate(90deg);
+        -webkit-transform: scale(.3) rotate(90deg);
+      }
+      &:last-child {
+        transform: scale(.3) rotate(-90deg);
+        -webkit-transform: scale(.3) rotate(-90deg);
+        margin-top: 3px;
+      }
+    }
+    .fo-file-path-warp {
+      max-width: 400px;
+      height: 20px;
+      margin-right: -5px;
+      overflow: hidden;
+    }
+    ul {
+      width: 999px;
+      position: relative;
+      li {
+        max-width: 74px;
+        margin-right: 5px;
+        position: relative;
+        padding-right: 15px;
+        float: left;
+        .icon-smallfolder {
+          font-size: 15px;
+          margin-top: 1px;
+        }
+        i {
+          max-width: 45px;
+          margin-left: 4px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          float: left;
+        }
+        .font-selectbutton-line {
+          float: right;
+          color: $write;
+          transform: scale(.5) rotate(-90deg);
+          -webkit-transform: scale(.5) rotate(-90deg);
+          position: absolute;
+          top: 2px;
+          right: 0;
+        }
+      }
+    }
+  }
+  .fo-choose-right {
+    span {
+      display: block;
+      float: left;
+      cursor: pointer;
+      color: $write;
+      &.font-selectbutton-arrange {
+        width: 30px;
+        height: 20px;
+        margin-top: 10px;
+        border-left: 1px solid rgba($c9-c, .5);
+        overflow: hidden;
+        &::before {
+          display: block;
+          margin-left: 8px;
+          margin-top: 3px;
+        }
+      }
+      &.fo-choose-type {
+        margin-top: 12px;
+        .font-selectbutton-soildclose {
+          float: right;
+          color: $write;
+          @include scale(.3);
+          margin-right: -4px;
+          margin-left: -6px;
+          margin-top: 2px;
+        }
+      }
+    }
+    .fo-type, .fo-arrange {
+      left: auto;
+      margin-top: 0;
+    }
+    .fo-type {
+      right: 42px;
+    }
+    .fo-arrange {
+      right: -5px;
+    }
+  }
+}
+
+.fo-file-thum {
+  height: calc(100vh - 130px);
+  border-top: none;
+  border-bottom: none;
+  ul {
+    margin-left: 22px;
+    li {
+      margin-right: 34px;
+      &:nth-child(6n) {
+        margin-right: 35px;
+      }
+      input {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.fo-se-result {
+  background-color: $c5-c-1;
+}
+
+.fo-type2-list {
+  height: calc(100vh - 120px);
+  @include scrollbar();
+  ul {
+    li {
+      height: 44px;
+      line-height: 44px;
+      border-bottom: 1px solid rgba($c9-c, .5);
+      position: relative;
+      @include newRadius(2);
+      @include newTransition($time);
+      .fo-choose-check {
+        margin-left: 10px;
+        margin-top: 15px;
+      }
+      .fo-choose-selected {
+        border-color: rgba($b9-c, .5);
+        i {
+          background-color: $c2-c;
+          &::before {
+            opacity: 1;
+          }
+        }
+      }
+      .fo-file-icon {
+        width: 24px;
+        height: 44px;
+        margin-right: 10px;
+        position: relative;
+        text-align: center;
+        i {
+          display: block;
+          width: 6px;
+          height: 6px;
+          position: absolute;
+          top: 6px;
+          left: -2px;
+          z-index: 1;
+          background-color: $c17-c-39;
+          @include newRadius(6);
+          @include newBoxShadow(0, 1, 2, $black, .2);
+        }
+        span {
+          display: inline-block;
+          font-size: 24px;
+          margin-top: 9px;
+          float: none;
+        }
+      }
+      .fo-file-name, .fo-file-size, .fo-file-files, .fo-file-time, .fo-file-by {
+        min-height: 20px;
+      }
+      .fo-file-name {
+        width: 40%;
+      }
+      .fo-file-size {
+        width: 10%;
+      }
+      .fo-file-files {
+        width: 15%;
+      }
+      .fo-file-time {
+        width: 20%;
+      }
+      img {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        margin-top: 10px;
+        border: 1px solid rgba($c17-c-7, .2);
+        margin-left: 5px;
+        @include newRadius(2);
+      }
+      .fo-icon {
+        position: absolute;
+        left: 230px;
+        top: 5px;
+        opacity: 0;
+        display: block;
+        @include newTransition($time);
+        .fo-icon-bg {
+          height: 28px;
+          &::before {
+            display: none;
+          }
+        }
+      }
+      &:hover {
+        background-color: rgba($main-c, .1);
+        .fo-icon {
+          opacity: 1;
+        }
+      }
+      &.current {
+        background-color: rgba($main-c, .1);
+      }
+    }
+  }
+}
+
+.tree-node-collapsed .node-wrapper .toggle-children-wrapper-collapsed .toggle-children {
+  background: url(/assets/images/icon.png) -752px -696px no-repeat !important;
+}
+
+.tree-node-expanded .node-wrapper .toggle-children-wrapper-expanded .toggle-children {
+  background: url(/assets/images/icon.png) -768px -696px no-repeat !important;
+  transform: rotate(0deg) !important;
+}
+
+.node-content-wrapper {
+  margin-left: -15px;
+}

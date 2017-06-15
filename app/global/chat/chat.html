@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chat</title>
+    <link rel="stylesheet" href="../../../css/global.css"/>
+    <link rel="stylesheet" href="../../../css/global/global-style.css"/>
+    <style>
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .color {
+            float: left;
+            width: 100px;
+            height: 30px;
+            margin-right: 10px;
+            margin-bottom: 5px;
+            text-align: center;
+            line-height: 30px;
+            color: #fff;
+        }
+
+        .but {
+            float: left;
+            margin-right: 20px;
+            margin-bottom: 10px;
+        }
+
+        .global-icon span {
+            margin-right: 10px;
+            margin-bottom: 5px;
+            font-size: 36px;
+        }
+
+        .d-letter {
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body style="background-color:#4C4B63;padding-left:20px;padding-right:20px;overflow:auto;">
+<h1>chat</h1>
+<div class="clearfix">
+    <div class="m-wrap pull-left" style="margin-bottom: 20px">
+        <div class="g-chat">
+            <div class="chat-header">
+                <img class="chat-avatar" src="/assets/images/111.jpg" alt="">
+                <div class="chat-user">
+                    <!-- icon-circle-offline 离线   -->
+                    <!-- icon-circle-online 在线   -->
+                    <!-- icon-circle-busy 忙碌   -->
+                    <h3 class="f4-f"><a href="#"><i class="icon-circle icon-circle-online"></i>Jacob Sims</a></h3>
+                    <p class="f43-f"><a href="#">VIEW PROFILE</a></p>
+                </div>
+                <div class="but-connect">
+                    <span class="font-chatinput"></span>
+                </div>
+            </div>
+            <div class="chat-bar">
+
+            </div>
+            <div class="chat-body"></div>
+        </div>
+    </div>
+    <div class="m-wrap pull-left" style="margin-bottom: 20px">
+        <div class="g-chat">
+            <div class="chat-header">
+                <img class="chat-avatar" src="/assets/images/111.jpg" alt="">
+                <div class="chat-user">
+                    <!-- icon-circle-offline 离线   -->
+                    <!-- icon-circle-online 在线   -->
+                    <!-- icon-circle-busy 忙碌   -->
+                    <h3 class="f4-f"><a href="#"><i class="icon-circle icon-circle-online"></i>Jacob Sims</a></h3>
+                    <p class="f43-f"><a href="#">VIEW PROFILE</a></p>
+                </div>
+                <div class="but-conn-hire" style="display: block">
+                    <span class="animated fadeInUp"><a href="#">CONNECT</a></span>
+                    <span class="animated fadeInDown"><a href="#">HIRE</a></span>
+                </div>
+            </div>
+            <div class="chat-bar">
+
+            </div>
+            <div class="chat-body"></div>
+        </div>
+    </div>
+    <div class="m-wrap pull-left" style="margin-bottom: 20px">
+        <div class="g-chat">
+            <div class="chat-header">
+                <img class="chat-avatar" src="/assets/images/111.jpg" alt="">
+                <div class="chat-user">
+                    <!-- icon-circle-offline 离线   -->
+                    <!-- icon-circle-online 在线   -->
+                    <!-- icon-circle-busy 忙碌   -->
+                    <h3 class="f4-f"><a href="#"><i class="icon-circle icon-circle-online"></i>Jacob Sims</a></h3>
+                    <p class="f43-f"><a href="#">VIEW PROFILE</a></p>
+                </div>
+                <div class="but-connect js-but-connect">
+                    <span class="font-chatinput"></span>
+                </div>
+                <div class="but-conn-hire">
+                    <span class="animated"><a href="#">CONNECT</a></span>
+                    <span class="animated"><a href="#">HIRE</a></span>
+                </div>
+            </div>
+            <div class="chat-bar">
+
+            </div>
+            <div class="chat-body"></div>
+        </div>
+    </div>
+    <div class="m-wrap pull-left" style="margin-bottom: 20px">
+        <div class="g-chat">
+            <div class="chat-header">
+                <img class="chat-avatar" src="/assets/images/111.jpg" alt="">
+                <div class="chat-user">
+                    <!-- icon-circle-offline 离线   -->
+                    <!-- icon-circle-online 在线   -->
+                    <!-- icon-circle-busy 忙碌   -->
+                    <h3 class="f4-f"><a href="#"><i class="icon-circle icon-circle-online"></i>Jacob Sims</a></h3>
+                    <p class="f43-f"><a href="#">VIEW PROFILE</a></p>
+                </div>
+                <!--<div class="but-connect">-->
+                <!--<span class="font-chatinput"></span>-->
+                <!--</div>-->
+            </div>
+            <div class="chat-bar hide">
+
+            </div>
+            <div class="chat-body chat-body-lst">
+                <div class="ch-r-left ch-message">
+                    <div class="ch-msg-time">
+                        <div class="ch-msg-time-event ch-msg-time-select">
+                            <span class="c1-f">29th Oct</span>
+                            <!-- chat-close-->
+                            <i class="font-selectbutton-line chat-open"></i>
+                        </div>
+                    </div>
+                    <div class="ch-msg-list">
+                        <img class="ch-msg-logo" src="/assets/images/personal-profile-title-img1.jpg">
+                        <div class="clearfix ch-msg-header">
+                            <span class="f19-f">Amanda Warren</span>
+                            <span class="f5-f ch-msg-merge-time">11:02am</span>
+                            <span class="icon1-chat-pin ch-msg-icon"></span>
+                            <span class="icon1-at ch-msg-icon"></span>
+                            <span class="font-alarm ch-msg-icon"></span>
+                        </div>
+                        <div class="f20-f ch-msg-text">
+                            <div class="clearfix">
+                                <span>comments on</span>
+                                <span class="v8-f">2017 sales management plan.excel</span>
+                                <span class="font-open"></span>
+                            </div>
+                            <div class="clearfix ch-msg-comments">
+                        <span class="font-comments">
+                            <em class="path1"></em>
+                            <em class="path2"></em>
+                        </span>
+                                The monkey-rope is found in all whalers;
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ch-msg-list ch-msg-self">
+                        <img class="ch-msg-logo" src="/assets/images/personal-profile-title-img1.jpg">
+                        <div class="clearfix ch-msg-header">
+                            <span class="f19-f">Amanda Warren</span>
+                            <span class="f5-f ch-msg-merge-time">11:02am</span>
+                            <span class="icon1-chat-pin ch-msg-icon"></span>
+                            <span class="icon1-at ch-msg-icon"></span>
+                            <span class="font-alarm ch-msg-icon"></span>
+                        </div>
+                        <div class="f20-f ch-msg-text">The monkey-rope is found in all whalers; but it was only in the
+                            Pequod that the monkey and his holder
+                            were ever tied together. This improvement upon the original usage was introduced by no less
+                            a man
+                            than Stubb, in order to afford the imperilled harpooneer the strongest possible guarantee
+                            for the
+                            faithfulness and vigilance of his monkey-rope holder.
+                        </div>
+                        <div class="ch-msg-opt">
+                            <span class="font-forward"></span>
+                            <span class="font-page-esc-small"></span>
+                        </div>
+                    </div>
+                    <div class="ch-msg-list ch-msg-forward">
+                        <img class="ch-msg-logo" src="/assets/images/personal-profile-title-img1.jpg">
+                        <div class="clearfix ch-msg-header">
+                            <span class="f19-f">Amanda Warren</span>
+                            <span class="f5-f ch-msg-merge-time">16th Jun</span>
+                        </div>
+                        <div class="clearfix ch-msg-forward-info">
+                            <span class="icon-forward"></span>
+                            <img class="pull-left" src="/assets/images/personal-profile-title-img1.jpg">
+                            <span class="f20-f">Anthony Schultz</span>
+                        </div>
+                        <div class="f20-f ch-msg-text">So strongly and metaphysically did I conceive of my situation
+                            then, that while earnestly watching
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="ch-msg-send-wrap ch-message">
+                    <div class="ch-msg-send">
+                        <textarea placeholder="Direct message"></textarea>
+                        <span class="icon-input-return"></span>
+                        <span class="font-chatinput"></span>
+                        <div class="d-select d-chat-select ">
+                            <ul>
+                                <li><span class="icon1-Group"></span>Conference</li>
+                                <li><span class="icon-title-post"></span>Post</li>
+                                <li><span class="font-import"></span>Insert files from BI</li>
+                                <li><span class="font-download"></span>Upload files</li>
+                                <li><span class="icon1-Shape"></span>Clear message</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="m-wrap pull-left" style="margin-bottom: 20px">
+        <div class="g-chat">
+            <div class="chat-header">
+                <img class="chat-avatar" src="/assets/images/111.jpg" alt="">
+                <div class="chat-user">
+                    <!-- icon-circle-offline 离线   -->
+                    <!-- icon-circle-online 在线   -->
+                    <!-- icon-circle-busy 忙碌   -->
+                    <h3 class="f4-f"><a href="#"><i class="icon-circle icon-circle-online"></i>Jacob Sims</a></h3>
+                    <p class="f43-f"><a href="#">VIEW PROFILE</a></p>
+                </div>
+                <!--<div class="but-connect">-->
+                <!--<span class="font-chatinput"></span>-->
+                <!--</div>-->
+            </div>
+            <div class="chat-bar hide">
+
+            </div>
+            <div class="chat-body chat-body-lst">
+                <div class="ch-r-left ch-message">
+                    <div class="ch-msg-time">
+                        <div class="ch-msg-time-event ch-msg-time-select">
+                            <span class="c1-f">29th Oct</span>
+                            <!-- chat-close-->
+                            <i class="font-selectbutton-line chat-open"></i>
+                        </div>
+                    </div>
+                    <div class="ch-msg-list">
+                        <img class="ch-msg-logo" src="/assets/images/personal-profile-title-img1.jpg">
+                        <div class="clearfix ch-msg-header">
+                            <span class="f19-f">Amanda Warren</span>
+                            <span class="f5-f ch-msg-merge-time">11:02am</span>
+                            <span class="icon1-chat-pin ch-msg-icon"></span>
+                            <span class="icon1-at ch-msg-icon"></span>
+                            <span class="font-alarm ch-msg-icon"></span>
+                        </div>
+                        <div class="f20-f ch-msg-text">
+                            <div class="clearfix">
+                                <span>comments on</span>
+                                <span class="v8-f">2017 sales management plan.excel</span>
+                                <span class="font-open"></span>
+                            </div>
+                            <div class="clearfix ch-msg-comments">
+                        <span class="font-comments">
+                            <em class="path1"></em>
+                            <em class="path2"></em>
+                        </span>
+                                The monkey-rope is found in all whalers;
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ch-msg-list ch-msg-self">
+                        <img class="ch-msg-logo" src="/assets/images/personal-profile-title-img1.jpg">
+                        <div class="clearfix ch-msg-header">
+                            <span class="f19-f">Amanda Warren</span>
+                            <span class="f5-f ch-msg-merge-time">11:02am</span>
+                            <span class="icon1-chat-pin ch-msg-icon"></span>
+                            <span class="icon1-at ch-msg-icon"></span>
+                            <span class="font-alarm ch-msg-icon"></span>
+                        </div>
+                        <div class="f20-f ch-msg-text">The monkey-rope is found in all whalers; but it was only in the
+                            Pequod that the monkey and his holder
+                            were ever tied together. This improvement upon the original usage was introduced by no less
+                            a man
+                            than Stubb, in order to afford the imperilled harpooneer the strongest possible guarantee
+                            for the
+                            faithfulness and vigilance of his monkey-rope holder.
+                        </div>
+                        <div class="ch-msg-opt">
+                            <span class="font-forward"></span>
+                            <span class="font-page-esc-small"></span>
+                        </div>
+                    </div>
+                    <div class="ch-msg-list ch-msg-forward">
+                        <img class="ch-msg-logo" src="/assets/images/personal-profile-title-img1.jpg">
+                        <div class="clearfix ch-msg-header">
+                            <span class="f19-f">Amanda Warren</span>
+                            <span class="f5-f ch-msg-merge-time">16th Jun</span>
+                        </div>
+                        <div class="clearfix ch-msg-forward-info">
+                            <span class="icon-forward"></span>
+                            <img class="pull-left" src="/assets/images/personal-profile-title-img1.jpg">
+                            <span class="f20-f">Anthony Schultz</span>
+                        </div>
+                        <div class="f20-f ch-msg-text">So strongly and metaphysically did I conceive of my situation
+                            then, that while earnestly watching
+                        </div>
+                    </div>
+                </div>
+                <div class="ch-msg-send-wrap ch-message chat-only">
+                    <div class="ch-msg-send">
+                        <textarea placeholder="Direct message"></textarea>
+                        <span class="icon-input-return"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="height:300px;"></div>
+<h1>mission-chat</h1>
+<div class="clearfix">
+    <div class="m-wrap pull-left" style="margin-bottom: 20px">
+        <div class="g-mission-chat-lst">
+            <header class="mission-chat-hd">MISSION CHAT</header>
+            <ul class="mission-chat-bd">
+                <!-- active-->
+                <li class="">
+                    <h3 class="f19-f">Jean Contreras</h3>
+                    <p class="f5-f">Human resource manager</p>
+                    <span class="font-chat"></span>
+                </li>
+                <li class="">
+                    <h3 class="f19-f">Eugene Jordan</h3>
+                    <p class="f5-f">Human resource manager</p>
+                    <span class="font-chat"></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="m-wrap pull-left" style="margin-bottom: 20px">
+        <div class="g-mission-chat">
+            <header class="mission-chat-hd">
+                <div class="icon-open-wrap">
+                    <i class="font-open"></i>
+                </div>
+                <div class="mission-chat-return">
+                    <!-- chat-close-->
+                    <i class="font-selectbutton-line chat-open"></i>
+                    <span>kate wu</span>
+                </div>
+                <ul class="chat-avatar-lst clearfix">
+                    <li><img src="/assets/images/personal-profile-title-img1.jpg"></li>
+                    <li><img src="/assets/images/personal-profile-title-img1.jpg"></li>
+                    <li><img src="/assets/images/personal-profile-title-img1.jpg"></li>
+                    <li><img src="/assets/images/personal-profile-title-img1.jpg"></li>
+                    <li><img src="/assets/images/personal-profile-title-img1.jpg"></li>
+                    <li><img src="/assets/images/personal-profile-title-img1.jpg"></li>
+                </ul>
+            </header>
+            <section class="mission-chat-bd">
+                <div class="ch-r-left ch-message chat-container">
+                    <div class="ch-msg-time">
+                        <div class="ch-msg-time-event ch-msg-time-select">
+                            <span class="c1-f">29th Oct</span>
+                            <!-- chat-close-->
+                            <i class="font-selectbutton-line chat-open"></i>
+                        </div>
+                    </div>
+                    <div class="ch-msg-list">
+                        <img class="ch-msg-logo" src="/assets/images/personal-profile-title-img1.jpg">
+                        <div class="clearfix ch-msg-header">
+                            <span class="f19-f">Amanda Warren</span>
+                            <span class="f5-f ch-msg-merge-time">11:02am</span>
+                            <span class="icon1-chat-pin ch-msg-icon"></span>
+                            <span class="icon1-at ch-msg-icon"></span>
+                            <span class="font-alarm ch-msg-icon"></span>
+                        </div>
+                        <div class="f20-f ch-msg-text">
+                            <div class="clearfix">
+                                <span>comments on</span>
+                                <span class="v8-f">2017 sales management plan.excel</span>
+                                <span class="font-open"></span>
+                            </div>
+                            <div class="clearfix ch-msg-comments">
+                        <span class="font-comments">
+                            <em class="path1"></em>
+                            <em class="path2"></em>
+                        </span>
+                                The monkey-rope is found in all whalers;
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ch-msg-list ch-msg-self">
+                        <img class="ch-msg-logo" src="/assets/images/personal-profile-title-img1.jpg">
+                        <div class="clearfix ch-msg-header">
+                            <span class="f19-f">Amanda Warren</span>
+                            <span class="f5-f ch-msg-merge-time">11:02am</span>
+                            <span class="icon1-chat-pin ch-msg-icon"></span>
+                            <span class="icon1-at ch-msg-icon"></span>
+                            <span class="font-alarm ch-msg-icon"></span>
+                        </div>
+                        <div class="f20-f ch-msg-text">The monkey-rope is found in all whalers; but it was only in the
+                            Pequod that the monkey and his holder
+                            were ever tied together. This improvement upon the original usage was introduced by no less
+                            a man
+                            than Stubb, in order to afford the imperilled harpooneer the strongest possible guarantee
+                            for the
+                            faithfulness and vigilance of his monkey-rope holder.
+                        </div>
+                        <div class="ch-msg-opt">
+                            <span class="font-forward"></span>
+                            <span class="font-page-esc-small"></span>
+                        </div>
+                    </div>
+                    <div class="ch-msg-list ch-msg-forward">
+                        <img class="ch-msg-logo" src="/assets/images/personal-profile-title-img1.jpg">
+                        <div class="clearfix ch-msg-header">
+                            <span class="f19-f">Amanda Warren</span>
+                            <span class="f5-f ch-msg-merge-time">16th Jun</span>
+                        </div>
+                        <div class="clearfix ch-msg-forward-info">
+                            <span class="icon-forward"></span>
+                            <img class="pull-left" src="/assets/images/personal-profile-title-img1.jpg">
+                            <span class="f20-f">Anthony Schultz</span>
+                        </div>
+                        <div class="f20-f ch-msg-text">So strongly and metaphysically did I conceive of my situation
+                            then, that while earnestly watching
+                        </div>
+                    </div>
+                    <div class="ch-msg-list ch-msg-forward">
+                        <img class="ch-msg-logo" src="/assets/images/personal-profile-title-img1.jpg">
+                        <div class="clearfix ch-msg-header">
+                            <span class="f19-f">Amanda Warren</span>
+                            <span class="f5-f ch-msg-merge-time">16th Jun</span>
+                        </div>
+                        <div class="clearfix ch-msg-forward-info">
+                            <span class="icon-forward"></span>
+                            <img class="pull-left" src="/assets/images/personal-profile-title-img1.jpg">
+                            <span class="f20-f">Anthony Schultz</span>
+                        </div>
+                        <div class="f20-f ch-msg-text">So strongly and metaphysically did I conceive of my situation
+                            then, that while earnestly watching
+                        </div>
+                    </div>
+                </div>
+                <div class="ch-msg-send-wrap ch-message">
+                    <div class="ch-msg-send">
+                        <textarea placeholder="Direct message"></textarea>
+                        <span class="icon-input-return"></span>
+                        <span class="font-chatinput"></span>
+                        <div class="d-select d-chat-select ">
+                            <ul>
+                                <li><span class="icon1-Group"></span>Conference</li>
+                                <li><span class="icon-title-post"></span>Post</li>
+                                <li><span class="font-import"></span>Insert files from BI</li>
+                                <li><span class="font-download"></span>Upload files</li>
+                                <li><span class="icon1-Shape"></span>Clear message</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+<script src="http://apps.bdimg.com/libs/jquery/1.9.0/jquery.min.js"></script>
+<script>
+  $(function () {
+    $('.js-but-connect').on('click', function () {
+      $(this).hide();
+      $(this).siblings('.but-conn-hire').show();
+      $(this).siblings('.but-conn-hire').find('span').first().addClass('fadeInUp');
+      $(this).siblings('.but-conn-hire').find('span').last().addClass('fadeInDown');
+    })
+  })
+</script>
+</body>
+</html>

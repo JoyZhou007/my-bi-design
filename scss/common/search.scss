@@ -1,0 +1,175 @@
+@charset "UTF-8";
+@import "../public";
+
+
+/*==============================================
+
+    Time：2017.02.04
+
+    Explain：搜索
+
+==============================================*/
+
+.s-style1{
+  width:100%;
+  height:40px;
+  border:1px solid $c2-c-1;
+  position: relative;
+  background-color:$write;
+  @include newRadius(4);
+  @include newTransition($time);
+  &:hover, &.search-border{
+    border-color:rgba($b3-c, .5);
+  }
+  input{
+    width:400px;
+    height:40px;
+    line-height:40px;
+    @include newRadius(4);
+    text-indent: 30px;
+    font-size:13px;
+    &:hover, &:focus{
+      color:$b8-c;
+    }
+  }
+  .font-search-blue1, .font-pin1{
+    position: absolute;
+    left:10px;
+    top:13px;
+    color:$b2-c;
+  }
+  .icon-input-return, .icon-m-sear-clear, .s-clear{
+    position:absolute;
+    cursor:pointer;
+    right:10px;
+    top:15px;
+  }
+  .icon-input-return{
+    color:$b3-c;
+    font-size:10px;
+  }
+  .icon-m-sear-clear{
+    font-size:8px;
+  }
+  .search-style1-warp{
+    margin-right:54px;
+    @include newRadius(4);
+    margin-top:10px;
+    margin-left:8px;
+    .search-style1-list{
+      height:20px;
+      line-height:20px;
+      text-indent: 5px;
+      max-width: calc(100% - 20px);
+      background-color:$c17-c-5;
+      float:left;
+      margin-right:5px;
+      @include newRadius(2);
+      .search-key{
+        &.readonly {
+          max-width: 100%;
+        }
+        padding-right:10px;
+        border-right:1px solid $write;
+        float:left;
+        display: block;
+        white-space: nowrap;
+        max-width: calc(100% - 34px);
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+      .font-remove{
+        padding-top:5px;
+        padding-right:6px;
+        color:$write;
+        font-size:12px;
+        cursor:pointer;
+        @include scale(.6);
+      }
+    }
+    .search-style1-img{
+      .search-key{max-width: calc(100% - 54px);}
+    }
+    input.s-last-input{
+      width:14em;
+      background-color:$write;
+      height:20px;
+      line-height:20px;
+      text-indent: 0;
+      text-align: left;
+      border:none;
+    }
+  }
+  .s-clear{
+    font-size:12px;
+    cursor:pointer;
+    @include scale(.8);
+  }
+}
+.s-style2{
+  .search-style1-warp{
+    padding-left:20px;
+  }
+}
+
+//左侧搜索
+.s-style3-warp{
+  margin-bottom:20px;
+}
+.s-style3{
+  width:20px;
+  height:20px;
+  margin-left:20px;
+  margin-right:20px;
+  margin-top:20px;
+  overflow: hidden;
+  @include newTransition($time);
+  .font-search-blue, .font-search-blue1{
+    color:$b1-c;
+    font-size:20px;
+    margin-right:10px;
+  }
+  .font-search-blue{cursor:pointer;}
+  input{
+    width: 166px;
+    height:20px;
+    background:none;
+  }
+  ul li{
+    float:left;
+    margin-right:5px;
+    height:20px;
+    line-height:20px;
+    border-bottom:1px solid rgba($write, 0);
+    @include newRadius(2);
+    span{
+      display:block;
+      &:nth-child(1){
+        padding-left:4px;
+        padding-right:3px;
+        border-right:1px solid rgba($write, .5);
+      }
+      &:nth-child(2){
+        width:20px;
+        height:20px;
+        cursor:pointer;
+      }
+    }
+    .font-page-esc-small{
+      margin-top:2px;
+      margin-left:3px;
+    }
+    &.s-style3-list-bg1{background-color:$c17-c-37}
+  }
+  .font-page-esc-small{
+    color:$write;
+    cursor:pointer;
+    margin-top:5px;
+    @include scale(.6);
+  }
+}
+.h-contact-list-se{
+  width:calc(100% - 20px) !important;
+  margin-top:20px !important;
+  border-bottom:1px solid $b1-c !important;
+}

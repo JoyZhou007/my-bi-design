@@ -1,0 +1,27 @@
+@charset "UTF-8";
+@import '../../public';
+
+.r-register-footer{
+  width: 100%;
+  padding-top: 39px;
+  height: 40px;
+  position: relative;
+  text-align: center;
+  box-sizing: content-box;
+  div{
+    margin-bottom: 5px;
+  }
+  span{
+    display: inline-block;
+    padding-top: 43px;
+    font-size:12px;
+    line-height: 15px;
+
+  }
+}
+.r-register-create-button{
+  position: absolute;
+  left:50%;
+  top: 39px;
+  margin-left: -205px;
+}

@@ -1,0 +1,39 @@
+
+类命名说明
+
+icon-* font-* w-*  web font
+g-*                global
+d-*                default
+s-*                search
+se-*               select
+di-*               dialog
+but-*              button
+date-*             date time
+ph-*               photo
+pa-*               page
+an-*               animate
+n-*                notification
+
+home
+h-*
+
+mission
+m-*
+
+sturcture
+st-*
+
+company personal
+a-*
+
+chat
+ch-*
+
+contacts
+ct-*
+
+folder
+f-*
+
+workflow
+wo-*

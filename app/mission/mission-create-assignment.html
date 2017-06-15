@@ -1,0 +1,882 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>application</title>
+    <link rel="stylesheet" href="../../css/global.css" />
+    <link rel="stylesheet" href="../../css/mission/mission.css" />
+    <link rel="stylesheet" href="../../css/mission/mission-create.css" />
+    <link rel="stylesheet" href="../../css/plugin/date.css" />
+</head>
+
+<body>
+<header class="g-header mission-header">
+    <div class="pull-left m-header-title m-create-header-title m-header-application">
+        <div class="clearfix m-create-title">
+            <span class="icon-title-assignment"></span>
+            <span class="pull-left f18-f">NEW ASSIGNMENT</span>
+            <span class="font-selectbutton-line"></span>
+            <div class="d-select hide">
+                <ul>
+                    <li>doing</li>
+                    <li>done</li>
+                    <li>pending</li>
+                </ul>
+            </div>
+        </div>
+        <div class="clearfix m-create-planning">
+            <div class="pull-left f13-f m-header-edit-type">
+                Type your mission name in here
+                <span class="font-edit1 hide"></span>
+                <input class="hide" type="text" value="Type your mission name in here" />
+            </div>
+            <span class="pull-left m-create-line"></span>
+            <span class="m-create-table g-checkbox g-checkbox-selected font-selectbutton-select"></span>
+            <span class="m-create-table f9-f">Show on the table</span>
+        </div>
+    </div>
+    <div class="pull-right">
+        <div class="pull-left g-header-icon">
+            <div class="pull-left">
+                <span class="g-header-icon-list icon1-but-chat-1"></span>
+            </div>
+            <div class="pull-left">
+                <span class="g-header-icon-list font-alarm"></span>
+            </div>
+            <div class="pull-left">
+                <span class="g-header-icon-list font-help"></span>
+            </div>
+        </div>
+        <a href="javascript:;" class="pull-left font-page-esc"></a>
+    </div>
+</header>
+
+<section class="clearfix mission-warp">
+    <!--left start-->
+    <div class="pull-left m-left">
+        <div class="m-a-period">
+            <div class="clearfix m-a-side-title">
+                <span class="pull-left font-hourglass"></span>
+                <span class="f16-f">Set mission period</span>
+            </div>
+            <p class="f33-f m-a-side-con">If don`t set it, the mission is begun from on now, and end is pending.</p>
+        </div>
+        <ul class="m-a-side-date">
+            <li class="m-a-side-date-item">
+                <div class="pull-left date-curr-time">
+                    <span class="f13-f">Start</span>
+                    <span class="pull-left f49-f">20</span>
+                    <div class="date-t">
+                        <span class="f32-f">Nov 2016</span>
+                        <span class="f27-f">15:00 Friday</span>
+                    </div>
+                </div>
+                <div class="m-a-side-date-icon">
+                    <span class="icon-mission-link"></span>
+                    <span class="font-rightnow"></span>
+                </div>
+            </li>
+            <li class="m-a-side-date-item">
+                <span class="f13-f">End</span>
+                <span class="v8-f">planning</span>
+                <span class="font-page-esc-small"></span>
+            </li>
+        </ul>
+        <div class="m-a-side-fun">
+            <div class="clearfix m-a-side-title">
+                <span class="pull-left font-function"></span>
+                <span class="f16-f">Function</span>
+            </div>
+            <p class="f33-f m-a-side-con">Set those function to be satisfy request</p>
+            <ul>
+                <li class="current">
+                    <div class="clearfix">
+                        <span class="g-checkbox g-checkbox-selected font-selectbutton-select"></span>
+                        <span class="f9-f">Participant</span>
+                    </div>
+                    <span class="f13-f">Only realize mission situation</span>
+                </li>
+                <li>
+                    <div class="clearfix">
+                        <span class="g-checkbox font-selectbutton-select"></span>
+                        <span class="f9-f">Memo</span>
+                    </div>
+                    <span class="f13-f">Record the mission summary</span>
+                </li>
+                <li class="current">
+                    <div class="clearfix">
+                        <span class="g-checkbox g-checkbox-selected font-selectbutton-select"></span>
+                        <span class="f9-f">Priority level</span>
+                    </div>
+                    <span class="f13-f">3 level to set from low to high</span>
+                </li>
+                <li>
+                    <div class="clearfix">
+                        <span class="g-checkbox font-selectbutton-select"></span>
+                        <span class="f9-f">Track</span>
+                    </div>
+                    <span class="f13-f">Locate mission people in real time</span>
+                </li>
+                <li>
+                    <div class="clearfix">
+                        <span class="g-checkbox font-selectbutton-select"></span>
+                        <span class="f9-f">Bidding</span>
+                    </div>
+                    <span class="f13-f">Select at least 2 memebers to compare</span>
+                </li>
+                <li>
+                    <div class="clearfix">
+                        <span class="g-checkbox font-selectbutton-select"></span>
+                        <span class="f9-f">Target</span>
+                    </div>
+                    <span class="f13-f">Select at least 2 memebers to complete one or each target</span>
+                </li>
+                <li>
+                    <div class="clearfix">
+                        <span class="g-checkbox font-selectbutton-select"></span>
+                        <span class="f9-f">Income or outlay</span>
+                    </div>
+                    <span class="f13-f">Set expense process</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--left end-->
+    <div class="m-right">
+        <div class="pull-left m-right-left">
+            <div class="g-padding20-1 g-style1">
+                <div class="m-right-part-desc">
+                    <div class="g-title">
+                        <span class="f9-f">OPERATOR</span>
+                        <em class="f14-f">require</em>
+                    </div>
+                    <div class="se-input">
+                        <div class="se-input-select">
+                            <span class="font-selectbutton-soildclose"></span>
+                        </div>
+                        <input type="text" placeholder="search">
+                        <p class="f33-f">Choose people to operate this mission</p>
+                        <div class="d-select hide">
+                            <ul>
+                                <li>All type</li>
+                                <li>Application</li>
+                                <li>Assignment</li>
+                                <li>Meeting</li>
+                                <li>Project</li>
+                                <li>Task</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="g-title">
+                        <span class="f9-f">DESCRIPTION</span>
+                    </div>
+                    <div class="se-input se-input-current">
+                        <textarea class="g-textArea"></textarea>
+                        <p class="f33-f">Maximum100 of characters</p>
+                    </div>
+                </div>
+            </div>
+            <div class="g-style1">
+                <div class="m-r-c-tab">
+                    <ul class="clearfix m-r-c-tab-list">
+                        <li class="pull-left f46-f current">COMMON GOAL</li>
+                        <li class="pull-right f46-f">SELF GOAL</li>
+                    </ul>
+                    <div class="g-title">
+                        <span class="f9-f">TARGET AMOUNT</span>
+                        <em class="f14-f">require</em>
+                    </div>
+                    <div class="se-input m-r-c-tab-common">
+                        <div class="se-input-select">
+                            <span class="f14-f">Unit</span>
+                            <span class="font-selectbutton-soildclose"></span>
+                        </div>
+                        <div class="m-r-c-tab-common-people">
+                            <img class="pull-left" src="/assets/images/personal-profile-title-img1.jpg" />
+                            <span class="f4-f">HR manage</span>
+                        </div>
+                        <input class="current-color" type="text" value="50,000.00">
+                    </div>
+                    <div class="se-input m-r-c-tab-common">
+                        <div class="se-input-select">
+                            <span class="f14-f">Unit</span>
+                            <span class="font-selectbutton-soildclose"></span>
+                        </div>
+                        <div class="m-r-c-tab-common-people">
+                            <img class="pull-left" src="/assets/images/personal-profile-title-img1.jpg" />
+                            <span class="f4-f">Philip Rogers</span>
+                        </div>
+                        <input class="current-color" type="text" value="50,000.00">
+                    </div>
+                    <div class="se-input m-r-c-tab-common">
+                        <div class="se-input-select">
+                            <span class="f14-f">Unit</span>
+                            <span class="font-selectbutton-soildclose"></span>
+                        </div>
+                        <div class="m-r-c-tab-common-people">
+                            <img class="pull-left" src="/assets/images/personal-profile-title-img1.jpg" />
+                            <span class="f4-f">Carl Williamson</span>
+                        </div>
+                        <input class="current-color" type="text" value="50,000.00">
+                    </div>
+                </div>
+            </div>
+            <div class="g-style1">
+                <div class="m-r-c-tab">
+                    <ul class="clearfix m-r-c-tab-list">
+                        <li class="pull-left f46-f">COMMON GOAL</li>
+                        <li class="pull-right f46-f current">SELF GOAL</li>
+                    </ul>
+                    <div class="g-title">
+                        <span class="f9-f">TARGET AMOUNT</span>
+                        <em class="f14-f">require</em>
+                    </div>
+                    <div class="se-input m-r-c-tab-common">
+                        <div class="se-input-select">
+                            <span class="f14-f">Unit</span>
+                            <span class="font-selectbutton-soildclose"></span>
+                        </div>
+                        <input class="current-color" type="text" value="50,000.00">
+                    </div>
+                </div>
+            </div>
+            <div class="g-style1 g-padding20-1">
+                <div class="g-title">
+                    <span class="f9-f">TRACK</span>
+                </div>
+                <div class="se-input">
+                    <div class="se-input-select">
+                        <span class="font-selectbutton-soildclose"></span>
+                    </div>
+                    <input type="text" placeholder="Select from this mission">
+                    <p class="f33-f">Choose people to operate this mission</p>
+                    <div class="d-select hide">
+                        <ul>
+                            <li>All type</li>
+                            <li>Application</li>
+                            <li>Assignment</li>
+                            <li>Meeting</li>
+                            <li>Project</li>
+                            <li>Task</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pull-right m-right-right">
+            <div class="g-style1 m-create-folder">
+                <div class="clearfix">
+                    <div class="pull-left m-create-title1">
+                        <span>MISSION FOLDER</span>
+                        <span>Stock related files about this mission</span>
+                    </div>
+                    <div class="pull-right m-create-folder-icon">
+                        <span class="font-upload"></span>
+                        <span class="font-import"></span>
+                        <span class="font-newfile"></span>
+                    </div>
+                </div>
+                <div class="fo-type1-list">
+                    <ul class="clearfix">
+                        <li class="current">
+                            <div class="fo-icon">
+                                <div class="fo-icon-bg">
+                                    <span class="font-permission"></span>
+                                    <span class="font-download"></span>
+                                    <span class="font-transfer"></span>
+                                    <span class="font-share"></span>
+                                    <span class="font-copy"></span>
+                                    <span class="font-move"></span>
+                                    <span class="font-pin"></span>
+                                    <span class="font-trash"></span>
+                                </div>
+                            </div>
+                            <div class="fo-type1-list-select">
+                                <div class="fo-type1-list-checkbox">
+                                    <i class="font-selectbutton-select g-checkbox"></i>
+                                </div>
+                                <span class="icon-file-chatfolder">
+                                    <em class="path1"></em>
+                                    <em class="path2"></em>
+                                    <em class="path3"></em>
+                                </span>
+                            </div>
+                            <h3 class="f5-f">Chat</h3>
+                        </li>
+                        <li class="current">
+                            <div class="fo-icon">
+                                <div class="fo-icon-bg">
+                                    <span class="font-permission"></span>
+                                    <span class="font-download"></span>
+                                    <span class="font-transfer"></span>
+                                    <span class="font-share"></span>
+                                    <span class="font-copy"></span>
+                                    <span class="font-move"></span>
+                                    <span class="font-pin"></span>
+                                    <span class="font-trash"></span>
+                                </div>
+                            </div>
+                            <div class="fo-type1-list-select">
+                                <div class="fo-type1-list-checkbox">
+                                    <i class="font-selectbutton-select g-checkbox"></i>
+                                </div>
+                                <span class="icon-file-missionfolder">
+                                    <em class="path1"></em>
+                                    <em class="path2"></em>
+                                </span>
+                            </div>
+                            <h3 class="f5-f">Mission</h3>
+                        </li>
+                        <li>
+                            <div class="fo-icon">
+                                <div class="fo-icon-bg">
+                                    <span class="font-permission"></span>
+                                    <span class="font-download"></span>
+                                    <span class="font-transfer"></span>
+                                    <span class="font-share"></span>
+                                    <span class="font-copy"></span>
+                                    <span class="font-move"></span>
+                                    <span class="font-pin"></span>
+                                    <span class="font-trash"></span>
+                                </div>
+                            </div>
+                            <div class="fo-type1-list-select">
+                                <div class="fo-type1-list-checkbox">
+                                    <i class="font-selectbutton-select g-checkbox"></i>
+                                </div>
+                                <span class="icon-file-sharefolder">
+                                    <em class="path1"></em>
+                                    <em class="path2"></em>
+                                    <em class="path3"></em>
+                                </span>
+                            </div>
+                            <h3 class="f5-f">Share</h3>
+                        </li>
+                        <li>
+                            <div class="fo-icon">
+                                <div class="fo-icon-bg">
+                                    <span class="font-permission"></span>
+                                    <span class="font-download"></span>
+                                    <span class="font-transfer"></span>
+                                    <span class="font-share"></span>
+                                    <span class="font-copy"></span>
+                                    <span class="font-move"></span>
+                                    <span class="font-pin"></span>
+                                    <span class="font-trash"></span>
+                                </div>
+                            </div>
+                            <div class="fo-update-file"></div>
+                            <div class="fo-type1-list-select">
+                                <div class="fo-type1-list-checkbox">
+                                    <i class="font-selectbutton-select g-checkbox"></i>
+                                </div>
+                                <span class="icon-file-folder">
+                                    <em class="path1"></em>
+                                    <em class="path2"></em>
+                                </span>
+                            </div>
+                            <h3 class="f5-f">project</h3>
+                        </li>
+                        <li>
+                            <div class="fo-icon">
+                                <div class="fo-icon-bg">
+                                    <span class="font-permission"></span>
+                                    <span class="font-download"></span>
+                                    <span class="font-transfer"></span>
+                                    <span class="font-share"></span>
+                                    <span class="font-copy"></span>
+                                    <span class="font-move"></span>
+                                    <span class="font-pin"></span>
+                                    <span class="font-trash"></span>
+                                </div>
+                            </div>
+                            <div class="fo-type1-list-select">
+                                <div class="fo-type1-list-checkbox">
+                                    <i class="font-selectbutton-select g-checkbox"></i>
+                                </div>
+                                <span class="icon-file-excel">
+                                    <em class="path1"></em>
+                                </span>
+                            </div>
+                            <h3 class="f5-f">project 1223344</h3>
+                        </li>
+                        <li>
+                            <div class="fo-icon">
+                                <div class="fo-icon-bg">
+                                    <span class="font-permission"></span>
+                                    <span class="font-download"></span>
+                                    <span class="font-transfer"></span>
+                                    <span class="font-share"></span>
+                                    <span class="font-copy"></span>
+                                    <span class="font-move"></span>
+                                    <span class="font-pin"></span>
+                                    <span class="font-trash"></span>
+                                </div>
+                            </div>
+                            <div class="fo-type1-list-select fo-type1-list-pin">
+                                <div class="fo-type1-list-checkbox">
+                                    <i class="font-selectbutton-select g-checkbox"></i>
+                                </div>
+                                <span class="icon-file-word">
+                                    <em class="path1"></em>
+                                </span>
+                                <div class="font-pin2"></div>
+                            </div>
+                            <h3 class="f5-f">project 1</h3>
+                        </li>
+                        <li class="current">
+                            <div class="fo-icon">
+                                <div class="fo-icon-bg">
+                                    <span class="font-permission"></span>
+                                    <span class="font-download"></span>
+                                    <span class="font-transfer"></span>
+                                    <span class="font-share"></span>
+                                    <span class="font-copy"></span>
+                                    <span class="font-move"></span>
+                                    <span class="font-pin"></span>
+                                    <span class="font-trash"></span>
+                                </div>
+                            </div>
+                            <div class="fo-type1-list-select fo-type1-list-pin">
+                                <div class="fo-type1-list-checkbox">
+                                    <i class="font-selectbutton-select g-checkbox"></i>
+                                </div>
+                                <span class="icon-file-information">
+                                    <em class="path1"></em>
+                                </span>
+                                <div class="font-pin2"></div>
+                            </div>
+                            <h3 class="f5-f">project 1223344</h3>
+                        </li>
+                        <li>
+                            <div class="fo-icon">
+                                <div class="fo-icon-bg">
+                                    <span class="font-permission"></span>
+                                    <span class="font-download"></span>
+                                    <span class="font-transfer"></span>
+                                    <span class="font-share"></span>
+                                    <span class="font-copy"></span>
+                                    <span class="font-move"></span>
+                                    <span class="font-pin"></span>
+                                    <span class="font-trash"></span>
+                                </div>
+                            </div>
+                            <div class="fo-type1-list-select">
+                                <div class="fo-type1-list-checkbox">
+                                    <i class="font-selectbutton-select g-checkbox"></i>
+                                </div>
+                                <span class="icon-file-information">
+                                    <em class="path1"></em>
+                                </span>
+                            </div>
+                            <h3 class="f5-f">Chat</h3>
+                        </li>
+                        <li>
+                            <div class="fo-icon">
+                                <div class="fo-icon-bg">
+                                    <span class="font-permission"></span>
+                                    <span class="font-download"></span>
+                                    <span class="font-transfer"></span>
+                                    <span class="font-share"></span>
+                                    <span class="font-copy"></span>
+                                    <span class="font-move"></span>
+                                    <span class="font-pin"></span>
+                                    <span class="font-trash"></span>
+                                </div>
+                            </div>
+                            <div class="fo-type1-list-select">
+                                <div class="fo-type1-list-checkbox">
+                                    <i class="font-selectbutton-select g-checkbox"></i>
+                                </div>
+                                <span class="icon-file-information">
+                                    <em class="path1"></em>
+                                </span>
+                            </div>
+                            <h3 class="f5-f">Chat</h3>
+                        </li>
+                        <li>
+                            <div class="fo-icon">
+                                <div class="fo-icon-bg">
+                                    <span class="font-permission"></span>
+                                    <span class="font-download"></span>
+                                    <span class="font-transfer"></span>
+                                    <span class="font-share"></span>
+                                    <span class="font-copy"></span>
+                                    <span class="font-move"></span>
+                                    <span class="font-pin"></span>
+                                    <span class="font-trash"></span>
+                                </div>
+                            </div>
+                            <div class="fo-type1-list-select">
+                                <div class="fo-type1-list-checkbox">
+                                    <i class="font-selectbutton-select g-checkbox"></i>
+                                </div>
+                                <span class="icon-file-information">
+                                    <em class="path1"></em>
+                                </span>
+                            </div>
+                            <h3 class="f5-f">Chat</h3>
+                        </li>
+                        <li>
+                            <div class="fo-icon">
+                                <div class="fo-icon-bg">
+                                    <span class="font-permission"></span>
+                                    <span class="font-download"></span>
+                                    <span class="font-transfer"></span>
+                                    <span class="font-share"></span>
+                                    <span class="font-copy"></span>
+                                    <span class="font-move"></span>
+                                    <span class="font-pin"></span>
+                                    <span class="font-trash"></span>
+                                </div>
+                            </div>
+                            <div class="fo-type1-list-select">
+                                <div class="fo-type1-list-checkbox">
+                                    <i class="font-selectbutton-select g-checkbox"></i>
+                                </div>
+                                <span class="icon-file-information">
+                                    <em class="path1"></em>
+                                </span>
+                            </div>
+                            <h3 class="f5-f">Chat</h3>
+                        </li>
+                        <li>
+                            <div class="fo-icon">
+                                <div class="fo-icon-bg">
+                                    <span class="font-permission"></span>
+                                    <span class="font-download"></span>
+                                    <span class="font-transfer"></span>
+                                    <span class="font-share"></span>
+                                    <span class="font-copy"></span>
+                                    <span class="font-move"></span>
+                                    <span class="font-pin"></span>
+                                    <span class="font-trash"></span>
+                                </div>
+                            </div>
+                            <div class="fo-type1-list-select">
+                                <div class="fo-type1-list-checkbox">
+                                    <i class="font-selectbutton-select g-checkbox"></i>
+                                </div>
+                                <span class="icon-file-information">
+                                    <em class="path1"></em>
+                                </span>
+                            </div>
+                            <h3 class="f5-f">Chat</h3>
+                        </li>
+                        <li>
+                            <div class="fo-icon">
+                                <div class="fo-icon-bg">
+                                    <span class="font-permission"></span>
+                                    <span class="font-download"></span>
+                                    <span class="font-transfer"></span>
+                                    <span class="font-share"></span>
+                                    <span class="font-copy"></span>
+                                    <span class="font-move"></span>
+                                    <span class="font-pin"></span>
+                                    <span class="font-trash"></span>
+                                </div>
+                            </div>
+                            <div class="fo-type1-list-select">
+                                <div class="fo-type1-list-checkbox">
+                                    <i class="font-selectbutton-select g-checkbox"></i>
+                                </div>
+                                <span class="icon-file-information">
+                                    <em class="path1"></em>
+                                </span>
+                            </div>
+                            <h3 class="f5-f">Chat</h3>
+                        </li>
+                        <li>
+                            <div class="fo-icon">
+                                <div class="fo-icon-bg">
+                                    <span class="font-permission"></span>
+                                    <span class="font-download"></span>
+                                    <span class="font-transfer"></span>
+                                    <span class="font-share"></span>
+                                    <span class="font-copy"></span>
+                                    <span class="font-move"></span>
+                                    <span class="font-pin"></span>
+                                    <span class="font-trash"></span>
+                                </div>
+                            </div>
+                            <div class="fo-type1-list-select">
+                                <div class="fo-type1-list-checkbox">
+                                    <i class="font-selectbutton-select g-checkbox"></i>
+                                </div>
+                                <span class="icon-file-information">
+                                    <em class="path1"></em>
+                                </span>
+                            </div>
+                            <h3 class="f5-f">Chat</h3>
+                        </li>
+                        <li>
+                            <div class="fo-icon">
+                                <div class="fo-icon-bg">
+                                    <span class="font-permission"></span>
+                                    <span class="font-download"></span>
+                                    <span class="font-transfer"></span>
+                                    <span class="font-share"></span>
+                                    <span class="font-copy"></span>
+                                    <span class="font-move"></span>
+                                    <span class="font-pin"></span>
+                                    <span class="font-trash"></span>
+                                </div>
+                            </div>
+                            <div class="fo-type1-list-select">
+                                <div class="fo-type1-list-checkbox">
+                                    <i class="font-selectbutton-select g-checkbox"></i>
+                                </div>
+                                <span class="icon-file-information">
+                                    <em class="path1"></em>
+                                </span>
+                            </div>
+                            <h3 class="f5-f">Chat</h3>
+                        </li>
+                        <li>
+                            <div class="fo-icon">
+                                <div class="fo-icon-bg">
+                                    <span class="font-permission"></span>
+                                    <span class="font-download"></span>
+                                    <span class="font-transfer"></span>
+                                    <span class="font-share"></span>
+                                    <span class="font-copy"></span>
+                                    <span class="font-move"></span>
+                                    <span class="font-pin"></span>
+                                    <span class="font-trash"></span>
+                                </div>
+                            </div>
+                            <div class="fo-type1-list-select">
+                                <div class="fo-type1-list-checkbox">
+                                    <i class="font-selectbutton-select g-checkbox"></i>
+                                </div>
+                                <span class="icon-file-information">
+                                    <em class="path1"></em>
+                                </span>
+                            </div>
+                            <h3 class="f5-f">Chat</h3>
+                        </li>
+                        <li>
+                            <div class="fo-icon">
+                                <div class="fo-icon-bg">
+                                    <span class="font-permission"></span>
+                                    <span class="font-download"></span>
+                                    <span class="font-transfer"></span>
+                                    <span class="font-share"></span>
+                                    <span class="font-copy"></span>
+                                    <span class="font-move"></span>
+                                    <span class="font-pin"></span>
+                                    <span class="font-trash"></span>
+                                </div>
+                            </div>
+                            <div class="fo-type1-list-select">
+                                <div class="fo-type1-list-checkbox">
+                                    <i class="font-selectbutton-select g-checkbox"></i>
+                                </div>
+                                <img src="/assets/images/personal-profile-title-img1.jpg" />
+                            </div>
+                            <h3 class="f5-f">Chat</h3>
+                        </li>
+                        <li>
+                            <div class="fo-icon">
+                                <div class="fo-icon-bg">
+                                    <span class="font-permission"></span>
+                                    <span class="font-download"></span>
+                                    <span class="font-transfer"></span>
+                                    <span class="font-share"></span>
+                                    <span class="font-copy"></span>
+                                    <span class="font-move"></span>
+                                    <span class="font-pin"></span>
+                                    <span class="font-trash"></span>
+                                </div>
+                            </div>
+                            <div class="fo-type1-list-select">
+                                <div class="fo-type1-list-checkbox">
+                                    <i class="font-selectbutton-select g-checkbox"></i>
+                                </div>
+                                <span class="icon-file-information">
+                                    <em class="path1"></em>
+                                </span>
+                            </div>
+                            <h3 class="f5-f">Chat</h3>
+                        </li>
+                        <li>
+                            <div class="fo-icon">
+                                <div class="fo-icon-bg">
+                                    <span class="font-permission"></span>
+                                    <span class="font-download"></span>
+                                    <span class="font-transfer"></span>
+                                    <span class="font-share"></span>
+                                    <span class="font-copy"></span>
+                                    <span class="font-move"></span>
+                                    <span class="font-pin"></span>
+                                    <span class="font-trash"></span>
+                                </div>
+                            </div>
+                            <div class="fo-type1-list-select">
+                                <div class="fo-type1-list-checkbox">
+                                    <i class="font-selectbutton-select g-checkbox"></i>
+                                </div>
+                                <span class="icon-file-information">
+                                    <em class="path1"></em>
+                                </span>
+                            </div>
+                            <h3 class="f5-f">Chat</h3>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="g-style1 m-create-map">
+                <div class="clearfix">
+                    <div class="pull-left m-create-title1">
+                        <span>MAP</span>
+                        <span>Search the location by your pin</span>
+                    </div>
+                    <div class="pull-right s-style1">
+                        <span class="font-search-blue1"></span>
+                        <input class="f26-f" type="text" placeholder="Search" />
+                    </div>
+                </div>
+                <div class="m-create-map-warp">
+                    <img src="/assets/images/mission-map.png" />
+                    <div class="m-create-map-svg">
+                        <svg width="24px" height="27px" viewBox="0 0 24 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <defs>
+                                <pattern id="pattern-1" patternUnits="objectBoundingBox" x="0%" width="100%" height="100%">
+                                    <use xlink:href="#image-2" transform="scale(0.15625,0.15625)"></use>
+                                </pattern>
+                                <image id="image-2" width="128" height="128" xlink:href="/assets/images/people-icon1.png" />
+                            </defs>
+                            <g id="Block" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g id="b/m/4" transform="translate(-247.000000, -157.000000)">
+                                    <g id="map">
+                                        <g id="Group-10" transform="translate(247.000000, 157.000000)">
+                                            <path d="M12,27 C12,27 16.2564718,23.4094827 18.0277743,22.3784974 C21.5992603,20.2997167 24,16.4302197 24,12 C24,5.372583 18.627417,0 12,0 C5.372583,0 0,5.372583 0,12 C0,16.4435659 2.41522611,20.3230256 6.00453522,22.3972358 C7.76855013,23.4166347 12,27 12,27 Z" id="Oval-5" fill="#000000"></path>
+                                            <circle id="Oval-5" fill="url(#pattern-1)" cx="12" cy="12" r="10"></circle>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                        <svg style="left: 35%;" width="90px" height="69px" viewBox="0 0 90 69" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <defs>
+                                <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-1">
+                                    <feGaussianBlur stdDeviation="2" in="SourceGraphic"></feGaussianBlur>
+                                </filter>
+                                <rect id="path-2" x="0" y="0" width="78" height="20" rx="4"></rect>
+                                <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-3">
+                                    <feOffset dx="0" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+                                    <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+                                    <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+                                </filter>
+                            </defs>
+                            <g id="Block" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g id="b/m/4" transform="translate(-275.000000, -132.000000)">
+                                    <g id="map">
+                                        <g id="Group-2" transform="translate(281.000000, 132.000000)">
+                                            <g id="icon/calendar/location/1" transform="translate(21.000000, 0.000000)">
+                                                <g id="Group-7" transform="translate(2.000000, 0.000000)">
+                                                    <path d="M10,0 C4.49152542,0 0,4.41885856 0,9.8382134 C0,14.1736973 6.18644068,20.248139 8.81355932,23.4163772 C9.06779661,23.7498759 9.57627119,24 10,24 C10.4237288,24 10.9322034,23.8332506 11.1864407,23.4163772 C13.8135593,20.248139 20,14.1736973 20,9.8382134 C20,4.41885856 15.5084746,0 10,0 Z M16.2893462,9.08784119 C16.2893462,12.5253929 13.4940812,15.2754342 10,15.2754342 C6.50591875,15.2754342 3.71065375,12.5253929 3.71065375,9.08784119 C3.71065375,5.6502895 6.50591875,2.90024814 10,2.90024814 C13.4940812,2.90024814 16.2893462,5.6502895 16.2893462,9.08784119 Z" id="Shape" fill="#080808" style="transform: scale(1.2)"></path>
+                                                </g>
+                                            </g>
+                                            <g id="control" transform="translate(0.000000, 39.000000)">
+                                                <g id="Rectangle-5" opacity="0.8">
+                                                    <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                                                    <use fill="#000000" fill-rule="evenodd" xlink:href="#path-2"></use>
+                                                </g>
+                                                <g class="cursor" id="page/esc/small/3" transform="translate(65.000000, 5.000000)" fill="#FFFFFF">
+                                                    <path d="M6.75578406,0.154241645 L4,2.91002571 L1.24421594,0.154241645 C1.03856041,-0.0514138817 0.719794344,-0.0514138817 0.514138817,0.154241645 L0.154241645,0.514138817 C-0.0514138817,0.719794344 -0.0514138817,1.03856041 0.154241645,1.24421594 L2.91002571,4 L0.154241645,6.75578406 C-0.0514138817,6.96143959 -0.0514138817,7.28020566 0.154241645,7.48586118 L0.514138817,7.84575835 C0.719794344,8.05141388 1.03856041,8.05141388 1.24421594,7.84575835 L4,5.08997429 L6.75578406,7.84575835 C6.96143959,8.05141388 7.28020566,8.05141388 7.48586118,7.84575835 L7.84575835,7.48586118 C8.05141388,7.28020566 8.05141388,6.96143959 7.84575835,6.75578406 L5.08997429,4 L7.84575835,1.24421594 C8.05141388,1.03856041 8.05141388,0.719794344 7.84575835,0.514138817 L7.48586118,0.154241645 C7.28020566,-0.0514138817 6.96143959,-0.0514138817 6.75578406,0.154241645 Z" id="Shape"></path>
+                                                </g>
+                                                <text id="office" font-family="HelveticaNeue-Bold, Helvetica Neue" font-size="13" font-weight="bold" fill="#FFFFFF">
+                                                    <tspan x="21" y="13">office</tspan>
+                                                </text>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                        <svg style="left:60%" width="163px" height="72px" viewBox="0 0 163 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <defs>
+                                <rect id="path-1" x="0" y="0" width="151" height="20" rx="4"></rect>
+                                <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-2">
+                                    <feOffset dx="0" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+                                    <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+                                    <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+                                </filter>
+                                <pattern id="pattern-3" patternUnits="objectBoundingBox" x="0%" width="100%" height="100%">
+                                    <use xlink:href="#image-4" transform="scale(0.234375,0.234375)"></use>
+                                </pattern>
+                                <image id="image-4" width="128" height="128" xlink:href="/assets/images/people-icon1.png" />
+                            </defs>
+                            <g id="Block" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g id="b/m/4" transform="translate(-359.000000, -80.000000)">
+                                    <g id="map">
+                                        <g id="Group-3" transform="translate(365.000000, 80.000000)">
+                                            <g id="control" transform="translate(0.000000, 42.000000)">
+                                                <g id="Rectangle-5" opacity="0.8">
+                                                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                                                    <use fill="#000000" fill-rule="evenodd" xlink:href="#path-1"></use>
+                                                </g>
+                                                <g class="cursor" id="page/esc/small/3" transform="translate(135.000000, 5.000000)" fill="#FFFFFF">
+                                                    <path d="M6.75578406,0.154241645 L4,2.91002571 L1.24421594,0.154241645 C1.03856041,-0.0514138817 0.719794344,-0.0514138817 0.514138817,0.154241645 L0.154241645,0.514138817 C-0.0514138817,0.719794344 -0.0514138817,1.03856041 0.154241645,1.24421594 L2.91002571,4 L0.154241645,6.75578406 C-0.0514138817,6.96143959 -0.0514138817,7.28020566 0.154241645,7.48586118 L0.514138817,7.84575835 C0.719794344,8.05141388 1.03856041,8.05141388 1.24421594,7.84575835 L4,5.08997429 L6.75578406,7.84575835 C6.96143959,8.05141388 7.28020566,8.05141388 7.48586118,7.84575835 L7.84575835,7.48586118 C8.05141388,7.28020566 8.05141388,6.96143959 7.84575835,6.75578406 L5.08997429,4 L7.84575835,1.24421594 C8.05141388,1.03856041 8.05141388,0.719794344 7.84575835,0.514138817 L7.48586118,0.154241645 C7.28020566,-0.0514138817 6.96143959,-0.0514138817 6.75578406,0.154241645 Z" id="Shape"></path>
+                                                </g>
+                                                <text id="Theresa-Williamson" font-family="HelveticaNeue-Bold, Helvetica Neue" font-size="13" font-weight="bold" fill="#FFFFFF">
+                                                    <tspan x="8" y="14">Theresa Williamson</tspan>
+                                                </text>
+                                            </g>
+                                            <g id="Group-10" transform="translate(57.000000, 0.000000)">
+                                                <path d="M18,40.5 C18,40.5 24.3847077,35.114224 27.0416614,33.5677461 C32.3988904,30.449575 36,24.6453296 36,18 C36,8.0588745 27.9411255,0 18,0 C8.0588745,0 0,8.0588745 0,18 C0,24.6653489 3.62283917,30.4845384 9.00680284,33.5958537 C11.6528252,35.1249521 18,40.5 18,40.5 Z" id="Oval-5" fill="#080808"></path>
+                                                <circle id="Oval-5" fill="url(#pattern-3)" cx="18" cy="18" r="15"></circle>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="m-create-map-list">
+                        <a class="font-page-next-small" href="javascript:;"></a>
+                        <ul>
+                            <li class="hover">
+                                <span></span>
+                                <img src="/assets/images/personal-profile-title-img1.jpg" />
+                            </li>
+                            <li class="hover">
+                                <span></span>
+                                <img src="/assets/images/personal-profile-title-img1.jpg" />
+                            </li>
+                            <li class="current">
+                                <span></span>
+                                <img src="/assets/images/personal-profile-title-img1.jpg" />
+                            </li>
+                            <li class="hover">
+                                <span></span>
+                                <img src="/assets/images/personal-profile-title-img1.jpg" />
+                            </li>
+                            <li class="hover">
+                                <span></span>
+                                <img src="/assets/images/personal-profile-title-img1.jpg" />
+                            </li>
+                        </ul>
+                        <a class="font-page-next-small" href="javascript:;"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    var foType1List = document.querySelector('.fo-type1-list');
+    var li = foType1List.getElementsByTagName('li');
+    console.log(foType1List.clientLeft);
+    for(var i = 0; i < li.length; i++) {
+        (function(num) {
+            var liCon = li[num].querySelector('.fo-icon');
+            console.log(foType1List.scrollTop);
+            liCon.style.top = li[num].offsetTop + foType1List.offsetTop - foType1List.scrollTop - 2 + 'px';
+            liCon.style.left = li[num].offsetLeft + document.querySelector('.m-create-folder').offsetLeft - 90 + 'px';
+        })(i)
+    }
+</script>
+</body>
+</html>

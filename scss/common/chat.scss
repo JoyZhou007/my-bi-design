@@ -1,0 +1,395 @@
+@charset "UTF-8";
+@import "../public";
+
+/*==============================================
+
+    Time：2017.03.06
+
+    Explain：Mission
+
+==============================================*/
+
+.m-wrap {
+    margin-right: 20px;
+}
+
+.g-chat {
+    width: 380px;
+    height: auto;
+    @include newBoxShadow(0, 4, 6, $c13-c, 50);
+    @include newRadius(4);
+    .chat-avatar {
+        width: 100%;
+        height: 240px;
+    }
+    .chat-header {
+        position: relative;
+        .chat-avatar {
+            @include newRadius(4);
+        }
+        .chat-user {
+            position: absolute;
+            bottom: 11px;
+            left: 21px;
+            > h3 {
+                margin-bottom: 3px;
+                > a {
+                    color: $write;
+                }
+            }
+            > p {
+                > a {
+                    color: $c3-c;
+                }
+            }
+        }
+
+        .but-connect {
+            position: absolute;
+            bottom: -25px;
+            right: 20px;
+            z-index: 2;
+        }
+        .show-but-hire {
+            height: 27px !important;
+            opacity: 1 !important;
+        }
+        .but-conn-hire {
+            display: none;
+            position: absolute;
+            bottom: -27.5px;
+            right: 20px;
+            > span {
+                @include newTransition(1);
+                //height: 0;
+                //opacity: 0;
+                > a {
+                    color: $write;
+                }
+
+            }
+        }
+    }
+    .icon-circle {
+        display: inline-block;
+        width: 9px;
+        height: 9px;
+        margin: 4px 4px 0 0;
+        @include newRadius(4.5);
+        background-color: transparent;
+    }
+    .icon-circle-online {
+        background-color: $c15-c;
+    }
+    .icon-circle-busy {
+        background-color: $c19-c-2;
+    }
+    .icon-circle-offline {
+        background-color: $b2-c;
+    }
+    .chat-bar {
+        width: 100%;
+        min-height: 60px;
+        background-color: $write;
+    }
+}
+
+.chat-body-lst {
+    position: relative;
+    background-color: $write;
+    .ch-message {
+        position: static;
+        height: 330px;
+        overflow-y: auto;
+        @include scrollbar();
+        .ch-msg-time-select{
+            >i{
+                transform: rotate(0deg) scale(0.6);
+            }
+        }
+    }
+    .ch-msg-send-wrap {
+        width: 380px;
+        height: 60px;
+        background-color: $bottom-c;
+        .ch-msg-send {
+            bottom: 8px;
+        }
+    }
+    .icon-input-return {
+        position: absolute;
+        right: 52px;
+        top: 14px;
+        cursor: pointer;
+        font-size: 16px;
+        color: $c10-c;
+        &:hover {
+            color: $b7-c;
+        }
+    }
+}
+
+.chat-only {
+    .icon-input-return {
+        position: absolute;
+        width: 39px;
+        text-align: center;
+        font-size: 12px;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: $write;
+        //border-left:1px solid $c10-c;
+        padding-top: 14px;
+        cursor: pointer;
+        color: $c10-c;
+        @include newBorderRadius(0, 4, 4, 0);
+        @include newTransition($time);
+        &:hover {
+            color: $b3-c;
+        }
+    }
+}
+
+/* mission-chat
+-------------------------------- */
+.g-mission-chat-lst {
+    width: 380px;
+    height: 570px;
+    @include newBoxShadow(0, 4, 6, $c13-c, 50);
+    @include newRadius(4);
+    background-color: $write;
+    .mission-chat-hd {
+        height: 60px;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 60px;
+        color: $write;
+        padding-left: 20px;
+        background-color: $main-c;
+        @include newBorderRadius(4, 4, 0, 0);
+    }
+    .mission-chat-bd {
+        height: 510px;
+        @include scrollbar();
+        li {
+            position: relative;
+            height: 40px;
+            margin-top: 1px;
+            padding: 5px 0 5px 10px;
+            cursor: pointer;
+            border: 1px solid transparent;
+            @include newTransition(0);
+            >h3{
+                font-weight: bold;
+                line-height: 20px;
+            }
+            >p{
+                line-height: 20px;
+            }
+            .font-chat{
+                display: none;
+                position: absolute;
+                top: 50%;
+                right: 10px;
+                margin-top: -6px;
+            }
+            &:hover{
+                border: 1px solid $c17-c-7;
+                .font-chat{
+                    display: block;
+                }
+            }
+        }
+        .active {
+            border: 1px solid $c17-c-7;
+        }
+    }
+}
+
+.chat-open{
+    transform: rotate(0deg) scale(0.6) !important;
+}
+.chat-close{
+    transform: rotate(-90deg) scale(0.6) !important;
+}
+
+
+.g-mission-chat{
+    width: 380px;
+    height: 570px;
+    @include newBoxShadow(0, 4, 6, $c13-c, 50);
+    @include newRadius(4);
+    background-color: $write;
+
+    .mission-chat-hd{
+        position: relative;
+        height: 100px;
+        padding-top: 16px;
+        background-color: $main-c;
+        @include box-sizing(border-box);
+        @include newBorderRadius(4, 4, 0, 0);
+        .icon-open-wrap{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 24px;
+            height: 24px;
+            text-align: center;
+            background-color: $write;
+            @include newRadius(4);
+            .font-open{
+                float: none;
+                font-size: 14px;
+                //color: $c2-c;
+                line-height: 24px;
+                cursor: pointer;
+                color: $black;
+                @include newTransition(0);
+                &:hover{
+                    color: $b3-c;
+                }
+            }
+        }
+
+        .mission-chat-return{
+            span{
+                font-size: 16px;
+                color: $write;
+                font-weight: bold;
+                margin-left: 16px;
+            }
+        }
+        .font-selectbutton-line{
+            margin-left: 20px;
+            color: $write;
+            transform: rotate(90deg);
+            cursor: pointer;
+            @include newTransition(0);
+            &:hover{
+                opacity: 0.5;
+            }
+        }
+        .chat-avatar-lst{
+            margin-top: 19px;
+            padding-left: 19px;
+            li{
+                float: left;
+                margin-right: 10px;
+                &:last-child{
+                    margin-right: 0;
+                }
+                >img{
+                    width: 28px;
+                    height: 28px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .mission-chat-bd{
+        position: relative;
+        height: 470px;
+        .chat-container{
+            height: 408px;
+            @include scrollbar();
+        }
+        .ch-message{
+           position: static;
+        }
+        .icon-input-return {
+            position: absolute;
+            right: 52px;
+            top: 14px;
+            cursor: pointer;
+            font-size: 16px;
+            color: $c10-c;
+            &:hover {
+                color: $b7-c;
+            }
+        }
+        .ch-msg-send-wrap {
+            width: 380px;
+            height: 60px;
+            background-color: $bottom-c;
+            .ch-msg-send {
+                bottom: 8px;
+            }
+        }
+    }
+}
+
+/* animate
+---------------------------------- */
+.animated {
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInUp {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 50%, 0);
+        transform: translate3d(0, 50%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+.fadeInUp {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+}
+
+@-webkit-keyframes fadeInDown {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -50%, 0);
+        transform: translate3d(0, -50%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+.fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+}

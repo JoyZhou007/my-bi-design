@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>calendar1</title>
+    <link rel="stylesheet" href="../../css/global.css" />
+    <link rel="stylesheet" href="../../css/plugin/date.css" />
+</head>
+<body>
+<div class="date" style="width: 250px;margin: 50px auto;">
+    <div class="clearfix date-top">
+        <a class="date-top-but date-top-prev font-page-next-small" href="javascript:;"></a>
+        <div class="pull-left date-top-warp">
+            <div class="data-top-month">
+                <span>November</span>
+            </div>
+            <div class="data-top-year">
+                <span>2016</span>
+            </div>
+        </div>
+        <a class="date-top-but date-top-next font-page-next-small" href="javascript:;"></a>
+    </div>
+    <div class="date-week-wrap">
+        <ul class="clearfix f5-f date-week">
+            <li>mo</li>
+            <li>tu</li>
+            <li>we</li>
+            <li>th</li>
+            <li>fr</li>
+            <li>sa</li>
+            <li>su</li>
+        </ul>
+    </div>
+
+    <!--左右按钮-->
+    <span class="font-selectbutton-soildclose date-btn-left date-btns"></span>
+    <span class="font-selectbutton-soildclose date-btn-right date-btns"></span>
+
+    <ul class="clearfix f39-f date-list">
+        <li class="date-list-gray"><span>26</span></li>
+        <li class="date-list-gray"><span>27</span></li>
+        <li class="date-list-gray"><span>28</span></li>
+        <li class="date-list-gray"><span>29</span></li>
+        <li class="date-list-gray"><span>30</span></li>
+        <li class="date-list-gray"><span>31</span></li>
+        <li><span>01</span></li>
+        <li class="date-list-left"><span>02</span><em></em></li>
+        <li class="date-list-middle"><span>03</span><em></em></li>
+        <li class="current date-list-middle"><span>04</span><em></em></li>
+        <li class="date-list-middle"><span>05</span><em></em></li>
+        <li class="enddate date-list-middle haveTask"><span>06</span><em></em></li>
+        <li class="date-list-middle"><span>07</span><em></em></li>
+        <li class="date-list-right"><span>08</span><em></em></li>
+        <li class="date-list-left"><span>09</span><em></em></li>
+        <li class="date-list-middle selected"><span>10</span><em></em></li>
+        <li class="date-list-middle"><span>11</span><em></em></li>
+        <li class="date-list-middle"><span>12</span><em></em></li>
+        <li class="date-list-right"><span>13</span><em></em></li>
+        <li><span>14</span><em></em></li>
+        <li><span>15</span><em></em></li>
+        <li><span>16</span><em></em></li>
+        <li><span>17</span><em></em></li>
+        <li><span>18</span><em></em></li>
+        <li><span>19</span><em></em></li>
+        <li><span>20</span><em></em></li>
+        <li><span>21</span><em></em></li>
+        <li><span>22</span><em></em></li>
+        <li><span>23</span><em></em></li>
+        <li><span>24</span><em></em></li>
+        <li><span>25</span><em></em></li>
+        <li><span>26</span><em></em></li>
+        <li><span>27</span><em></em></li>
+        <li><span>28</span><em></em></li>
+        <li><span>29</span><em></em></li>
+        <li><span>30</span><em></em></li>
+        <li class="date-list-gray"><span>01</span></li>
+        <li class="date-list-gray"><span>02</span></li>
+        <li class="date-list-gray"><span>03</span></li>
+        <li class="date-list-gray"><span>04</span></li>
+        <li class="date-list-gray"><span>05</span></li>
+        <li class="date-list-gray"><span>06</span></li>
+    </ul>
+</div>
+<div class="date" style="width: 250px;margin: 50px auto;">
+    <div class="clearfix date-top">
+        <a class="date-top-but date-top-prev font-page-next-small" href="javascript:;"></a>
+        <div class="pull-left date-top-warp">
+            <div class="data-top-month">
+                <span>November</span>
+            </div>
+            <div class="data-top-year">
+                <span>2016</span>
+            </div>
+        </div>
+        <a class="date-top-but date-top-next font-page-next-small" href="javascript:;"></a>
+    </div>
+    <div class="date-week-wrap">
+        <ul class="clearfix f5-f date-week">
+            <li>mo</li>
+            <li>tu</li>
+            <li>we</li>
+            <li>th</li>
+            <li>fr</li>
+            <li>sa</li>
+            <li>su</li>
+        </ul>
+    </div>
+    <!--左右按钮-->
+    <span class="font-selectbutton-soildclose date-btn-left date-btns"></span>
+    <span class="font-selectbutton-soildclose date-btn-right date-btns"></span>
+    <ul class="clearfix f39-f date-list">
+        <li class="date-list-gray"><span>26</span></li>
+        <li class="date-list-gray"><span>27</span></li>
+        <li class="date-list-gray"><span>28</span></li>
+        <li class="date-list-gray"><span>29</span></li>
+        <li class="date-list-gray"><span>30</span></li>
+        <li class="date-list-gray"><span>31</span></li>
+        <li><span>01</span></li>
+        <li class="date-list-left date-list-select"><span>02</span><em></em></li>
+        <li class="date-list-middle date-list-select"><span>03</span><em></em></li>
+        <li class="current date-list-middle date-list-select"><span>04</span><em></em></li>
+        <li class="date-list-middle date-list-select"><span>05</span><em></em></li>
+        <li class="enddate date-list-middle date-list-select haveTask"><span>06</span><em></em></li>
+        <li class="date-list-middle date-list-select"><span>07</span><em></em></li>
+        <li class="date-list-right date-list-select"><span>08</span><em></em></li>
+        <li class="date-list-both date-list-select "><span>09</span><em></em></li>
+        <li class="date-list-middle selected"><span>10</span><em></em></li>
+        <li class="date-list-middle"><span>11</span><em></em></li>
+        <li class="date-list-middle"><span>12</span><em></em></li>
+        <li class="date-list-right"><span>13</span><em></em></li>
+        <li><span>14</span><em></em></li>
+        <li><span>15</span><em></em></li>
+        <li><span>16</span><em></em></li>
+        <li><span>17</span><em></em></li>
+        <li><span>18</span><em></em></li>
+        <li><span>19</span><em></em></li>
+        <li><span>20</span><em></em></li>
+        <li><span>21</span><em></em></li>
+        <li class="todo date-list-both"><span>22</span><em></em></li>
+        <li class="todo date-list-left"><span>23</span><em></em></li>
+        <li class="todo date-list-middle"><span>24</span><em></em></li>
+        <li class="todo date-list-right"><span>25</span><em></em></li>
+        <li class="hasdone date-list-left"><span>26</span><em></em></li>
+        <li class="hasdone date-list-middle"><span>27</span><em></em></li>
+        <li class="hasdone date-list-middle"><span>28</span><em></em></li>
+        <li class="hasdone date-list-right"><span>29</span><em></em></li>
+        <li><span>30</span><em></em></li>
+        <li class="date-list-gray-end"><span>01</span></li>
+        <li class="date-list-gray-end"><span>02</span></li>
+        <li class="date-list-gray-end"><span>03</span></li>
+        <li class="date-list-gray-end"><span>04</span></li>
+        <li class="date-list-gray-end"><span>05</span></li>
+        <li class="date-list-gray-end"><span>06</span></li>
+    </ul>
+    <div class="date-pins">
+        <div class="date-pins-list hide">
+            <div class="date-pins-top">
+                <div class="date-pins-item">
+                    <p>
+                        <span class="date-pins-item-circle date-pins-item-circle-start"></span>
+                        <span class="date-pins-item-start">Start time</span>
+                        <span class="pull-right f22-f">12:00</span>
+                    </p>
+                </div>
+                <div class="date-pins-item">
+                    <p>
+                        <span class="date-pins-item-circle"></span>
+                        <span class="date-pins-item-start">End time</span>
+                        <span class="pull-right f22-f">12:00</span>
+                    </p>
+                </div>
+                <div class="date-pins-item">
+                    <p class="f12-f date-pins-item-title">Task 133</p>
+                    <p>
+                        <span class="date-pins-item-circle"></span>
+                        <span class="date-pins-item-start">End time</span>
+                        <span class="pull-right f22-f">12:00</span>
+                    </p>
+                </div>
+                <div class="date-pins-item">
+                    <p class="f12-f date-pins-item-title">Task 133</p>
+                    <p>
+                        <span class="date-pins-item-circle date-pins-item-circle-start"></span>
+                        <span class="date-pins-item-start">Start time</span>
+                        <span class="pull-right f22-f">12:00</span>
+                        <span class="date-pins-item-line"></span>
+                    </p>
+                    <p>
+                        <span class="date-pins-item-circle"></span>
+                        <span class="date-pins-item-start">End time</span>
+                        <span class="pull-right f22-f">12:00</span>
+                    </p>
+                </div>
+            </div>
+            <div class="date-pins-bottom f36-f">ADD A PIN</div>
+        </div>
+        <div class="date-add-pin">
+            <div class="date-pins-top-wrap">
+                <div class="date-pins-top">
+                    <span class="font-edit1"></span>
+                    <span class="font-remove"></span>
+                    <div class="clearfix date-add-pin-user">
+                        <img src="/assets/images/personal-profile-title-img1.jpg" alt="" class="pull-left">
+                        <div class="pull-left">
+                            <div class="f23-f">Roy Reed</div>
+                            <div class="f5-f">11:02am</div>
+                        </div>
+                    </div>
+                    <p class="f25-f date-add-pin-con">Synth polaroid bitters chillwave pickled. Vegan disrupt tousled, Portland keffiyeh aesthetic food truck sriracha cornhole single-origin coffee church-key roof party. Leggings ethical McSweeney's, normcore you probably haven't heard of them Marfa </p>
+                </div>
+                <div class="date-pins-top">
+                    <span class="font-edit1"></span>
+                    <div class="clearfix date-add-pin-user">
+                        <img src="/assets/images/personal-profile-title-img1.jpg" alt="" class="pull-left">
+                        <div class="pull-left">
+                            <div class="f23-f">Roy Reed</div>
+                            <div class="f5-f">11:02am</div>
+                        </div>
+                    </div>
+                    <p class="f25-f date-add-pin-con">Synth polaroid bitters chillwave pickled. Vegan disrupt tousled, Portland keffiyeh aesthetic food truck sriracha cornhole single-origin coffee church-key roof party. Leggings ethical McSweeney's, normcore you probably haven't heard of them Marfa </p>
+                </div>
+            </div>
+
+            <div class="date-pins-bottom f36-f">ADD A PIN</div>
+            <!--添加.date-pins-bottom-complete改变背景-->
+        </div>
+    </div>
+</div>
+</body>
+</html>

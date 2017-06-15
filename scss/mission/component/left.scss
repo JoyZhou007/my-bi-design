@@ -1,0 +1,166 @@
+@charset "UTF-8";
+@import "../../public";
+
+
+/*===============================================
+
+  Time: 2016.1.17
+
+  Explain: mission side
+
+==============================================*/
+
+.mission-left{
+  .m-storage-title{
+    margin-top:14px;
+    padding-bottom:16px;
+    line-height: 1em;
+    border-bottom:1px solid $c9-c;
+    .font-storage::before{
+      color:$c4-c;
+      margin-right:5px;
+      margin-left:20px;
+    }
+  }
+  .m-pause-title{
+    margin-top:14px;
+    padding-bottom:16px;
+    line-height: 1em;
+    border-bottom:1px solid $c9-c;
+    .icon1-pause::before{
+      color:$c4-c;
+      margin-right:5px;
+      margin-left:20px;
+    }
+  }
+  .m-simple-left{
+    height:calc(100vh - 120px);
+    li{
+      height:60px;
+      &:hover{
+        background-color:$bottom-c;
+      }
+    }
+  }
+  .m-simple-time{
+    width:250px;
+    height:50px;
+    text-align: center;
+    border-right:1px solid rgba($c9-c, .5);
+    background-color:$b7-c;
+    li{
+      width:60px;
+      height:29px;
+      margin-top:19px;
+      cursor:pointer;
+      display:inline-block;
+      color:$b2-c;
+      font-family: HelveticaNeueMedium;
+      border-bottom:2px solid $b7-c;
+      @include newTransition($time);
+      &.current, &:hover{
+        color:$write;
+        border-bottom-color:$write;
+      }
+    }
+  }
+}
+.m-left-storage-list{
+  height:calc(100vh - 446px);
+  @include scrollbar();
+}
+.m-left-storage-list, .m-left-pause-list{
+  margin-right:-18px;
+  li{
+    padding:10px 20px 12px;
+    border-bottom:1px solid rgba($c9-c, .5);
+    position:relative;
+    @include newTransition($time);
+    overflow: hidden;
+    .icon1-Shape-3, .icon-board-task, .icon-board-project, .icon-board-meeting, .icon-board-application{
+      margin-right:5px;
+    }
+    .icon1-Shape-3{
+      @include scale(.7);
+      margin-top:5px;
+    }
+    &:hover{
+      background-color:$b6-c;
+      .m-left-storage-pos, .m-left-pause-pos{
+        right:20px;
+        color:rgba($b2-c, .5);
+        .font-trash{
+          color:$c16-c;
+        }
+      }
+    }
+  }
+}
+.m-left-storage-pos, .m-left-pause-pos{
+  position:absolute;
+  right:-70px;
+  top:5px;
+  @include newTransition($time);
+  span{
+    display:block;
+    width:24px;
+    height:24px;
+    float:left;
+    margin-right:5px;
+    background-color:$write;
+    border:1px solid $c2-c-1;
+    @include newRadius(2);
+    cursor:pointer;
+    &::before{
+      display:block;
+      margin-left:50%;
+      margin-top:50%;
+      @include newTranslate(50%, 50%);
+    }
+  }
+}
+.mission-left-task-list{
+  h2{
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+  p{
+    line-height:1.2em;
+    margin-top:2px;
+    margin-bottom:4px;
+    .icon-m-task{
+      margin-right:10px;
+      color:$c17-c-7;
+    }
+  }
+  .m-left-storage-people{
+    line-height:22px;
+    .icon-m-shape{
+      margin-right:10px;
+      margin-top:6px;
+      color:$c17-c-7;
+    }
+    img{
+      width:20px;
+      height:20px;
+      @include newRadius(2);
+      border:1px solid rgba($c17-c-7, .2);
+      margin-right:5px;
+    }
+    em{
+      display:block;
+      width:20px;
+      height:20px;
+      float:left;
+      background-color:$b8-c;
+      text-align: center;
+      font-family: helveticaNeuelight;
+      color:$write;
+      @include newRadius(2);
+    }
+  }
+  span[class^="font-"], [class*=" font-"], span[class^="icon-"], [class*=" icon-"], span[class^="icon1-"], [class*=" icon1-"]{
+    color:$c2-c;
+  }
+}

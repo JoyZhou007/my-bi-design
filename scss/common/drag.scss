@@ -1,0 +1,335 @@
+@charset "UTF-8";
+@import "../public";
+
+
+/*==============================================
+
+    Time：2017.02.04
+
+    Explain：drag
+
+==============================================*/
+
+.g-drag-animated{
+  i, em{@include newTransition($time);}
+}
+.g-drag{
+  height:24px;
+  background-color:$c11-c;
+  line-height:24px;
+  position:relative;
+  cursor:pointer;
+  @include newRadius(15);
+  text-align: center;
+  @include returnFontChangeF(1, 4);
+  span{
+    position: absolute;
+    z-index:1;
+    white-space:nowrap;
+  }
+  i{
+    width:50%;
+    height:24px;
+    background-color:$c3-c;
+    display:block;
+    position:absolute;
+    left:0;
+    top:0;
+    @include newRadius(15);
+  }
+  em{
+    display:block;
+    height:30px;
+    width:30px;
+    position:absolute;
+    background-color:$write;
+    top:-3px;
+    line-height:30px;
+    left:50%;
+    margin-left:-15px;
+    z-index:2;
+    cursor:pointer;
+    @include newRadius(30);
+    @include newBoxShadow(0, 1, 2, $black, .5);
+  }
+}
+
+//3列
+.g-drag3{
+  span{
+    &:nth-child(1){left:10px;}
+    &:nth-child(2){left:50%;}
+    &:nth-child(3){left:auto;right:10px;}
+  }
+}
+.g-drag-b3-c{
+  i{
+    width:100%;
+    background-color:$b3-c;
+  }
+  em{
+    left:calc(100% - 15px);
+  }
+}
+
+//5；列
+.g-drag5{
+  i{
+    width:75%;
+    background-color:$c14-c;
+  }
+  em{left:75%;}
+  span{
+    &:nth-child(1){left:10px;}
+    &:nth-child(2){left:25%;}
+    &:nth-child(3){left:50%;}
+    &:nth-child(4){left:75%;}
+    &:nth-child(5){left:auto;right:10px;}
+  }
+}
+
+//4列
+.g-drag-type{
+  em{width:100px;}
+}
+.g-drag4{
+  i{
+    width:66.666%;
+    background-color:$c14-c;
+  }
+  em{
+    left:66.666%;
+    width:100px;
+  }
+  span{
+    &:nth-child(1){left:10px;}
+    &:nth-child(2){left:33.333%;}
+    &:nth-child(3){left:66.666%;}
+    &:nth-child(4){left:auto;right:10px;}
+  }
+}
+
+//1列
+.g-d-bg1::after{background:$c14-c;}
+.g-d-bg2::after{background:$c4-c;}
+.g-d-bg3::after{background:$c5-c-1;}
+.g-d-drag{
+  width:calc(100% - 40px);
+  position:relative;
+  li{
+    margin-bottom:15px;
+    div.pull-left{
+      &:nth-child(1){
+        width:280px;
+      }
+    }
+    .g-drag{
+      margin-left:15px;
+      margin-right:15px;
+      margin-bottom:5px;
+    }
+  }
+}
+.g-drag1-width1{
+  width:56px;
+  height:24px;
+  float:right;
+  background-color:$c11-c;
+  position:relative;
+  @include newRadius(30);
+  cursor:pointer;
+  .g-drag1::after{
+    display:block;
+    content:'';
+    height:24px;
+    @include newTransition($time);
+    @include newRadius(100);
+  }
+  em{
+    width: calc(100% - 28px);
+    display:block;
+    position:absolute;
+    top:0;
+    left:28px;
+    line-height:24px;
+    text-align: center;
+    @include newTransition($time);
+  }
+  span{
+    display:block;
+    width:28px;
+    height:28px;
+    background-color:$write;
+    position:absolute;
+    left:0;
+    top:-2px;
+    z-index:10;
+    @include newBoxShadow(0, 1, 2, $black, .5);
+    @include newRadius(30);
+  }
+  .g-set-but-left-style{
+    &::after {
+      width:0;
+      opacity:0;
+    }
+    em{left:28px;}
+    span{
+      left:0;
+      margin-left:0;
+    }
+  }
+  .g-set-but-right-style{
+    &::after {
+      width:100%;
+      opacity:1;
+    }
+    em{left:0;}
+    span{
+      left:100%;
+      margin-left:-28px;
+    }
+  }
+}
+.g-drag1-bg{background-color:$c5-c-1;}
+.g-remove-but-style{
+  span{
+    -webkit-animation: permSetButOrigin .6s linear both;
+    -moz-animation: permSetButOrigin .6s linear both;
+    -o-animation: permSetButOrigin .6s linear both;
+    -ms-animation: permSetButOrigin .6s linear both;
+    animation: permSetButOrigin .6s linear both;
+  }
+  &::after{
+    -webkit-animation: permSetButBgOrigin .4s linear both;
+    -moz-animation: permSetButBgOrigin .4s linear both;
+    -o-animation: permSetButBgOrigin .4s linear both;
+    -ms-animation: permSetButBgOrigin .4s linear both;
+    animation: permSetButBgOrigin .4s linear both;
+  }
+}
+.g-set-but-drag {
+  &::after {
+    -webkit-animation: permSetButBg .4s linear both;
+    -moz-animation: permSetButBg .4s linear both;
+    -o-animation: permSetButBg .4s linear both;
+    -ms-animation: permSetButBg .4s linear both;
+    animation: permSetButBg .4s linear both;
+  }
+  span {
+    -webkit-animation: permSetBut .4s linear both;
+    -moz-animation: permSetBut .4s linear both;
+    -o-animation: permSetBut .4s linear both;
+    -ms-animation: permSetBut .4s linear both;
+    animation: permSetBut .4s linear both;
+  }
+}
+@-webkit-keyframes permSetButBg {
+  0%{width:100%;opacity:0}
+  100%{width:100%;opacity:1}
+}
+@-moz-keyframes permSetButBg {
+  0%{width:100%;opacity:0}
+  100%{width:100%;opacity:1}
+}
+@-o-keyframes permSetButBg {
+  0%{width:100%;opacity:0}
+  100%{width:100%;opacity:1}
+}
+@-ms-keyframes permSetButBg {
+  0%{width:100%;opacity:0}
+  100%{width:100%;opacity:1}
+}
+@keyframes permSetButBg {
+  0%{width:100%;opacity:0}
+  100%{width:100%;opacity:1}
+}
+@-webkit-keyframes permSetButBgOrigin {
+  0%{width:100%;opacity:1}
+  100%{width:100%;opacity:0}
+}
+@-moz-keyframes permSetButBgOrigin {
+  0%{width:100%;opacity:1}
+  100%{width:100%;opacity:0}
+}
+@-o-keyframes permSetButBgOrigin {
+  0%{width:100%;opacity:1}
+  100%{width:100%;opacity:0}
+}
+@-ms-keyframes permSetButBgOrigin {
+  0%{width:100%;opacity:1}
+  100%{width:100%;opacity:0}
+}
+@keyframes permSetButBgOrigin {
+  0%{width:100%;opacity:1}
+  100%{width:100%;opacity:0}
+}
+@-webkit-keyframes permSetBut {
+  0%{left:0;margin-left:0; height:28px; top:-2px;}
+  35%{left:0;margin-left:0; height:24px; top:0;}
+  50%{left:14px; height:24px; top:0;}
+  65%{left:100%;margin-left:-28px; height:24px; top:0;}
+  100%{left:100%;margin-left:-28px; height:28px; top:-2px;}
+}
+@-moz-keyframes permSetBut {
+  0%{left:0;margin-left:0; height:28px; top:-2px;}
+  35%{left:0;margin-left:0; height:24px; top:0;}
+  50%{left:14px; height:24px; top:0;}
+  65%{left:100%;margin-left:-28px; height:24px; top:0;}
+  100%{left:100%;margin-left:-28px; height:28px; top:-2px;}
+}
+@-o-keyframes permSetBut {
+  0%{left:0;margin-left:0; height:28px; top:-2px;}
+  35%{left:0;margin-left:0; height:24px; top:0;}
+  50%{left:14px; height:24px; top:0;}
+  65%{left:100%;margin-left:-28px; height:24px; top:0;}
+  100%{left:100%;margin-left:-28px; height:28px; top:-2px;}
+}
+@-ms-keyframes permSetBut {
+  0%{left:0;margin-left:0; height:28px; top:-2px;}
+  35%{left:0;margin-left:0; height:24px; top:0;}
+  50%{left:14px; height:24px; top:0;}
+  65%{left:100%;margin-left:-28px; height:24px; top:0;}
+  100%{left:100%;margin-left:-28px; height:28px; top:-2px;}
+}
+@keyframes permSetBut {
+  0%{left:0;margin-left:0; height:28px; top:-2px;}
+  35%{left:0;margin-left:0; height:24px; top:0;}
+  50%{left:14px; height:24px; top:0;}
+  65%{left:100%;margin-left:-28px; height:24px; top:0;}
+  100%{left:100%;margin-left:-28px; height:28px; top:-2px;}
+}
+@-webkit-keyframes permSetButOrigin {
+  0%{left:100%;height:28px; top:-2px;}
+  35%{left:100%;height:24px; top:0;}
+  50%{left:14px; height:24px; top:0;}
+  65%{left:0; margin-left:0; height:24px; top:0;}
+  100%{left:0; margin-left:0; height:28px; top:-2px;}
+}
+@-moz-keyframes permSetButOrigin {
+  0%{left:100%;margin-left:-28px;height:28px; top:-2px;}
+  35%{left:100%;margin-left:-28px;height:24px; top:0;}
+  50%{left:14px; height:24px; top:0;}
+  65%{left:0; margin-left:0; height:24px; top:0;}
+  100%{left:0; margin-left:0; height:28px; top:-2px;}
+}
+@-o-keyframes permSetButOrigin {
+  0%{left:100%;margin-left:-28px;height:28px; top:-2px;}
+  35%{left:100%;margin-left:-28px;height:24px; top:0;}
+  50%{left:14px; height:24px; top:0;}
+  65%{left:0; margin-left:0; height:24px; top:0;}
+  100%{left:0; margin-left:0; height:28px; top:-2px;}
+}
+@-ms-keyframes permSetButOrigin {
+  0%{left:100%;margin-left:-28px;height:28px; top:-2px;}
+  35%{left:100%;margin-left:-28px;height:24px; top:0;}
+  50%{left:14px; height:24px; top:0;}
+  65%{left:0; margin-left:0; height:24px; top:0;}
+  100%{left:0; margin-left:0; height:28px; top:-2px;}
+}
+@keyframes permSetButOrigin {
+  0%{left:100%;margin-left:-28px;height:28px; top:-2px;}
+  35%{left:100%;margin-left:-28px;height:24px; top:0;}
+  50%{left:14px; height:24px; top:0;}
+  65%{left:0; margin-left:0; height:24px; top:0;}
+  100%{left:0; margin-left:0; height:28px; top:-2px;}
+}

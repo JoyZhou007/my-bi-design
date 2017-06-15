@@ -1,0 +1,1026 @@
+@charset "UTF-8";
+@import '../public';
+
+/*==============================================
+
+    Time：2017.02.15
+
+    Explain：login
+
+==============================================*/
+/* animate*/
+.transition2 {
+    @include newTransition(0);
+}
+
+.login-fixed-box {
+    opacity: 1 !important;
+    z-index: 5 !important;
+    height: auto !important;
+    width: 440px !important;
+}
+
+.login-fixed {
+    z-index: -1;
+    width: 270px;
+    height: 0;
+    opacity: 0;
+}
+
+.login {
+    height: 100vh;
+    background-size: cover;
+    position: relative;
+
+    .login-filter {
+        width: 100%;
+        height: 100vh;
+        filter: blur(5px);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+    .login-mask {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include newImgPath('mask.png', 0, center, 0);
+        z-index: 2;
+
+    }
+
+}
+
+.login-bg-r1 {
+    @include newImgPath('login-bg-r1.jpg', 0, center, 0);
+
+    .login-filter {
+        @include newImgPath('login-bg-r1.jpg', 0, center, 0);
+    }
+}
+
+.login-bg-r2 {
+    @include newImgPath('login-bg-r2.jpg', 0, center, 0);
+    .login-filter {
+        @include newImgPath('login-bg-r2.jpg', 0, center, 0);
+    }
+}
+
+.login-bg3 {
+    @include newImgPath('login-bg3.jpg', 0, center, 0);
+    .login-filter {
+        @include newImgPath('login-bg3.jpg', 0, center, 0);
+    }
+}
+
+.login-bg-r3 {
+    @include newImgPath('login-bg-r3.jpg', 0, center, 0);
+    .login-filter {
+        @include newImgPath('login-bg-r3.jpg', 0, center, 0);
+    }
+}
+
+.login-bg-r4 {
+    @include newImgPath('login-bg-r4.jpg', 0, center, 0);
+    .login-filter {
+        @include newImgPath('login-bg-r4.jpg', 0, center, 0);
+    }
+}
+
+.login-show {
+    width: 440px;
+    height: auto;
+    padding-bottom: 25px;
+    background: $write;
+    position: absolute;
+    top: 130px;
+    left: 50%;
+    margin-left: -220px;
+    @include newBoxShadow(0, 4, 6, $black, .6);
+    @include newRadius(4);
+    padding-top: 20px;
+    padding-left: 30px;
+    .r-person-register-l, .r-person-register-r {
+        width: 410px;
+        position: relative;
+    }
+    .r-person-register-l div, .r-person-register-r div {
+        position: relative;
+        &:hover {
+            p {
+                font-size: 12px;
+                top: -25px;
+                color: $c2-c;
+            }
+        }
+    }
+    .login-show-pwd {
+        margin-top: 33px;
+    }
+    .r-person-register-info {
+        height: 40px;
+        line-height: 33px;
+        font-size: 28px;
+        color: $c1-c;
+        width: 100%;
+        background-color: transparent;
+        border-bottom: 1px solid $c2-c;
+        &:hover {
+            border-color: $c19-c-1;
+        }
+    }
+    .r-person-register-l div p, .r-person-register-r div p {
+        height: 40px;
+        line-height: 50px;
+        font-size: 18px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include newTransition($time);
+    }
+    .keep-me {
+        margin-top: 6px;
+        .keep-me-left {
+            cursor: pointer;
+            .font-selectbutton-select {
+                font-size: 12px;
+            }
+            .select {
+                float: left;
+                color: $write;
+                display: inline-block;
+                width: 15px;
+                height: 15px;
+                background: $c2-c;
+                @include newRadius(2);
+                @include scale(.6);
+            }
+        }
+        .keep-me-right {
+            padding-right: 30px;
+            cursor: pointer;
+            &:hover {
+                text-decoration: underline;
+                text-decoration-color: red;
+            }
+        }
+    }
+    .login-create {
+        margin-top: 25px;
+    }
+}
+
+.alert-error {
+    color: $c5-c-1;
+}
+
+.login-wrap {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+}
+
+.font-page-esc {
+    display: block;
+    position: absolute;
+    right: -30px;
+    top: 15px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-left: 1px solid $c9-c;
+    color: $write;
+    font-size: 25px;
+    //background: none;
+    margin-top: 4px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    @include newTransition(0);
+    &:hover {
+        color: $b2-c;
+    }
+}
+
+.login-header {
+    position: fixed;
+    width: 100%;
+    height: 67px;
+    padding-top: 0;
+    padding-right: 0;
+    padding-left: 20px;
+    z-index: 8;
+    .login-header-lst {
+        position: absolute;
+        left: 50%;
+        top: 23px;
+        margin-left: -200px;
+        > li {
+            line-height: 25px;
+            margin-right: 16px;
+            padding-left: 10px;
+            padding-right: 10px;
+            &:hover {
+                background-color: rgba(205, 205, 205, 0.4);
+                color: $write;
+                @include newRadius(5);
+                @include newTransition(0);
+            }
+            > a {
+                display: inline-block;
+            }
+        }
+    }
+    .login-language {
+        position: relative;
+        margin-right: 89px;
+        .public-select-style1 {
+            padding: 0;
+            text-align: center;
+            li {
+                line-height: 40px;
+                border: none;
+                padding-left: 0;
+                &:hover {
+                    background-color: $c18-c-1;
+                    color: $write;
+                }
+            }
+        }
+        .public-select-style1 li:hover:first-child {
+            @include newBorderRadius(4, 4, 0, 0);
+        }
+        .public-select-style1 li:hover:last-child {
+            @include newBorderRadius(0, 0, 4, 4);
+        }
+    }
+    .login-language-main {
+        position: relative;
+        margin-right: 38px;
+        margin-top: 25px;
+        cursor: pointer;
+        .public-after {
+            color: $write;
+        }
+        > .public-after:after {
+            float: right;
+            margin-top: 5px;
+            margin-left: 5px;
+        }
+    }
+}
+
+.login-main {
+    position: absolute;
+    width: 970px;
+    height: 100px;
+    left: 50%;
+    top: 200px;
+    margin-left: -485px;
+    > p {
+        position: relative;
+        margin-top: 10px;
+        z-index: 9;
+        @include newTransition(0);
+        &:hover {
+            color: $c3-c;
+        }
+    }
+    .login-main-tit {
+        position: relative;
+        font-size: 40px;
+        line-height: 40px;
+        color: $write;
+        text-align: center;
+        @include newTransition(0);
+        z-index: 9;
+        &:hover {
+            color: $c3-c;
+        }
+    }
+    .btn-group {
+        position: absolute;
+        top: -280px;
+        padding: 500px 500px;
+        margin-left: -590px;
+        left: 50%;
+        width: 180px;
+        .but {
+            width: 180px;
+            height: 60px;
+            line-height: 60px;
+        }
+        .but-pro-small {
+            color: $c1-c;
+            @include newBoxShadow(0, 4, 6, #000, 0.6);
+        }
+    }
+}
+
+.login-share {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    border-top: 1px solid rgba(179, 187, 189, 0.5);
+    padding-top: 24px;
+    z-index: 4;
+
+    > ul {
+        position: absolute;
+        top: 24px;
+        left: 50%;
+        width: 780px;
+        height: 24px;
+        margin-left: -390px;
+
+    }
+    > ul > li {
+        width: 88px;
+        float: left;
+        padding: 0 21px;
+        text-align: center;
+        > span {
+            font-size: 28px;
+            color: $c18-c-2;
+            cursor: pointer;
+            @include newTransition(0);
+        }
+        > span:hover {
+            font-size: 28px;
+            color: $write;
+        }
+    }
+}
+
+.login-footer {
+    .but-txt {
+        margin-left: 10px;
+        margin-top: 10px;
+        color: $write;
+    }
+    .left {
+        margin-left: 20px;
+    }
+    .left:hover {
+        background-color: $b3-c;
+        border-color: $b3-c;
+        color: $write;
+    }
+    .right {
+        margin-right: 20px;
+    }
+    .right:hover {
+        background-color: $c18-c-3;
+        border-color: $c18-c-3;
+        color: $write;
+    }
+    .but {
+        position: relative;
+        z-index: 11;
+        border: 1px solid $b2-c;
+        cursor: pointer;
+        background-color: transparent;
+        color: $b2-c;
+        margin-bottom: 5px;
+    }
+}
+
+.login-logo {
+    .icon-logo {
+        position: fixed;
+        top: 15px;
+        left: 20px;
+        font-size: 35px;
+        color: $write;
+        cursor: pointer;
+        z-index: 10;
+    }
+}
+
+/* login-reset-psd
+----------------------------------- */
+.reset-psd-header{
+    .font-page-esc{
+        position: static;
+        border-left: none;
+        color: $b2-c;
+    }
+}
+.login-reset-psd {
+    .login-show {
+        position: absolute;
+        width: 450px;
+        height: auto;
+        padding-bottom: 15px;
+        margin: 0 0 0 -225px;
+        .login-show-message {
+            > textarea {
+                width: 98.5%;
+                height: 147px;
+                margin-top: 55px;
+                border-color: #ccc;
+
+            }
+        }
+        .icon1-color-big-password {
+            display: inline-block;
+            float: none;
+            margin-right: 10px;
+            font-size: 16px;
+        }
+    }
+    .line {
+        display: block;
+        background-color: $c9-c;
+        width: 100%;
+        height: 1px;
+        margin-top: 20px;
+    }
+    .login-show {
+        position: absolute;
+        top: 127px;
+        left: 50%;
+        width: 450px;
+        height: auto;
+        padding-bottom: 15px;
+        margin: 0 0 0 -240px;
+        background: $bottom-c;
+        @include newBoxShadow(0, 0, 0, $black, .6);
+        @include newRadius(4);
+        padding-top: 20px;
+        padding-left: 30px;
+        .r-person-register-l, .r-person-register-r {
+            width: 420px;
+            position: relative;
+        }
+        .r-person-register-l div, .r-person-register-r div {
+            position: relative;
+            &:hover {
+                p {
+                    font-size: 12px;
+                    top: -25px;
+                }
+            }
+            input:focus + p {
+                font-size: 12px;
+                top: -25px;
+            }
+        }
+        .login-show-pwd {
+            margin-top: 33px;
+        }
+        .login-show-user {
+            margin-bottom: 20px;
+            margin-top: 35px;
+        }
+        .login-show-message {
+            > textarea {
+                width: 98.5%;
+                height: 147px;
+                margin-top: 55px;
+                border-color: #ccc;
+
+            }
+        }
+        .r-person-register-info {
+            height: 40px;
+            line-height: 33px;
+            font-size: 28px;
+            color: $c1-c;
+            width: 100%;
+            background-color: transparent;
+            border-bottom: 1px solid $c2-c;
+        }
+        .r-person-register-l div p, .r-person-register-r div p {
+            height: 40px;
+            line-height: 50px;
+            font-size: 18px;
+            color: $c2-c;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: .2s;
+        }
+        .but-create {
+            margin-top: 40px;
+        }
+        .login-show-hd {
+            > h1 {
+                margin-bottom: 10px;
+                text-align: center;
+                span {
+                    margin-right: 10px;
+                }
+            }
+            > p {
+                text-align: center;
+                > span {
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+}
+
+/* login-menu dept
+---------------------------------------- */
+.login-main-menu {
+    position: absolute;
+    top: 300px;
+    left: 10px;
+    h2 {
+        @include newTransition(0);
+        &:hover {
+            color: $c3-c;
+        }
+        font-size: 40px;
+        color: $write;
+        line-height: 50px;
+    }
+    p {
+        @include newTransition(0);
+        &:hover {
+            color: $c3-c;
+        }
+    }
+    .main-lst {
+        margin-top: 58px;
+        li {
+            float: left;
+            width: 180px;
+            height: 180px;
+            margin-right: 40px;
+            //background-color: $main-c;
+            @include newRadius(90);
+            @include newTransition(0);
+            cursor: pointer;
+            .main-lst-txt {
+                display: block;
+                margin-top: 60px;
+                line-height: 30px;
+                text-align: center;
+            }
+            .front{
+                width: 180px;
+                height: 180px;
+                background-color: $main-c;
+                @include newRadius(90);
+                z-index: 1;
+            }
+            .back{
+                width: 180px;
+                height: 180px;
+                background-color: $c4-c;
+                @include newRadius(90);
+                z-index: 2;
+            }
+            .bg1{
+                @include newImgPath('man2.png', no-repeat, top, center, contain);
+            }
+            .bg2{
+                @include newImgPath('man4.png', no-repeat, top, center, contain);
+            }
+            .bg3{
+                @include newImgPath('man3.png', no-repeat, top, center, contain);
+            }
+            .bg4{
+                @include newImgPath('man2.png', no-repeat, top, center, contain);
+            }
+
+
+        }
+    }
+
+}
+
+//.figure-explain {
+//    min-height: 100px;
+//}
+
+.figure-explain-wrap{
+    min-height: 100px;
+}
+/* recover-psd
+------------------------------------------------- */
+.recover {
+    .login-show {
+        height: auto;
+        padding-bottom: 15px;
+    }
+    .r-person-register-l {
+        .but-create {
+            background-color: $c4-c;
+        }
+
+    }
+    .hr {
+        position: relative;
+        margin-top: 40px;
+        width: 100%;
+        height: 2px;
+        background-color: $bottom-c;
+        .circle {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            margin-left: -20px;
+            width: 40px;
+            height: 40px;
+            @include newRadius(20);
+            background-color: $b2-c;
+            line-height: 40px;
+            text-align: center;
+        }
+    }
+    .login-show-pwd {
+        position: relative;
+        .but-send {
+            position: absolute;
+            top: -5px;
+            right: 0;
+
+        }
+
+    }
+    .but-send{
+        font-size: 12px;
+    }
+    .but-create{
+        @include newTransition(0);
+        background-color: rgba(215,188,283,0.5) !important;
+        &:hover{
+            background-color: rgba(215,188,283,1) !important;
+        }
+    }
+    .but-reset-pass {
+        margin-top: 20px;
+    }
+    .r-person-register-info:focus+p{
+        font-size: 12px !important;
+        top: -25px !important;
+        color: $c2-c !important;
+    }
+}
+
+/* contact-us
+--------------------------------------------------------------------- */
+/* scale
+-------------------------- */
+.scale-p {
+    font-size: 12px !important;
+    top: -25px !important;
+    color: $c2-c !important;
+}
+.about-main {
+    text-align: left;
+    padding-top: 230px;
+    margin-bottom: 40px;
+    padding-left: 20px;
+    h2 {
+        @include newTransition(0);
+        color: $write;
+        font-size: 40px;
+        margin-bottom: 15px;
+        &:hover {
+            color: $c3-c;
+        }
+    }
+    p {
+        @include newTransition(0);
+        width: 680px;
+        margin-bottom: 20px;
+        font-size: 16px;
+        &:hover {
+            color: $c3-c;
+        }
+    }
+}
+
+.contact-us-wrap{
+    position: relative;
+    bottom: 0;
+    height: 100vh;
+    @include newTransition($time);
+}
+.contact-us-wrap-hide{
+    position: relative;
+    bottom: -750px;
+}
+
+.sign-up {
+    height: 100%;
+    background-color: $write;
+    .sign-up-wrap {
+        width: 1100px;
+        margin: 0 auto;
+        padding-top: 30px;
+        .sign-up-lf,
+        .sign-up-rt {
+            float: left;
+        }
+        .sign-up-lf {
+            width: 410px;
+            margin-right: 90px;
+            .login-show {
+                position: static;
+                width: 400px;
+                height: auto;
+                padding-bottom: 15px;
+                //height: auto;
+                background: $write;
+                margin: 0;
+                @include newBoxShadow(0, 4, 6, $black, .6);
+                @include newRadius(4);
+                padding-top: 20px;
+                padding-left: 30px;
+                .r-person-register-l, .r-person-register-r {
+                    width: 380px;
+                    position: relative;
+                }
+                .r-person-register-l > div,
+                .r-person-register-r > div {
+                    position: relative;
+
+                }
+                .r-person-register-l input {
+                    padding-left: 5px;
+                    &:hover {
+                        border-bottom-color: $c19-c-1;
+                    }
+                    &:hover + p {
+                        font-size: 12px;
+                        top: -25px;
+                        color: $c2-c;
+                    }
+                }
+                .login-show-pwd {
+                    margin-top: 40px;
+                    //padding-top: 10px;
+                    > input:focus + p {
+                        font-size: 12px;
+                        top: -25px;
+                        color: $c2-c;
+                    }
+                }
+                .login-show-user {
+                    margin-bottom: 20px;
+                    //padding-top: 10px;
+                    > input:focus + p {
+                        font-size: 12px;
+                        top: -25px;
+                        color: $c2-c;
+                    }
+                }
+                .login-show-message {
+                    //padding-top: 10px;
+                    position: relative;
+                    margin-top: 45px;
+                    > textarea {
+                        width: 98.5%;
+                        height: 147px;
+                        margin-top: 10px;
+                        border-color: $c2-c;
+                        padding-left: 5px;
+                        &:hover + p {
+                            font-size: 12px;
+                            top: -25px;
+                            color: $c2-c;
+                        }
+                    }
+                    > textarea:focus + p {
+                        font-size: 12px;
+                        top: -25px;
+                        color: $c2-c;
+                    }
+
+                }
+                .r-person-register-info {
+                    height: 40px;
+                    line-height: 33px;
+                    font-size: 28px;
+                    color: $c1-c;
+                    width: 100%;
+                    background-color: transparent;
+                    border-bottom: 1px solid $c2-c;
+                }
+                .r-person-register-l div p,
+                .r-person-register-r div p,
+                .login-show-message > p {
+                    height: 40px;
+                    line-height: 50px;
+                    font-size: 18px;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    transition: .2s;
+                    padding-left: 5px;
+
+                }
+                .but-send {
+                    margin-top: 10px;
+                }
+            }
+        }
+        .sign-up-rt {
+            width: 600px;
+            .f58-f {
+                font-size: 34px;
+            }
+            .sign-up-info {
+                margin-bottom: 40px;
+                line-height: 25px;
+                > h2 {
+                    margin-bottom: 10px;
+                }
+                .main-lst {
+                    li {
+                        &:before {
+                            content: "";
+                            display: inline-block;
+                            width: 5px;
+                            height: 3px;
+                            background-color: $c2-c;
+                            margin-bottom: 5px;
+                            margin-right: 15px;
+                        }
+                    }
+                }
+            }
+            .main-c {
+                color: $main-c;
+            }
+
+        }
+    }
+}
+
+/* about-us
+--------------------------------------------------------------------- */
+.login-main-menu {
+    .about-main {
+        min-height: 200px;
+        padding-top: 0 !important;
+    }
+}
+
+.login-wrap {
+    position: relative;
+    z-index: 2;
+
+}
+
+.line-ht5 {
+    line-height: 25px;
+}
+
+/* animate 登录框
+ ------------------------------------------------*/
+@-webkit-keyframes zoomIn {
+    from {
+        opacity: 0;
+        -webkit-transform: scale3d(.3, .3, .3);
+        transform: scale3d(.3, .3, .3);
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        -webkit-transform: scale3d(.3, .3, .3);
+        transform: scale3d(.3, .3, .3);
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+.zoomIn {
+    -webkit-animation-name: zoomIn;
+    animation-name: zoomIn;
+}
+
+@-webkit-keyframes zoomOut {
+    from {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+        -webkit-transform: scale3d(.3, .3, .3);
+        transform: scale3d(.3, .3, .3);
+    }
+
+    to {
+        opacity: 0;
+        display: none;
+    }
+}
+
+@keyframes zoomOut {
+    from {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+        -webkit-transform: scale3d(.3, .3, .3);
+        transform: scale3d(.3, .3, .3);
+    }
+
+    to {
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+.zoomOut {
+    -webkit-animation-name: zoomOut;
+    animation-name: zoomOut;
+}
+
+@-webkit-keyframes slideInLeft {
+    from {
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+        visibility: visible;
+    }
+
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+        visibility: visible;
+    }
+
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.slideInLeft {
+    -webkit-animation-name: slideInLeft;
+    animation-name: slideInLeft;
+}
+
+/* 翻牌效果
+-------------------*/
+.flip{
+    position: relative;
+    perspective: 1000px;
+}
+
+.flip>div{
+    width: 180px;
+    height: 180px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    @include newTransition(0.5);
+    //transition: all 1s ease;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+.flip:hover div.front{
+    z-index: 2;
+}
+.flip:hover div.back{
+    z-index: 1;
+}
+
+.Y div.back{
+    transform:rotateY(180deg);
+}
+//.Y:hover div.front{
+//    transform:rotateY(180deg);
+//}
+//.Y:hover div.back{
+//    transform:rotateY(0deg);
+//}
+
+.flip-front{
+    transform:rotateY(180deg) !important;
+}
+
+.flip-back{
+    transform:rotateY(0deg) !important;
+}
+

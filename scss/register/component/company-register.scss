@@ -1,0 +1,241 @@
+@charset "UTF-8";
+@import '../../public';
+
+.r-company-register-box{
+  width: 100%;
+  position: relative;
+
+}
+.r-company-register{
+  margin:0 auto;
+  width: 870px;
+}
+.r-company-business,.r-company-name{
+  width: 410px;
+  height: 120px;
+  position: relative;
+  transition: .2s;
+  .r-company-title{
+    height: 15px;
+    padding-bottom: 5px;
+    transition: .2s;
+  }
+}
+.r-company-name{
+  padding-top: 20px;
+  .r-company-input-industry{
+    height: 28px;
+    line-height: 28px;
+    font-size:18px;
+    color: $c2-c;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background-color: transparent;
+    border-bottom:1px solid $c2-c;
+    .d-select{
+      li{
+       a{
+         color: $b2-c;
+       }
+        &:hover{
+          a{
+            color: $write;
+          }
+        }
+      }
+    }
+  }
+  div{
+  //  position: relative;
+  //  &:hover{
+  //    p{
+  //      color: $b9-c;
+  //      font-size:12px;
+  //      top: -28px;
+  //    }
+  //  }
+  //  &.active{
+  //    p{
+  //      color: $b9-c;
+  //      font-size:12px;
+  //      top: -28px;
+  //    }
+  //  }
+  // p{
+  //   transition: .2s;
+  //   position: absolute;
+  //   left: 0;
+  //   top: 0;
+  //   height: 40px;
+  //   width: 100%;
+  //   line-height: 40px;
+  //   font-size:28px;
+  //   color: $c2-c;
+  // }
+    input{
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 40px;
+      width: 100%;
+      line-height: 40px;
+      font-size:28px;
+      color: $c1-c;
+      background-color: transparent;
+      border-bottom:1px solid $c2-c;
+    }
+  }
+}
+.r-company-business .r-unload-license{
+  width: 100%;
+  height: 120px;
+  background-color: $c2-c;
+  text-align: center;
+
+  cursor: pointer;
+  font-size:12px;
+  transition: .2s;
+  span{
+    transition: .2s;
+    line-height: 120px;
+  }
+}
+//.company-input-name{
+//  height: 40px;
+//  width: 100%;
+//  line-height: 40px;
+//  font-size:28px;
+//  color: $c1-c;
+//  background-color: transparent;
+//  border-bottom:1px solid $c2-c;
+//}
+.r-company-input-industry{
+  height: 28px;
+  line-height: 28px;
+  font-size:18px;
+  color: $c2-c;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  background-color: transparent;
+  border-bottom:1px solid $c2-c;
+}
+.r-company-arrow{
+  position: absolute;
+  bottom: 7px;
+  right: -2px;
+  cursor: pointer;
+  &:hover{
+    color: $b3-c;
+  }
+}
+.r-font-selectbutton-soildclose{
+  font-size:10px;
+  font-size: 12px;
+  color: #9193AB;
+  transform: scale(.3);
+  margin-left: -17px;
+}
+
+.r-company-business {
+  &:hover{
+    .r-company-name-box {
+      font-size: 18px;
+      height: 21px;
+      color: $c2-c;
+      @include returnFontChangeF(1, 52);
+
+    }
+    .r-unload-license{
+      height: 110px;
+      background-color: $c9-c;
+      span{
+        color:$c2-c;
+        line-height: 110px;
+      }
+    }
+  }
+}
+
+/* add by joy 2017-02-23
+------------------------------------ */
+
+.r-company-name-box{
+  position: relative;
+  height: 40px;
+  >p{
+    position: absolute;
+    top: 0 ;
+    left: 0 ;
+    font-size: 28px ;
+    line-height: 40px;
+    font-family: HelveticaNeueThin ;
+    color: $c1-c ;
+    @include newTransition(0);
+  }
+  >input{
+    //position: static !important;
+    z-index: 5;
+    color: $c1-c ;
+  }
+  >input:hover+p{
+    font-size: 12px ;
+    color: $b9-c ;
+    top: -20px ;
+  }
+  >input:focus+p{
+    font-size: 12px ;
+    color: $b9-c ;
+    top: -20px ;
+  }
+
+}
+.r-unload-license{
+  position: relative;
+  z-index: 2;
+}
+.r-company-business{
+    img{
+      position: absolute;
+      top: 20px;
+      left: 0;
+      z-index: 1;
+    }
+}
+
+//  showImg
+.show-img{
+  z-index: 3 !important;
+}
+
+/* hover*/
+.company-input-hover{
+  font-size: 12px !important;
+  color: $b9-c !important;
+  top: -20px !important;
+}
+
+.r-company-name{
+  .d-select{
+    width: 440px;
+  }
+}
+.r-company-input-industry{
+  em{
+    display: block;
+    cursor: pointer;
+  }
+  @include newTransition(0);
+  &:hover{
+    em{
+      color: $b9-c !important;
+
+    }
+  }
+}
+.error{
+  color: #f84673;
+}

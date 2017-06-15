@@ -1,0 +1,181 @@
+@charset "UTF-8";
+@import '../public';
+
+
+/*==============================================
+
+    Time：2017.02.10
+
+    Explain：home page contact list
+
+==============================================*/
+
+.h-contact-list{
+  height:calc(100vh - 175px);
+  @include scrollbar();
+  dl{
+    overflow:hidden;
+    @include newTransition($time);
+  }
+  dt{
+    height:22px;
+    padding-left:10px;
+    i{
+      font-size:12px;
+      color:$b1-c;
+      margin-left:5px;
+    }
+    span{
+      &:last-child{
+        display:inline-block;
+        cursor:pointer;
+        @include newTransition($time);
+        em{
+          display:inline-block;
+          font-size:12px;
+          color:$write;
+          margin-top:3px;
+          float:none;
+          @include scale(.6);
+        }
+      }
+      &.h-contact-list-rotate{
+        @include newRotate(-90);
+      }
+    }
+    &.h-contact-list-margin{}
+    margin-top:17px;
+    margin-bottom:5px;
+  }
+  dd{
+    height:34px;
+    position:relative;
+    padding-top:5px;
+    padding-bottom:1px;
+    padding-left:10px;
+    margin-bottom:5px;
+    cursor:pointer;
+    @include newRadius(2);
+    @include newTransition($time);
+    img{
+      width:28px;
+      height:28px;
+      margin-right:8px;
+      border:1px solid rgba($c17-c-7,.2);
+      @include newRadius(2);
+    }
+    span{
+      display:block;
+      line-height:1em;
+      margin-top:2px;
+      margin-bottom:4px;
+      em{
+        margin-left:5px;
+      }
+    }
+    i{
+      position:absolute;
+      right:5px;
+      top:14px;
+      font-size:12px;
+      color:$b3-c;
+      opacity:0;
+      @include newTransition($time);
+      &:hover{color:$b7-c;}
+    }
+    em.font-newconnect{
+      position:absolute;
+      width:12px;
+      height:12px;
+      right:5px;
+      top:14px;
+      font-size:12px;
+      color:$b7-c;
+      opacity:0;
+      overflow: hidden;
+      @include newRadius(12);
+      @include newTransition($time);
+      &::before{
+        position:absolute;
+        left:0;
+        top:0;
+        bottom:0;
+        right:0;
+        z-index:1;
+      }
+      &::after{
+        display:block;
+        content:'';
+        position:absolute;
+        left:2px;
+        top:2px;
+        right:2px;
+        bottom:2px;
+        background-color:$write;
+      }
+      &:hover{
+        color:$main-c;
+      }
+    }
+    &:hover{
+      background-color:rgba($write, .2);
+      i, .font-newconnect{opacity:1;}
+    }
+    &.current{
+     background-color:$write;
+      span{
+        &:nth-child(2){
+          @include returnFontChangeF(1, 19);
+        }
+        &:nth-child(3){
+          @include returnFontChangeF(1, 5);
+        }
+      }
+      i{opacity:1;color:$b7-c;}
+    }
+    .h-contact-list-but{
+      width:50px;
+      height:0;
+      position:absolute;
+      right:0;
+      bottom:0;
+      top:50%;
+      text-align: center;
+      color:$write;
+      line-height:20px;
+      background-color:$b7-c;
+      z-index:2;
+      overflow: hidden;
+      @include newRadius(2);
+      @include newTranslate(0, 50%);
+      @include newTransition($time);
+      li{
+        &:first-child{border-bottom:1px solid $c9-c;}
+      }
+    }
+    .h-contact-list-but-height{height:40px;}
+  }
+}
+.h-contact-sort{
+  position:absolute;
+  top:0;
+  left:220px;
+  width:30px;
+  height:100vh;
+  background-color:$c9-c;
+  text-align: center;
+  opacity:0;
+  @include newTransitionDelay(.2, .6);
+  a{
+    display:block;
+    line-height:1em;
+    margin-bottom:15px;
+    color:$b2-c;
+    font-family: helveticaNeuelight;
+    &:first-child{margin-top:100px;}
+  }
+}
+.h-contact-sort-an{
+  left:250px;
+  opacity:1;
+}

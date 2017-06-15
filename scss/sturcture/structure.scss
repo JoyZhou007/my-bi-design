@@ -1,0 +1,17 @@
+@charset "UTF-8";
+@import '../public';
+
+//menu
+@import './component/menu';
+
+//edit-position
+@import './component/edit-position';
+
+//entirety
+@import './component/entirety';
+
+//synchronization
+@import './component/synchronization';
+
+//common
+@import './component/common';

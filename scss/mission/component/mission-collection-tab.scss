@@ -1,0 +1,140 @@
+@charset "UTF-8";
+@import '../../public';
+
+//tab
+.m-r-c-tab{
+  padding:20px;
+  position:relative;
+  span.font-switch{
+    position:absolute;
+    right:20px;
+    top:22px;
+    font-size:10px;
+    color:$b2-c;
+    cursor:pointer;
+  }
+  .m-r-c-tab-list{
+    height:28px;
+    border-bottom:1px solid $c9-c;
+    padding-right:50px;
+    padding-left:50px;
+    li{
+      height:27px;
+      color:$b9-c;
+      cursor:pointer;
+      padding-left:15px;
+      padding-right:15px;
+      &.current{
+        border-bottom:2px solid $b3-c;
+        color:$b3-c;
+      }
+    }
+  }
+  .m-r-c-add-list{
+    position:relative;
+    .m-r-c-select-right .g-title{margin-top:0;}
+    .m-r-c-claim-left{
+      width:120px;
+      height:30px;
+      position:relative;
+      cursor:pointer;
+      @include newBorderRadius(2, 0, 0, 2);
+      span{
+        display:block;
+        width:90px;
+        text-align: center;
+        line-height:30px;
+        @include newTransition($time);
+      }
+      em{
+        display:block;
+        width:26px;
+        height:26px;
+        background-color:$write;
+        position:absolute;
+        left:91px;
+        top:2px;
+        @include newTransition($time);
+        @include newRadius(2);
+      }
+    }
+    .m-r-c-claim-select{
+      em{left:2px;}
+      span{margin-left:26px;}
+      background-color:$c5-c-1;
+    }
+    .m-r-c-claim-input{
+      width:calc(100% - 122px);
+      input, .s-style1{
+        border-left:none;
+        @include newBorderRadius(0, 2, 2, 0);
+      }
+      .m-r-c-claim-select-right{
+        left:auto;
+        right:0;
+        width:140px;
+      }
+    }
+    .m-r-c-claim-date{text-indent: 55px;}
+    .m-r-c-claim-before{
+      display:block;
+      position:absolute;
+      left:10px;
+      line-height:30px;
+      cursor:pointer;
+    }
+  }
+  .d-select-min-width{
+    width:140px;
+    left:auto;
+    right:0;
+  }
+  .m-r-c-select-left{margin-right:140px;}
+  .m-r-c-select-right{
+    width:120px;
+    position:absolute;
+    right:0;
+    top:0;
+    input{
+      text-align: center;
+      background-color:$write;
+    }
+  }
+  .but-add{
+    width:auto;
+    line-height:30px;
+    margin-top:10px;
+  }
+}
+.m-r-c-select-percent{
+  width:100%;
+  height:28px;
+  border:1px solid $c2-c-1;
+  position:relative;
+  color:$b2-c;
+  @include newRadius(2);
+  .font-min, .font-add{
+    position:absolute;
+    top:0;
+    cursor:pointer;
+    @include newTransition($time);
+    &:hover{
+      color:$b3-c;
+    }
+  }
+  .font-min{left:10px;}
+  .font-add{right:10px;}
+  .m-r-c-select-percent-pos{
+    position:absolute;
+    left:50%;
+    @include newTranslate(50%, 0);
+  }
+  input{
+    width:2em;
+    height:28px;
+    float:left;
+  }
+  span{
+    line-height:28px;
+  }
+}

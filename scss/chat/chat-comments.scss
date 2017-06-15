@@ -1,0 +1,224 @@
+@charset "UTF-8";
+@import '../public.scss';
+/*==============================================
+
+    Time：2017.03.08
+
+    Explain：chat comments
+
+==============================================*/
+.chat-comments{
+  .chat-comments-wrap{
+    height:calc(100% - 50px);
+    position: relative;
+    .chat-comments-search{
+      .chat-comments-search-left{
+        font-size: 16px;
+        margin-top:17px;
+        margin-right:11px;
+        cursor: pointer;
+      }
+      .chat-comments-search-center{
+        line-height: 50px;
+      }
+      .chat-comments-search-right{
+        font-size: 16px;
+        margin-top:17px;
+        margin-left:6px;
+        transform: rotate(180deg);
+        margin-right: 20px;
+        cursor: pointer;
+      }
+    }
+    .chat-comments-upload{
+      padding-left:20px;
+      padding-top:10px;
+      .chat-search-user-content{
+        width:300px;
+      }
+      .chat-search-user{
+        img{
+          width:28px;
+          height:28px;
+          border:1px solid rgba($c17-c-7,.2);
+          @include newRadius(2);
+        }
+      }
+      .chat-search-comments-username{
+        line-height: 15px;
+        span{
+          margin-left:8px;
+          margin-right:4px;
+        }
+        .chat-comments-upload-pic{
+          color: $b3-c;
+        }
+      }
+    }
+    .chat-comments-picture{
+      width:360px;
+      height:171px;
+      border:1px solid rgba($c17-c-6,.5);
+      @include newRadius(2);
+      margin:10px 0 0 20px;
+      position: relative;
+      img{
+        height:100%;
+      }
+      .font-like{
+        top:5px;
+        left:5px;
+        color: rgba(238,26,26,.5);
+        cursor: pointer;
+        @include newTransition($time);
+        &:hover{
+          color:$c16-c;
+        }
+
+      }
+      .font-comments{
+        @include newRadius(2);
+        top:5px;
+        right:34px;
+        .path1{
+          top:0;
+          left:5px;
+        }
+        .path2{
+          bottom:0;
+          left:5px;
+        }
+      }
+      .chat-comments-font{
+        width:24px;
+        height:24px;
+        text-align: center;
+        line-height: 24px;
+        border:1px solid rgba($c2-c,0.2);
+        position: absolute;
+        background: $write;
+        cursor: pointer;
+        @include newRadius(2);
+        @include newTransition($time);
+        &:hover{
+          border-color: rgba($b3-c,.2);
+          color:$b3-c ;
+        }
+      }
+      .font-more{
+        top:5px;
+        right:5px;
+      }
+      .chat-comments-likes{
+        cursor: pointer;
+        width:60px;
+        height:24px;
+        line-height: 24px;
+        position: absolute;
+        top:5px;
+        left:5px;
+        background: $write;
+        @include newRadius(2);
+        border:1px solid rgba($c2-c,.2);
+        @include newTransition($time);
+        .chat-comments-likes-number{
+          position: relative;
+          left:6px;
+        }
+        .chat-comments-likes-add{
+          position: relative;
+          left:2px;
+          top:-6px;
+        }
+        .chat-comments-likes-like{
+          color: $c16-c;
+          font-size: 12px;
+          position: relative;
+          left:2px;
+        }
+        &:hover{
+          border-color: rgba($b3-c,.2);
+        }
+      }
+    }
+    .chat-comments-share{
+      line-height: 16px;
+      margin: 8px 0 0 20px;
+      .chat-comments-share-name{
+        color: $c17-c-7;
+        font-size: 12px;
+        margin:2px 10px 0 0;
+      }
+    }
+    .chat-comments-list{
+      margin-left:20px;
+      margin-top:15px;
+      padding-top:6px;
+      .chat-search-list-content{
+        margin-bottom: 10px;
+        .chat-search-comments-content{
+          width:318px;
+        }
+        .chat-search-comments-username{
+          span{
+            margin-right:4px;
+          }
+          .font-more{
+            text-align: center;
+            line-height: 12px;
+            font-size: 12px;
+            position: relative;
+            left:8px;
+            cursor: pointer;
+            @include newTransition($time);
+            &:hover{
+              color:$b3-c;
+            }
+          }
+        }
+        .chat-search-user{
+          img{
+            width:28px;
+            border:1px solid rgba($c17-c-7,.2);
+            @include newRadius(2);
+            margin-right:8px;
+          }
+        }
+      }
+    }
+  }
+
+  .chat-comments-input{
+      width: 358px;
+      height: 50px;
+      padding: 0 20px;
+      position: absolute;
+      bottom:20px;
+      right: 0;
+      background: $write;
+      z-index: 4;
+    .s-style1{
+      width:100%;
+      border-color: $c10-c;
+      margin:0;
+      cursor: pointer;
+      @include newTransition($time);
+      input{
+        text-indent: 11px;
+        width: auto;
+      }
+      .icon-input-return{
+        @include newTransition($time);
+        color: $c10-c;
+      }
+    }
+    &:hover{
+      .s-style1{
+        border-color:$b3-c!important;
+      }
+      .icon-input-return{
+        color:  $b3-c!important;
+      }
+    }
+}
+}

@@ -1,0 +1,342 @@
+@charset "UTF-8";
+@import '../public';
+
+//header
+@import './component/header';
+
+//left
+@import './component/left';
+
+.m-claim{background-color:$c4-c;}
+.m-date{background-color:$c5-c-1;}
+.alarm-clicked{color:$c17-c-48!important;}
+
+//margin-top:10 margin-left:20
+//第一标题字体 f9-f
+//第二介绍     f33-f
+.m-create-title1{
+  margin-left:20px;
+  span{
+    display:block;
+    line-height:1em;
+    &:nth-child(1){
+      margin-top:10px;
+      margin-bottom:2px;
+      @include returnFontChangeF(1, 9);
+    }
+    &:nth-child(2){
+      @include returnFontChangeF(1, 33);
+    }
+  }
+}
+
+.m-create-edit1{
+  position:absolute;
+  right:20px;
+  top:10px;
+}
+
+.mission-warp{
+  min-width:1360px;
+  //overflow: hidden;
+  .m-left, .m-right{
+    height:calc(100vh - 70px);
+  }
+  .m-left{
+    width:250px;
+    height:calc(100vh - 70px);
+    background-color:$write;
+    border-right:1px solid $c17-c-6;
+  }
+  .m-right{
+    margin-left:260px;
+    padding-top:10px;
+    .m-right-left {
+      width:calc(100% - 650px);
+      height:100%;
+      margin-top:-10px;
+      padding-top:10px;
+      @include scrollbar();
+    }
+  }
+  .m-simple-right{margin-left:251px;}
+}
+
+//map
+.m-create-map{
+  position:relative;
+  .s-style1{
+    width:400px;
+    margin-top:4px;
+    margin-right:20px;
+    margin-bottom:4px;
+  }
+  .m-create-map-warp{
+    min-height:300px;
+    //position: relative;
+  }
+  .m-create-map-list{
+    height:50px;
+    position:absolute;
+    left:0;
+    bottom:0;
+    right:0;
+    background-color:rgba($write, .5);
+    a{
+      display:block;
+      width:16px;
+      height:16px;
+      position:absolute;
+      left:10px;
+      top:17px;
+      color:$b2-c;
+      @include newRadius(16);
+      @include newTransition($time);
+      &:last-child{
+        left:auto;
+        right:10px;
+        @include rotate(180);
+      }
+      &:hover{
+        color:$b8-c;
+      }
+    }
+    ul{
+      margin-left:36px;
+      margin-right:36px;
+      margin-top:11px;
+      text-align: center;
+      li{
+        width: 20px;
+        height: 20px;
+        float: left;
+        display:inline-block;
+        margin-right:4px;
+        margin-left:4px;
+        position:relative;
+        img{
+          width:20px;
+          height:20px;
+          border:1px solid rgba($c17-c-7, .5);
+          margin-top:4px;
+          @include newRadius(2);
+        }
+        &.current{
+          width:28px;
+          height:28px;
+          margin-right:0px;
+          margin-left:0px;
+          span{display:none;}
+          img{
+            width:28px;
+            height:28px;
+            margin-top:0;
+            @include newBoxShadow(0, 4, 4, $black, .2);
+          }
+          i{
+            display: block;
+            width:28px;
+            height:28px;
+            top:0!important;
+            @include newBoxShadow(0, 4, 4, $black, .2);
+            line-height: 28px!important;
+          }
+          em{
+            display: block;
+            width:28px!important;
+            height:28px!important;
+            margin-top: 0px!important;
+            @include newBoxShadow(0, 4, 4, $black, .2);
+            line-height: 28px!important;
+          }
+        }
+        span{
+          display:block;
+          opacity:0;
+          position:absolute;
+          z-index:10;
+          left:0;
+          top:0;
+          width:22px;
+          height:22px;
+          background-color:$b2-c;
+          margin-top:4px;
+          cursor:pointer;
+          @include newRadius(2);
+          @include newTransition($time);
+        }
+        &:hover[class = hover]{
+          span{opacity:1;}
+        }
+      }
+    }
+  }
+  .m-create-map-svg{
+    position:absolute;
+    top:50px;
+    bottom:50px;
+    left:0;
+    right:0;
+    svg{
+      position:absolute;
+      left:20%;
+      top:30%;
+    }
+  }
+}
+
+.m-r-c-but{
+  text-align: right;
+  margin-top:10px;
+  border-top:1px solid rgba($c9-c, .5);
+  div{
+    margin-left:7px;
+    margin-top:18px;
+    margin-bottom:10px;
+    display:inline-block;
+  }
+}
+
+
+//folder
+.m-right-right{
+  width:640px;
+  height:calc(100vh - 70px);
+  @include scrollbar();
+  margin-top:-10px;
+  padding-top:10px;
+  .m-create-folder-icon{
+    margin-right:5px;
+    margin-top:12px;
+    span{
+      display:block;
+      float:left;
+      margin-right:15px;
+      cursor:pointer;
+      color:$b2-c;
+      @include newTransition($time);
+      @include newRadius(2);
+      &::before{
+        display:block;
+        margin:6px 4px;
+      }
+      &:hover{
+        color:$b3-c;
+        background-color:$c9-c;
+      }
+    }
+  }
+  .m-create-folder{
+    margin-bottom:10px;
+    position:relative;
+    .m-create-folder-bottom{
+      position:absolute;
+      bottom:10px;
+      left:20px;
+      right:0;
+      .m-create-folder-bottom-left{
+        margin-top:15px;
+      }
+      .g-checkbox{margin-top:3px;}
+      .font-trash{color:$c16-c;}
+    }
+  }
+}
+
+//mission map
+.oimg{
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  z-index: 1000;
+  border-radius: 100%;
+  cursor: pointer;
+}
+baidu-map{
+  width: 640px;
+  height: 300px;
+  display: block;
+}
+.closeBtn{
+  color: #ffffff;
+  cursor: pointer;
+  position: absolute;
+  font-size:12px;
+  top: 5px;
+  right: 5px;
+  transform: scale(.67);
+}
+.BMap_noprint{
+  width:0 !important;
+  height: 0 !important;
+}
+.oSpan{
+  display: block;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  z-index: 1000;
+  border-radius: 100%;
+  cursor: pointer;
+  background:#C2F970;
+  font-size: 16px;
+  line-height: 30px;
+  text-align: center;
+}
+.map-list{
+  width: 140px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.map-list ul{
+  margin: 0!important;
+  width: 1000000%;
+  text-align: left!important;
+  position: relative;
+  top: 0;
+  left: 0;
+  transition: all 0.3s linear;
+  height: 26px;
+}
+.map-loading{
+  width: 100%;
+  height: 100%;
+  background: $write;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  z-index: 21;
+  opacity:1;
+  text-align: center;
+  line-height: 100%;
+  @include newTransition($time);
+  .loader{
+    position: absolute;
+    margin-left: 48%;
+    top: 100px;
+    width:auto!important;
+    height:auto!important;
+    .loader-inner{
+      margin:auto;
+      .my-loader{
+        background-image: linear-gradient(transparent 0%, transparent 70%, $b3-c 30%, $b3-c 100%);
+        border:none;
+      }
+    }
+  }
+
+  .map-loading-des{
+    position: absolute;
+    top: 200px;
+    width: 100%;
+  }
+}
+.map-loaded{
+  opacity:0;
+  @include newTransition($time);
+  top: -100%;
+}

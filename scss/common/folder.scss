@@ -1,0 +1,240 @@
+@charset "UTF-8";
+@import '../public';
+
+
+/*==============================================
+
+    Time：2017.02.16
+
+    Explain：folder
+
+==============================================*/
+
+.fo-type1-list, .fo-type2-list{
+  height:280px;
+  border-top:1px solid $c2-c-1;
+  border-bottom:1px solid $c2-c-1;
+  background-color:$bottom-c;
+  margin-top:10px;
+  margin-bottom:44px;
+  @include scrollBar($c17-c-13, $bottom-c);
+}
+.di-warp, .di1-warp{
+  .fo-type2-list{
+    height:280px;
+    ul{
+      margin-left:20px;
+      margin-right:15px;
+      padding-top:5px;
+      li{
+        height:auto;
+        line-height:20px;
+        margin-top:5px;
+        margin-bottom:5px;
+        margin-right:5px;
+        float:left;
+        img{
+          width:18px;
+          height:18px;
+          margin-top:0;
+          margin-right:0;
+          margin-left:0;
+          float:left;
+          border:1px solid rgba($c17-c-7, .2);
+          @include newBorderRadius(2, 0, 0, 2);
+        }
+        span{
+          display:inline-block;
+          line-height:20px;
+          padding-left:4px;
+          background-color:$main-c;
+          @include newBorderRadius(0, 2, 2, 0);
+          em{
+            float:right;
+            color:$write;
+            font-size: 12px;
+            cursor:pointer;
+            margin-top:4px;
+            margin-left:4px;
+            margin-right:4px;
+            @include scale(.6);
+          }
+        }
+      }
+    }
+  }
+}
+.fo-type1-list{
+  ul{
+    margin-top:13px;
+    margin-left:46px;
+    border-right:1px solid rgba($c9-c, .5);
+    li{
+      width:60px;
+      height:69px;
+      margin-right:35px;
+      margin-bottom:20px;
+      float:left;
+      text-align: center;
+      position:relative;
+      &:nth-child(6n){margin-right:0;}
+      .fo-type1-list-select{
+        display:block;
+        height:48px;
+        border:1px solid $bottom-c;
+        position:relative;
+        margin-bottom:5px;
+        cursor:pointer;
+        z-index:11;
+        @include newRadius(2);
+        @include newTransition($time);
+        &::before{
+          display:block;
+          position:relative;
+          left:50%;
+          top:50%;
+          @include newTranslate(50%, 50%);
+        }
+        .fo-type1-list-checkbox{
+          display:block;
+          width:10px;
+          height:10px;
+          border:1px solid $c2-c-1;
+          position:absolute;
+          top:1px;
+          left:1px;
+          opacity:0;
+          z-index:2;
+          @include newRadius(2);
+          @include scale(1);
+          @include newTransition(.2);
+        }
+        span{
+          position:absolute;
+          left:50%;
+          top:50%;
+          font-size:37px;
+          @include newTranslate(50%, 50%);
+        }
+        img{
+          width:36px;
+          height:36px;
+          margin-top:6px;
+        }
+      }
+      h3{
+        display:inline-block;
+        line-height:1em;
+        text-align: center;
+        font-weight: normal;
+        overflow: hidden;
+        padding-left:5px;
+        padding-right:5px;
+        @include newRadius(2);
+        @include newTransition(.2);
+        &:hover{
+          background-color:$main-c;
+          color:$write;
+        }
+      }
+      &.current{
+        .fo-type1-list-checkbox{
+          background-color:$c2-c;
+          border-color:$b9-c;
+          i{
+            margin-left:-1px;
+            &::before{opacity:1;}
+          }
+        }
+      }
+      .fo-type1-list-pin{
+        background-color:$c17-c-40;
+        border-color:$b1-c;
+        .font-pin2{
+          position:absolute;
+          right:0;
+          bottom:0;
+          font-size:12px;
+          color:$c5-c-1;
+        }
+      }
+      &:hover{
+        z-index:12;
+        .fo-icon{display:block;}
+      }
+      &:hover, &.current{
+        .fo-type1-list-select{
+          background-color:rgba($main-c, .1);
+          border-color:$b1-c;
+          .fo-type1-list-checkbox{opacity:1;}
+        }
+        .fo-type1-list-pin{
+          background-color:$c17-c-40;
+          border-color:$b1-c;
+        }
+      }
+      .fo-update-file{
+        width:6px;
+        height:6px;
+        position:absolute;
+        left:2px;
+        top:2px;
+        background-color:$c17-c-39;
+        @include newRadius(20);
+        @include newBoxShadow(0, 1, 2, $black, .2);
+      }
+    }
+  }
+}
+.fo-icon{
+  height:35px;
+  position:fixed;
+  left:0;
+  bottom:0;
+  z-index:10;
+  display:none;
+  .fo-icon-bg{
+    width:234px;
+    height:28px;
+    background-color:$write;
+    @include newBoxShadow(0, 2, 4, $c13-c, .5);
+    &::before{
+      display:block;
+      content:'';
+      width:0;
+      height:0;
+      position:absolute;
+      left:50%;
+      top:28px;
+      margin-left:-2px;
+      border:5px solid $write;
+      border-style: solid dashed dashed dashed;
+      border-color: $write transparent transparent transparent;
+    }
+    span{
+      display:block;
+      width:24px;
+      height:24px;
+      float:left;
+      margin-right:6px;
+      cursor:pointer;
+      margin-top:2px;
+      position:relative;
+      @include newTransition(.2);
+      &::before{
+        position:absolute;
+        left:50%;
+        top:50%;
+        @include newTranslate(50%, 50%);
+      }
+      &:hover{
+        background-color:$c9-c;
+        color:$b3-c;
+      }
+      &:last-child{
+        margin-right:0;
+        color:$c16-c;
+      }
+    }
+  }
+}

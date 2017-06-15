@@ -1,0 +1,144 @@
+@charset "UTF-8";
+@import '../../public';
+
+
+.r-person-register-box{
+  width: 100%;
+  position: relative;
+
+}
+.r-person-register{
+  margin: 0 auto;
+  width: 850px;
+  padding-top: 33px;
+
+}
+.r-person-register-l,.r-person-register-r{
+  width: 410px;
+  position: relative;
+  .r-company-title{
+    height: 15px;
+    font-size:12px;
+    color: $b9-c;
+    padding-bottom: 5px;
+  }
+  div{
+    padding-bottom: 20px;
+    position: relative;
+    &:hover{
+      p{
+        color: $b9-c;
+        font-size:12px;
+        top: -28px;
+      }
+    }
+    &.active{
+      p{
+        color: $b9-c;
+        font-size:12px;
+        top: -28px;
+      }
+    }
+    p{
+      height: 40px;
+      line-height: 50px;
+      font-size:18px;
+      color: $c2-c;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: .2s;
+    }
+    .person-register-active{
+      color: $b9-c;
+      font-size:12px;
+      top: -28px;
+      font-family: HelveticaNeueMedium;
+    }
+  }
+  div:nth-child(3) {
+    padding-bottom: 0;
+
+  }
+}
+
+.r-person-register-info{
+  height: 40px;
+  line-height: 33px;
+  font-size:28px;
+  color: $c1-c;
+  width: 100%;
+  background-color: transparent;
+  border-bottom:1px solid $c2-c;
+  @include newTransition($time);
+  &:hover{
+    border-bottom:1px solid #ec93ab;
+  }
+}
+.r-person-error{
+  display: block;
+  line-height:20px;
+  height:20px;
+  color: $c5-c-1;
+}
+.show{
+  opacity:1!important;
+}
+.font-page-esc{
+  color:rgba(145,147,171,.5);
+  @include newTransition($time);
+  &:hover{
+    color: $b2-c;
+  }
+}
+.r-person-hide{
+  opacity:0;
+}
+.but-photo-mask{
+  width:300px;
+  height:300px;
+  background: rgba(0,0,0,0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer!important;
+  z-index:1;
+  @include newRadius(2);
+  @include newTransition($time);
+  .but-photo-mask-pos{
+    opacity:0;
+    @include newTransition($time);
+  }
+  &:hover{
+    background: rgba(0,0,0,.6);
+    z-index:10;
+    .but-photo-mask-pos{
+      opacity:1;
+    }
+  }
+
+}
+.head-pic{
+  cursor: pointer;
+  width:300px;
+  height:300px;
+  &:hover{
+    & + div{
+      background: rgba(0,0,0,.6);
+      z-index:10;
+    }
+  }
+}
+.r-person-phone{
+  position: relative;
+}
+.but-send{
+  position: absolute!important;
+  left:290px;
+ top:-5px;
+}
+.r-register-footer{
+  .r-person-service{
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,402 @@
+@charset "UTF-8";
+@import '../public';
+
+
+/*==============================================
+
+    Time：2017.02.23
+
+    Explain：contact list
+
+==============================================*/
+
+@import "../home/contact-people-list";
+@import "../common/folder";
+
+//in common
+.ct-common{
+  width:399px;
+  height:0;
+  position:absolute;
+  right:0;
+  top:70px;
+  z-index:13;
+  background-color:$write;
+  overflow: hidden;
+  @include newTransition($time);
+  .ct-common-top{
+    height:50px;
+    line-height:50px;
+    background-color:$c11-c;
+    padding-left:20px;
+    .font-page-esc-small{
+      float:right;
+      color:$write;
+      font-size:12px;
+      margin-top:20px;
+      margin-right:20px;
+      cursor:pointer;
+      @include scale(.7);
+    }
+  }
+  ul{
+    height:calc(100% - 56px);
+    margin-left:10px;
+    margin-right:10px;
+    margin-top:5px;
+    @include scrollbar();
+    li{
+      height:35px;
+      padding-left:10px;
+      padding-top:5px;
+      position:relative;
+      @include newTransition($time);
+      img{
+        width:26px;
+        height:26px;
+        margin-right:8px;
+        border:1px solid rgba($c17-c-7, .2);
+        @include newRadius(2);
+      }
+      span{
+        display:block;
+        line-height:1.2em;
+      }
+      i{
+        position:absolute;
+        right:6px;
+        top:14px;
+        cursor:pointer;
+        font-size:12px;
+        opacity:0;
+        @include newTransition($time);
+      }
+      &:hover{
+        background-color:$b6-c;
+        i{opacity:1;}
+      }
+    }
+  }
+}
+.ct-common-di{
+  @include newTranslate(0, 0);
+  top:50px;
+  right:10px;
+  left:auto;
+}
+.ct-common-h{height:calc(100vh - 70px);}
+
+.ct-side{
+  position:static;
+  left:0;
+  float:left;
+  overflow: hidden;
+  .set-but{z-index:10;}
+}
+.ct-right{
+  height:100vh;
+  margin-left:250px;
+  background-color:$write;
+}
+.ct-right-right{
+  width:360px;
+  margin-right:20px;
+  padding-top:20px;
+  height:calc(100vh - 90px);
+}
+.ct-right-general-left{width:340px;}
+.ct-right-general-right{width:320px;}
+.ct-right-general{
+  margin-top:20px;
+  margin-right:20px;
+  li{
+    line-height:1em;
+    margin-bottom:25px;
+    p{margin-top:3px;}
+    .ct-intro-people{
+      line-height:20px;
+      margin-right:10px;
+      img{
+        width:20px;
+        height:20px;
+        margin-right:5px;
+        border:1px solid rgba($c17-c-7, .2);
+        @include newRadius(2);
+      }
+    }
+    &:last-child{margin-bottom:45px;}
+  }
+}
+.ct-resume-list{
+  margin-right:20px;
+  .ct-right-general{
+    padding-bottom:10px;
+    margin-bottom:10px;
+    border-bottom:1px solid rgba($c9-c, .5);
+    li{
+      .ct-resume-time{
+        margin-top:3px;
+        span.icon1-Shape-2{
+          font-size:12px;
+          color:$b2-c;
+          margin-left:5px;
+          margin-right:5px;
+        }
+      }
+      .ct-right-width3{
+        width:33.333%;
+        float:left;
+      }
+      &:last-child{margin-bottom:0;}
+    }
+  }
+  ul:last-child{
+    border-bottom:none;
+    margin-bottom:45px;
+    padding-bottom:0;
+  }
+}
+.ct-occupation-warp{
+  height:100vh;
+  position:fixed;
+  left:0;
+  top:0;
+  right:0;
+  z-index:13;
+  background-color:$write;
+  @include scrollbar();
+  h2{margin-top:100px;}
+  .a-list-top{
+    margin-top:30px;
+    width:400px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .but-done{
+    margin-top:20px;
+    margin-bottom:20px;
+  }
+}
+.ct-occupation{
+  width:400px;
+  margin-left:auto;
+  margin-right:auto;
+  .ct-textArea{
+    width:calc(100% - 14px);
+  }
+  .but-deep-color{
+    line-height:30px;
+    margin-top:10px;
+    width:100%;
+  }
+}
+.ct-skill{
+  margin-right:30px;
+  margin-top:12px;
+  margin-bottom:35px;
+  li{
+    .skill-people-num{
+      text-align: left;
+      margin-left:15px;
+    }
+    .font-color-good{
+      margin-top:-3px;
+      font-size:12px;
+      cursor:pointer;
+      color:$c9-c;
+      @include newTransition($time);
+      &:hover{color:$b2-c;}
+    }
+    .ct-skill-good-color1{color:$b3-c !important;}
+    &:hover{
+      background:none !important;
+    }
+  }
+}
+.ct-right-left{
+  width:calc(100% - 420px);
+  height:calc(100vh - 70px);
+  padding-top:20px;
+  padding-left:20px;
+  border-right:1px solid rgba($c9-c, .5);
+  @include scrollbar();
+}
+.ct-permission{
+  ul{
+    margin-bottom:55px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ct-people-info{
+  height:336px;
+  text-align: center;
+  margin-bottom:10px;
+  border-bottom:1px solid rgba($c9-c, .5);
+  img{
+    width:300px;
+    height:300px;
+    border:1px solid $c2-c-1;
+    @include newRadius(2);
+  }
+  span{
+    display:block;
+    margin-top:10px;
+    em{
+      display:inline-block;
+      width:9px;
+      height:9px;
+      margin-right:8px;
+      @include newRadius(9);
+      &.ct-people-status1{
+        background-color:$c15-c;
+      }
+      &.ct-people-status2{
+        background-color:$c19-c-2;
+      }
+      &.ct-people-status3{
+        background-color:$b2-c;
+      }
+    }
+  }
+}
+.ct-mission-top{
+  margin-bottom:12px;
+  span{
+    &:nth-child(1){
+      color:$c3-c;
+      font-size:15px;
+      margin-right:6px;
+    }
+    &:nth-child(2){
+      line-height: 1em;
+    }
+    &:nth-child(3){
+      float:right;
+      cursor:pointer;
+      color:$b2-c;
+      @include scale(.3);
+    }
+  }
+}
+.ct-mission-list{
+  height:calc(100vh - 465px);
+  @include scrollbar();
+  li{
+    position:relative;
+    padding-top:12px;
+    padding-left:10px;
+    padding-bottom:8px;
+    border:1px solid rgba($c17-c-6, .5);
+    margin-bottom:10px;
+    overflow: hidden;
+    @include newRadius(2);
+    @include newTransition($time);
+    h2{
+      font-weight:normal;
+      line-height:1em;
+    }
+    span{
+      display:inline-block;
+      line-height:1em;
+    }
+    .ct-m-icon-color{
+      color:$c2-c;
+      font-size:10px;
+      margin-top:3px;
+      margin-right:10px;
+    }
+    .icon1-Shape-3{
+      color:$c17-c-7;
+      font-size:10px;
+      margin-right:10px;
+      @include scale(.7);
+    }
+    .ct-m-people{
+      img{
+        width:18px;
+        height:18px;
+        border:1px solid rgba($c17-c-7, .2);
+        margin-right:5px;
+        @include newRadius(2);
+      }
+      span{line-height:20px;}
+    }
+    .ct-m-pos{
+      position:absolute;
+      top:3px;
+      right:-53px;
+      z-index:1;
+      @include newTransition($time);
+      span{
+        width:22px;
+        height:22px;
+        background-color:$write;
+        font-size:12px;
+        color:$b2-c;
+        margin-left:5px;
+        border:1px solid rgba($c2-c ,.2);
+        cursor:pointer;
+        @include newRadius(2);
+        &::before{
+          display:block;
+          margin-top:6px;
+          margin-left:5px;
+        }
+      }
+    }
+    &:hover{
+      border-color:rgba($b3-c, .5);
+      @include newBoxShadow(0, 4, 4, $c13-c, .5);
+      .ct-m-pos{right:3px;}
+    }
+  }
+}
+
+.logo-pic{
+  width:300px;
+  height:300px;
+  @include newRadius(2);
+}

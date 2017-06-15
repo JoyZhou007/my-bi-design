@@ -1,0 +1,463 @@
+@charset "UTF-8";
+@import '../public';
+
+
+
+/*===============================================
+
+  Time: 2016.1.17
+
+  Explain: mission calendar
+
+==============================================*/
+
+.mission-header{
+  .m-header-title{border-right:1px solid $c9-c;}
+}
+.m-side-link-title{
+  margin-top:8px;
+  padding-bottom:3px;
+  border-bottom:1px solid $c9-c;
+  padding-left:20px;
+}
+.m-side-link-to-title{
+  background-color:$c11-c;
+  line-height:50px;
+  span{
+    display:block;
+    &:nth-child(1){padding-left:20px;}
+    &:nth-child(2){
+      padding-left:20px;
+      color:$write;
+      font-size:12px;
+      float:right;
+      cursor:pointer;
+      transform-origin: right top;
+      margin-top:20px;
+      margin-right:20px;
+      @include scale(.7);
+    }
+  }
+}
+
+.m-task-status-list{
+  min-width:350px;
+  width:calc(33.3% - 12px);
+  margin-right:10px;
+  margin-top:10px;
+  height:calc(100vh - 80px);
+  border-left:1px solid $c2-c-1;
+  border-right:1px solid $c2-c-1;
+  float:left;
+  background-color:$c7-c;
+  @include newBorderRadius(2, 2, 0, 0);
+  .m-calendar-to-do-title, .m-calendar-doing-title, .m-calendar-done-title{
+    line-height:40px;
+    @include newBorderRadius(2, 2, 0, 0);
+    text-align: center;
+    position: relative;
+    span{
+      display:block;
+      width:24px;
+      height:24px;
+      line-height:24px;
+      position:absolute;
+      right:10px;
+      top:8px;
+      background-color:rgba($black, .5);
+      @include newRadius(2);
+    }
+  }
+  .m-calendar-to-do-title{background-color:$b2-c;}
+  .m-calendar-doing-title{background-color:$b9-c;}
+  .m-calendar-done-title{background-color:$c17-c-9;}
+  .m-calendar-right{
+    margin-top:10px;
+    height:calc(100vh - 130px);
+    @include scrollbar();
+    margin-right:-1px;
+    margin-left:-1px;
+    svg{
+      width:calc(100% - 40px);
+      height:12px;
+      margin-left:20px;
+      margin-bottom:2px;
+      margin-right:20px;
+      path{fill:$write;}
+      .m-calendar-task, .m-calendar-task1{
+        width:12px;
+        height:12px;
+      }
+      .m-calendar-task{fill:$b8-c;}
+      .m-calendar-task1{fill:$b3-c;}
+    }
+    li{
+      border: 1px solid $c2-c-1;
+      margin-bottom:10px;
+      background-color:$write;
+      position:relative;
+      min-height:205px;
+      @include newTransition($time);
+      overflow: hidden;
+      .mission-left-task-list{
+        margin:10px 20px;
+      }
+      .m-left-storage-pos{
+        right:-100px;
+      }
+      &:hover{
+        @include newBoxShadow(0, 2, 4, $c2-c, .5);
+        .m-left-storage-pos{
+          right:0;
+        }
+      }
+      &.m-calendar-to-do-hover:hover{
+        background-color:rgba($c17-c-10, .1);
+        border-color:rgba($b3-c, 0);
+      }
+      &.m-calendar-done-hover:hover{
+        border-color:rgba($b3-c, .5);
+      }
+      .m-calendar-doing-line{
+        width:4px;
+        position:absolute;
+        left:0;
+        top:0;
+        bottom:0;
+        z-index:1;
+      }
+      .m-calendar-doing-line-color1{background-color:$c14-c;}
+      .m-calendar-doing-line-color2{background-color:$c17-c-11;}
+      .m-calendar-doing-warp{
+        height:84px;
+        span{
+          display:block;
+          margin-left:21px;
+          line-height:.9em;
+        }
+        p{
+          margin-left:21px;
+          margin-right:21px;
+          line-height:1.2em;
+          margin-top:3px;
+          //white-space:nowrap;
+          //overflow:hidden;
+          //text-overflow:ellipsis;
+        }
+      }
+      .m-calendar-loading{
+        height:132px;
+        display:none;
+        position:absolute;
+        left:0;
+        right:0;
+        bottom:0;
+        @include newTransition($time);
+        opacity:0;
+        @include newBgPath('m-loading.png', 0, center, center);
+        background-color:rgba($black, .7);
+      }
+      &.m-calendar-loading-show .m-calendar-loading{
+        opacity:1;
+        display:block;
+      }
+    }
+  }
+  .m-calendar-oper{
+    margin:8px 20px;
+    min-height:24px;
+    span{
+      display:block;
+      cursor:pointer;
+    }
+    .m-calendar-oper-left{
+      span{
+        margin-right:10px;
+        margin-top:6px;
+        &.prior-color1{color:$c3-c;}
+        &.prior-color2{color:$b3-c;}
+        &.font-pending-issue{color:$b3-c;}
+      }
+    }
+    .m-calendar-oper-right{
+      span{
+        width:24px;
+        height:24px;
+        margin-left:15px;
+        position: relative;
+        font-size:26px;
+        color:rgba(255, 255, 255, 0) !important;
+        @include newRadius(24);
+        &:before{
+          color:rgba(255, 255, 255, 0) !important;
+        }
+      }
+    }
+  }
+}
+
+
+//simple
+.mission-warp{
+  .m-simple-left-height{height:50px;}
+  .m-simple-right{
+    background-color:$write;
+    position:relative;
+    .m-simple-warp{
+      height:50px;
+      background-color:$b7-c;
+      position:relative;
+      a.icon-page-small{z-index:1;}
+      .m-simple-curr-date{
+        width:50px;
+        position:absolute;
+        left:50%;
+        top:4px;
+        line-height:1em;
+        @include newTranslate(50%, 0);
+      }
+      a{
+        display:block;
+        width:16px;
+        height:16px;
+        position:absolute;
+        left:10px;
+        top:25px;
+        color:$c17-c-8;
+        font-size:17px;
+        z-index:1;
+        @include newTransition($time);
+        @include newRadius(16);
+        &:last-child{
+          @include rotate(180);
+        }
+        &:hover{
+          background-color:$b7-c;
+          color:$b2-c;
+        }
+        &:last-child{
+          left:auto;
+          right:7px;
+        }
+      }
+      ul{
+        height:50px;
+        margin-left:15px;
+        margin-right:15px;
+        li{
+          float:left;
+          text-align: center;
+          position:relative;
+          span{
+            display:inline-block;
+            @include returnFontChangeF(1, 4);
+            line-height:1em;
+            margin-top:20px;
+            cursor:pointer;
+            &.current{
+              color:$main-c;
+            }
+          }
+          i{
+            display:block;
+            &.current{
+              color:$main-c;
+            }
+            cursor:pointer;
+            line-height:1em;
+            @include returnFontChangeF(1, 38);
+          }
+        }
+      }
+      .m-simple-right-hour li{width:calc(100% / 16);}
+      .m-simple-right-month{
+        margin-left:25px;
+        margin-right:25px;
+        li{width:calc(100% / 31);}
+      }
+      .month28{
+        li{width:calc(100% / 28) !important;}
+      }
+      .month29{
+        li{width:calc(100% / 29) !important;}
+      }
+      .month30{
+        li{width:calc(100% / 30) !important;}
+      }
+      .month31{
+        li{width:calc(100% / 31) !important;}
+      }
+      .m-simple-week{
+        margin-left:0;
+        margin-right:0;
+        li{width:calc(100% / 7);}
+      }
+      .icon-input-return{
+        position:absolute;
+        left:5px;
+        top:5px;
+        color:$write;
+        font-size:14px;
+        transform:rotateX(180deg);
+        cursor: pointer;
+      }
+    }
+    .m-simple-right-scroll{
+      height:calc(100vh - 70px);
+      @include scrollbar();
+    }
+    svg{
+      width:100%;
+      height:83px;
+      float:left;
+      position:relative;
+      z-index:1;
+      rect.m-simple-rect{
+        width:100%;
+        -moz-min-width:100%;
+        height:16px;
+        fill:$c7-c;
+      }
+      .m-simple-end-bg{
+        height:24px;
+        fill:$b8-c;
+      }
+      .m-simple-doing-bg-bot{fill:rgba($b3-c, .6);}
+      .m-simple-doing-bg{fill:$b3-c}
+      .m-simple-task{fill:rgba($b3-c, .06);}
+      .m-simple-path-color{fill:$write;}
+      svg.m-simple-icon{
+        circle{fill:$b3-c;}
+        path{fill:$write;}
+      }
+      text.m-simple-text{
+        fill:$write;
+        font-family: HelveticaNeueMedium;
+      }
+    }
+    .m-simple-line{
+      i{
+        display:block;
+        width:1px;
+        border-left:1px dashed $c9-c;
+        position:absolute;
+        top:50px;
+        bottom:0;
+      }
+      .m-simple-line1{left:10.2%;}
+      .m-simple-line2{left:28.7%;}
+      .m-simple-line3{left:47%;}
+      .m-simple-line4{left:65.3%;}
+      .m-simple-line5{left:83.5%;}
+    }
+    .m-simple-week-line{
+      .m-simple-line1{left:7.2%;}
+      .m-simple-line2{left:21.4%;}
+      .m-simple-line3{left:35.6%;}
+      .m-simple-line4{left:50%;}
+      .m-simple-line5{left:64.5%;}
+      .m-simple-line6{left:78.6%;}
+      .m-simple-line5{left:93%;}
+    }
+  }
+}
+.m-simple-warp{
+  height:calc(100vh - 120px);
+  background-color:$write;
+  @include scrollbar();
+  .m-simple-right .m-simple-right-scroll{
+    height:calc(100vh - 120px);
+    overflow: visible;
+  }
+  .mission-left{
+    height:auto;
+    min-height:calc(100vh - 120px);
+    ul{
+      height:100%;
+      min-height:100%;
+      overflow: visible;
+    }
+  }
+}
+// mission-link
+.mission-link-prompt{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background-color: $write;
+}
+
+.calendar{
+  .mission-link-prompt{
+    top: 285px;
+  }
+}
+.schedule{
+  .mission-link-prompt{
+    top: 0;
+  }
+}
+
+.misssion-link-vessel{
+  border: 1px solid transparent;
+}
+//mission-schedule left list
+.schedule-left-lst{
+  overflow: hidden;
+}
+
+//mission calendar search select
+.mission-calendar-search-select{
+  width:400px;
+  background: $write;
+  min-width: 140px;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  margin-top: 10px;
+  line-height: 20px;
+  padding-bottom: 7px;
+  border:1px solid rgba($c9-c,.5);
+  @include newRadius(2);
+  @include newBoxShadow(0,4,6,$c12-c-1,.5);
+  .calendar-search-select-title{
+    height:36px;
+    border-bottom:1px solid rgba($c12-c-1,.5);
+   .calendar-search-select-left,.calendar-search-select-right{
+     width:198px;
+     text-align: center;
+     line-height: 36px;
+     font-size:12px;
+     color: $c18-c-10;
+   }
+    .calendar-search-select-active{
+      color: $b3-c;
+      .icon1-Shape-2-bottom{
+        color:$b3-c;
+        display: inline-block!important;
+        @include newTransition($time);
+      }
+    }
+    .icon1-Shape-2-bottom{
+      float: none;
+      position: absolute;
+      transform:scale(.9);
+      margin-top:10px;
+      margin-left:12px;
+      display: none;
+    }
+    .icon1-Shape-2-top{
+      transform: rotate(180deg) scale(.9)!important;
+    }
+  }
+  .calendar-search-select-content{
+    height:315px;
+    overflow: hidden;
+    @include scrollbar();
+    .m-left-storage-list{
+      height:auto;
+    }
+  }
+}

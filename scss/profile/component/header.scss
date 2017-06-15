@@ -1,0 +1,59 @@
+@charset "UTF-8";
+@import '../../public';
+
+.p-profile-header{
+  width: 100%;
+  border-bottom: 1px solid $c10-c;
+  height: 70px;
+}
+.p-profile-header-l{
+  padding-top: 16px;
+  padding-left: 20px;
+  h2{
+    font-size: 14px;
+    span{
+      font-size:16px;
+      display: inline-block;
+      padding-right: 5px;
+      margin-top: -1px;
+    }
+  }
+  ul{
+    padding-top: 7px;
+    li{
+      cursor: pointer;
+      float: left;
+      font-size: 12px;
+      border-right: 1px solid rgba(145,147,171,.5);
+      height: 14px;
+      line-height: 14px;
+      padding-top: 1px;
+      padding-right: 5px;
+      padding-left: 5px;
+    }
+    li:nth-child(1){
+      padding-left:0;
+    }
+    li:nth-last-child(1){
+      padding-right:0;
+      border-right: none;
+    }
+  }
+
+}
+
+.p-profile-header-r{
+  position: relative;
+  .p-profile-header-button-box{
+    position: relative;
+    position: absolute;
+    top: 15px;
+    right:124px;
+    height: 40px;
+    cursor: pointer;
+    padding-right: 14px;
+    border-right: 1px solid #E2E2E9;
+
+  }
+
+}

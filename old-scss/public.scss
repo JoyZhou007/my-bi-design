@@ -1,0 +1,1008 @@
+@charset "UTF-8";
+
+
+
+
+/*===============================================
+
+  Time: 2016.03.24
+
+  Explain: 自定义路径
+
+==============================================*/
+
+//图片路径
+$img-url: '/assets/images/';
+
+//字体路径
+$font-url: '/assets/font/';
+
+
+
+
+/*===============================================
+
+  Time: 2016.03.24
+
+  Explain: 字体大小
+
+==============================================*/
+
+$font-size10:10px;
+$font-size12:12px;
+$font-size13:13px;
+$font-size14:14px;
+$font-size17:17px;
+
+
+
+
+/*===============================================
+
+  Time: 2016.03.24
+
+  Explain: 网络字体
+
+==============================================*/
+
+@mixin font-family($family, $path){
+  font-family: '#{$family}';
+  src: url('#{$font-url}#{$path}.eot');
+  src: url('#{$font-url}#{$path}.eot?#iefix') format('embedded-opentype'),
+  url('#{$font-url}#{$path}.woff') format('woff'),
+  url('#{$font-url}#{$path}.ttf') format('truetype'),
+  url('#{$font-url}#{$path}.svg##{$family}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/*===============================================
+
+  Time: 2016.03.24
+
+  Explain: 公共颜色
+
+  注：L => link
+      H => hover
+      D => default
+      P => public
+      W => window
+      U => upload
+      C => contact
+
+==============================================*/
+
+$public-color:#606673;
+$fff:#fff;
+
+
+
+//global
+$global-main:#2094cb;
+$global-color: #606673;
+$global-white: #fff;
+$global-black: #000;
+$global-gray: #eee;
+$global-gray1: #666666;
+$global-upload-D: #b1deb9;
+$global-upload-L: #63be73;
+$global-upload-H: #53a060;
+$global-del-L: #ee4c37;
+$global-del-H: #d53a26;
+$global-save-L: #2198d0;
+$global-save-H: #176d95;
+$global-cancel-L: #e9ecf4;
+$global-cancel-H: #d5dae8;
+$global-hire-L: #0cbdcf;
+$global-hire-H: #239ba7;
+$global-pelation-L: #11dca4;
+$global-pelation-H: #16bf90;
+$global-unlock-L: #63a3be;
+$global-unlock-H: #427489;
+$global-scroll1: #7b7f8a;
+$global-scroll2: #e5e5e7;
+$global-scroll3: #b8b8b8;
+$global-scroll4: #efefef;
+$global-font1: #1d1f24;
+$global-font2: #d1d6d9;
+$global-purple:#ab48d4;
+
+
+//default
+$D-parent: #2198d0;
+$D-subsidiary: #0cbdcf;
+$D-branch: #11dca4;
+$D-client: #7cd509;
+$D-friend: #b5e11a;
+$D-time: #0be415;
+$D-delay: #ee4c37;
+$D-color: #2194cb;
+$D-color-half: #90c9e5;
+$D-color1: #563e63;
+$D-color2: #f95881;
+
+//type color
+$D-team:#0d9bc4;
+$D-supplier:#11dca4;
+$D-other:#2c0ccf;
+
+
+//border
+$P-line-color: #d0d4de;
+$P-but-color1: #aeb1b8;
+$P-but-color2: #d4d5d9;
+
+$P-but-color3: #c8cbd0;
+$P-but-color4: #d1d6d9;
+$P-but-color5: #f1e6d7;
+$P-but-color14: #f3f3f6;
+
+$U-view-border:#d2d2d3;
+$W-people-items: #c2c4c9;
+$W-people-profile: #c7ccd1;
+$cropper-border: #39f;
+$C-login-line-border: #353b46;
+$login-msg-upgrade-border: #8fc799;
+$head-sear-tran-border: #a2aabd;
+$nav-sear-border: #3f444e;
+$nav-sear-border: #2f3339;
+$nav-sear-border1: #b0b7c7;
+$C-index-list-border: #eeeef0;
+$C-index-list-border1: #e5e5e5;
+$C-index-list-border2: #c7c7c8;
+$C-index-list-border3: #d8d8d9;
+$C-index-add-border: #959caf;
+$C-login-com-ol-border: #757c8a;
+$member-wrap-border: #37758c;
+$comments-content-border: #c7c8cc;
+$comments-info-border: #ebebf2;
+$chat-flow-action-border: #d0d4d8;
+$icon-forward-border: #646978;
+$P-per-sel-border: #dcdcde;
+$selected-item-border: #cfd6d9;
+$P-new-msg-border: #b5e11a;
+$P-border-icon: #dadee1;
+$chat-left-post-border: #1e222a;
+$profile-wrap-border: #176184;
+$company-pmi-list-border: #91bacd;
+$common-list-border: #d5dadc;
+$company-profile-border: #d2d6df;
+$company-but-border: #ccd1d6;
+$tax-id-focus-border: #2094cb;
+$company-general-list-border: #e2e5e8;
+$company-analysis-line-border: #f0f0f1;
+$register-phone-hide-border: #77bfe1;
+$company-register-border: #acafb7;
+$add-company-licence-H-border: #f84673;
+$add-company-licence-i-H-border: #d27691;
+$contacts-list-img-border: #1d222e;
+$select-circle-selected-bg: #232936;
+$btn-delete-border: #ff3366;
+$bottom-edit-all-border: #636a7a;
+$box-choice-date-last-border: #91949c;
+$box-date-con-before-border: #249ad0;
+$box-date-con-gray-bg-border: #fafafb;
+$box-date-con-active-border: #58aed7;
+$box-date-click-border: #d2d7da;
+$login-email-border: #e3e4e6;
+$login-contact-border: #63be73;
+$reset-pass-input-border: #1f98cf;
+$login-width-input-H-border: #ec93ab;
+$profile-scroll-list-img-border: #cfd4d8;
+$middle-search-border: #e3e5eb;
+$middle-search-import-border: #bfc1c5;
+$personal-skill-list-img-border: #cdd2d6;
+$box-company-wrap-border: #0d9bc4;
+$select-style1-border: #23759c;
+$common-list-img-border: #acc5d1;
+$set-file-select-border: #515a64;
+$chat-window-tab-border: #d9dddf;
+$chat-window-long-border: #e37891;
+$msg-text-import-border: #9fa8be;
+$chat-default-img-border: #d6dadd;
+$structure-dialog-level-middle-border: #dadde5;
+$department-selected-list-border: #bcccd5;
+
+//post-boder
+$post-border-line1: #d0d3dc;
+$post-border-line2: #d9dee2;
+$post-border-line3: #a3aabd;
+$post-border-line4: #b5bbca;
+$chat-dialog-border1: #b8b8b3;
+$chat-dialog-border2: #d1d5df;
+$chat-dialog-border3: #e1e1de;
+$chat-dialog-text1: #b6c2d1;
+$chat-dialog-text2: #656669;
+$chat-dialog-text3: #050202;
+$chat-dialog-text4: #f20d0d;
+
+
+//zhang---public-color
+$public-color-icon-pencil:#59617b;
+$public-option-select:#b1c8e5 ;
+$public-option-select-H:#6492cb;
+$message-clear-first:#878b96;
+$message-clear-second:#bd8d56;
+$message-bg-color-oragin:#ee4c37;
+$chat-work-new-input:#b6b6b7;
+$chat-work-new-p:#aaaaab;
+$W-wa-title-h:#a2aabd;
+$wa-title-bg-work:#8fc9e5;
+$wa-title-br-work:#80dde6;
+$wa-title-bg-work1:#f0f9d1;
+$wa-title-br-work1:#d8ef88;
+$alert-invite-color:#a0a0a1;
+$alert-invite-bg-change:#a1cb20;
+$alert-invite-shadow:#949495;
+$person-name-color:#24dea9;
+$chat-list-h:#d1d4dd;
+$chat-list-border:#d1d6d9;
+$work-selected-item-bg:#8fc9e5;
+$desktop-bg1:#dfdfe0;
+$zh-font-color:#bdc3d0;
+$split-line:#e7e9ee;
+$person-new-contact-bottom-color:#7f7f7f;
+$opation-bg-black:#181819;
+$opation-h6-color:#b4bac9;
+$workflow-setting:#aeb5c5;
+$workflow-898989:#898989;
+$workflow-setting-596891:#596891;
+$mission-e4e4e4:#e4e4e4;
+//zhang-chat-setting-color
+$chat-setting-input-color:#c9c9cb;
+$chat-setting-font-color:#bdc0d1;
+$chat-setting-left:#bcc2d0;
+$chat-setting-h1-color:#93969d;
+$chat-setting-h1-border:#d0d4df;
+$chat-setting-p-bg:#b7bacb;
+$chat-setting-rignt-border:#cfd3dc;
+$the-chat-setting-account-choose-p:#59595b;
+$the-account-blue-button:#2194cb;
+$the-workflow-bg-fz:#c9c9ca;
+$the-workflow-bg-fz1:#737373;
+$the-workflow-bg-button:#c1c4ca;
+$the-workflow-span1-button:#929498;
+//zhang-account-workflow-color
+$workflow-center-after-receive:#7c7d80;
+$workflow-center-button-color:#b5b9c0;
+$workflow-center-button-color2:#c7c7c9;
+$workflow-center-leftbutton-color2:#4a4a4b;
+$workflow-color-404040:#404040;
+$workflow-color-525455:#525455;
+$workflow-color-e4e6ec:#e4e6ec;
+$workflow-color-e8e9ea:#e8e9ea;
+$workflow-color-b3b9c7:#b3b9c7;
+$workflow-color-6f6f70:#6f6f70;
+
+//zhang-department-color
+$department-color-2094cb:#2094cb;
+$department-color-1c6d93:#1c6d93;
+$department-color-309ccf:#309ccf;
+$department-color-d3e5ed:#d3e5ed;
+$department-color-5e5e5e:#5e5e5e;
+$department-color-dfdfe0:#dfdfe0;
+$department-color-ececee:#ececee;
+$department-color-c2c7d5:#c2c7d5;
+$stru-right-contant-list-border:#1b6d92;
+$stru-right-contant-list-size:#d3e4ec;
+$stru-right-contant-list-1b6d93:#1b6d93;
+$stru-right-contant-list-22aced:#22aced;
+$stru-right-contant-list-e9ecf5:#e9ecf5;
+$stru-right-contant-list-707684:#707684;
+$stru-right-contant-list-e5f4fb:#e5f4fb;
+$stru-right-contant-list-91bacc:#91bacc;
+$stru-right-contant-list-888c97:#888c97;
+$stru-right-contant-list-c4c5ca:#c4c5ca;
+$stru-right-contant-list-8b8f9b:#8b8f9b;
+$stru-right-contant-list-000000:#000000;
+$stru-right-contant-list-137fb3:#137fb3;
+//zhang-login-color
+$login-footer-bg:#b3bbbd;
+$login-about-mask:#b3afb2;
+$login-dept-bg:#e15075;
+$login-product-close:#d7d6df;
+$login-product-5858e2:#5858e2;
+$login-product-6a6d72:#6a6d72;
+$login-product-80858f:#80858f;
+$login-product-949dab:#949dab;
+$login-product-47aeea:#47aeea;
+$login-product-256bde:#256bde;
+$login-product-f5f8fa:#f5f8fa;
+$login-product-d3dee4:#d3dee4;
+$login-product-3de16f:#3de16f;
+$login-product-e1bc3d:#e1bc3d;
+$login-product-a1b6c3:#a1b6c3;
+$login-product-d2d6e1:#d2d6e1;
+$login-product-646a7d:#646a7d;
+$login-product-8d4e87:#8d4e87;
+$login-product-6b707c:#6b707c;
+$login-product-b7bac1:#b7bac1;
+$login-product-797e8b:#797e8b;
+$company-ababac:#ababac;
+$company-707070:#707070;
+$company-c0c0c1:#c0c0c1;
+$company-838384:#838384;
+$company-b0b9c9:#b0b9c9;
+$mission-b0b9c9:#b8becd;
+$mission-e7e7ec:#e7e7ec;
+
+//color
+$font-black:#000000;
+$error-color: #f84673;
+$box-font-color: #a2aabd;
+$P-font-time: #5e5e5e;
+$P-font-H-time: #1f98cf;
+$W-mask-color: #ff3366;
+$W-wa-title: #47506e;
+$W-wa-content: #707583;
+$W-but-border-normal: #ccd1d6;
+$W-cancel-bg: #aabac4;
+$P-light-font: #0d9bc4;
+$P-light-font1: #116da2;
+$P-light-font2: #116da3;
+$P-light-font3:#a8b0c1;
+$login-us-font: #acafb7;
+$C-login-gray-font: #a2aabd;
+$login-msg-upgrade: #8fc799;
+$C-login-pos: #888b91;
+$nav-sear-color: #3f444e;
+$result-wrap-border: #2094cb;
+$member-file-name-color: #13a8b7;
+$P-new-msg-font: #b5e11a;
+$chat-left-main-font: #353a47;
+$chat-left-post-font: #dcdcdc;
+$chat-c-load-font: #f5b271;
+$common-name-font: #85919c;
+$company-perm-font: #91959c;
+$company-cert-fixed-font1: #0d9ac5;
+$company-cert-fixed-font2: #b1b7c7;
+$company-cert-fixed-font3: #0e6ca0;
+$company-general-area-font: #57585b;
+$check-ppl-con-font: #ff0000;
+$company-analysis-score-font: #8ade16;
+$company-analysis-than-font: #e5e7f1;
+$company-analysis-level-font: #d5dd16;
+$msg-number-font: #1d2128;
+$h-hire-font: #fefefe;
+$box-date-on-H-font: #fefefe;
+$login-list-sing-font: #282828;
+$register-prompt-a-font: #2094cb;
+$company-analysis-level-font: #7cd509;
+$header-search-font1: #010101;
+$cropper-view-box:#3399ff;
+$account-number-font:#363636;
+$company-friend-font:#212632;
+$access-perm-curr-font:#135a7b;
+$common-list-curr-font1:#2198d0;
+$common-list-curr-font2:#0cbdcf;
+$common-list-curr-font3:#11dca4;
+$common-list-curr-font4:#7cd509;
+$common-list-curr-font5:#b5e11a;
+$set-file-exp-font:#90949f;
+$set-file-exp-p-font:#dd7816;
+$set-file-exp-p-font1:#9016dd;
+$set-file-font:#969696;
+$contact-per-pos-right-font:#e2e4ea;
+$index-notification-top-font:#7a849b;
+$post-name-font1: #a2a2a2;
+$chat-window-click-website: #9fb3dc;
+$chat-window-tag:#8dac1e;
+$chat-flow-text: #676767;
+$msg-hold-speak-font: #4c90a3;
+$msg-topic-name-font: #838ea4;
+$chat-window-long-span-font: #0c0c0e;
+$mew-msg-font: #8dc91a;
+$chat-default-font: #626262;
+$chat-default-right-title: #f56b8f;
+$chat-default-right-li-color: #3791ca;
+
+
+
+//background
+$P-but-bg: #f3f3f6;
+$box-bg-color: #a2aabd;
+$box-bg-H-color: #bcc2cf;
+$P-but-bg-normal: #ff3366;
+$P-but-bg-H-normal: #d31f4c;
+$W-but-bg-normal: #ccd1d6;
+$cropper-bg: #39f;
+$P-sear-light-bg: #ffef99;
+$U-prompt-bg: #1f2532;
+$P-draw-bg: #dbdee5;
+$P-draw-curr-bg: #2094cb;
+$login-msg-edit-bg: #125a7c;
+$nav-bg: #1e2229;
+$nav-right-bg: #c80000;
+$head-sear-bg: #2f3339;
+$C-index-add-bg: #e3e3e7;
+$C-index-add-H-bg: #cfd0d5;
+$type-block-bg: #a7d8c3;
+$member-wrap-profile-bg2: #176184;
+$member-wrap-profile-bg: #b8e5e9;
+$member-wrap-icon-del-bg: #727888;
+$member-progress-bar-bg: #13a8b7;
+$P-per-sel-bg: #6492cb;
+$chat-left-bg: #232936;
+$scroll-thumb-bg: #454e61;
+$scroll-track-bg: #303643;
+$company-pmi-list-bg: #e5f3fa;
+$common-list-bg: #d2eaf5;
+$common-list-curr-bg: #38637c;
+$P-title-list-bg: #d0d4de;
+$company-perm-line-bg: #f9f9fb;
+$company-general-list-bg: #2094cb;
+$add-company-key-color1-bg: #5656ed;
+$company-analysis-cmt-line-bg1: #f2f2f3;
+$company-analysis-cmt-line-bg2: #0cbdcf;
+$company-analysis-cmt-line-bg3: #11dca4;
+$company-analysis-cmt-line-bg4: #7cd509;
+$company-analysis-cmt-line-bg5: #b5e11a;
+$add-company-licence-bg: #f1f2f4;
+$add-company-licence-i-bg: #a8acb3;
+$search-box-bg: #414652;
+$contacts-list-li-H-bg: #353a47;
+$msg-number-bg: #9fa7ba;
+$msg-number-H-bg: #333945;
+$msg-number-curr-bg: #36627a;
+$select-circle-H-bg: #f73566;
+$select-circle-i-bg: #565d6c;
+$h-content-bg: #cbcbcb;
+$box-date-h1-bg: #9398aa;
+$box-date-con-curr-bg: #c8cbd4;
+$box-date-con-curr-bg1: #fafafb;
+$box-date-con-active-bg: #58aed7;
+$box-date-click-bg: #90cbe7;
+$box-date-click-H-bg: #2198d0;
+$login-list-accout-H-bg: #f84673;
+$login-contact-bg: #63be73;
+$public-botton-bg: #647398;
+$public-botton-bg1: #4d5c83;
+$public-botton-bg2: #e9e9eb;
+$public-or-H-bg: #dadbe0;
+$login-width-span-H-bg: #cbcdd2;
+$personal-ability-bg1: #11dca4;
+$personal-ability-bg2: #3f98f2;
+$personal-ability-bg3: #7cd509;
+$personal-ability-bg4: #dd753d;
+$personal-ability-bg5: #b5e11a;
+$personal-ability-bg6: #e6c929;
+$personal-ability-bg7: #d5dd16;
+$personal-ability-bg8: #09cbb2;
+$personal-ability-bg9: #2198d0;
+$personal-ability-bg10: #e2a41e;
+$personal-ability-bg11: #0cbdcf;
+$chat-c-load-bg1:#f5b271;
+$select-company-bg: #1f516f;
+$login-header-left-bg: #cdcdcd;
+$logo-after-bg: #191c22;
+$index-select-company-bg: #0d9bc4;
+$personal-educations-bg: #90ceeb;
+$public-close-a-bg: #888f9f;
+$editable-select-bg: #e9f5fb;
+$box-company-msg-logo-bg: #202632;
+$select-style1-H-bg: #cce8f6;
+$contact-per-common-bg: #292d34;
+$contact-per-common-bg1: #8d97a9;
+$set-file-i-bg:#202b45;
+$set-file-p-bg:#f20a0a;
+$set-file-x-bg:#52ab39;
+$set-file-a-bg:#359087;
+$set-file-w-bg:#43b3eb;
+$set-file-j-bg:#427086;
+$set-file-e-bg:#ac70ea;
+$set-file-o-bg:#c4c2c2;
+$set-file:#8d9b9b;
+$set-file-select-bg:#555e69;
+$set-file-select-H-bg:#252a36;
+$set-file-select-list-bg: #85919c;
+$name-bg-blue:#8cc6e3;
+$progress-remind:#a280b3;
+$post-bg-grey1:#b3baca;
+$post-gb-blue1:#3e9ccb;
+$public-option-cur-bg:#9ddca9;
+$index-notification-bottom:#f0f2f8;
+$index-not-day-bg1:#94b7c0;
+$index-not-day-bg2:#656c90;
+$index-not-day-bg3:#477a87;
+$index-not-day-bg4:#497365;
+$index-not-day-bg5:#507349;
+$index-not-day-bg6:#6f7349;
+$index-not-day-bg7:#736349;
+$index-not-day-bg8:#734d49;
+$index-not-day-bg9:#73495b;
+$index-not-day-bg10:#734973;
+$index-not-day-bg11:#5c4973;
+$index-notification:#f3f4f4;
+$index-not-invit-bg:#7aa17e;
+$stru-sear-bg:#e18416;
+$stru-com-size-span-bg:#646464;
+$chat-box-close:#7b8294;
+$chat-window-mark-color1:#1562f0;
+$chat-window-point-color:#1c5ce7;
+$chat-window-tab-color:#d6a9a1;
+$msg-hold-speak-bg:#f5f9ff;
+$structure-dialog-but-hover-bg:#1f5a78;
+$company-stru-side-bg:#e8e9ef;
+$company-stru-side-hover-bg:#bec3d1;
+$stru-right-pos-span-bg:#22abec;
+$chat-person-icon-hover-bg:#373737;
+
+//Loading
+$loading-strip-span:#f3b06f;
+
+//box-shadow
+$nav-curr-shadow: #b4b4b6;
+$C-index-list-shadow: #e2e2e4;
+$C-index-list-shadow1: #eeeef0;
+$other-action-wrap-shadow1: #959595;
+$company-perm-move-shadow: #414141;
+$login-footer-shadow: #233e28;
+$public-button-shadow: #676767;
+$public-button-shadow1: #cbccd1;
+$set-file-select-shadow: #a0a0a0;
+$public-option-cur-shadow: #999;
+
+//Whether online -- color
+$circle-offline: #d3d7e0;
+$circle-busy: #ffe346;
+$circle-online: #64cb76;
+$set-status : #3265d3;
+
+
+/*===============================================
+
+  Time: 2016.03.24
+
+  Explain: 角度旋转
+
+==============================================*/
+
+@mixin rotate($rotate){
+  -webkit-transform:rotate(#{$rotate}deg);
+  -moz-transform:rotate(#{$rotate}deg);
+  -o-transform:rotate(#{$rotate}deg);
+  -ms-transform:rotate(#{$rotate}deg);
+  transform:rotate(#{$rotate}deg);
+}
+
+
+
+
+/*===============================================
+
+  Time: 2016.03.24
+
+  Explain: 缩放
+
+==============================================*/
+
+@mixin scale($scale){
+  -webkit-transform:scale($scale);
+  -moz-transform:scale($scale);
+  -o-transform:scale($scale);
+  -ms-transform:scale($scale);
+  transform:scale($scale);
+}
+
+
+
+
+/*===============================================
+
+  Time: 2016.03.24
+
+  Explain: 圆角
+
+==============================================*/
+
+@mixin border-radius($radius1, $radius2, $radius3, $radius4){
+  -moz-border-radius:$radius1 $radius2 $radius3 $radius4;
+  -webkit-border-radius:$radius1 $radius2 $radius3 $radius4;
+  -ms-border-radius:$radius1 $radius2 $radius3 $radius4;
+  -o-border-radius:$radius1 $radius2 $radius3 $radius4;
+  border-radius:$radius1 $radius2 $radius3 $radius4;
+}
+@mixin radius($radius) {
+  -moz-border-radius:$radius;
+  -webkit-border-radius:$radius;
+  -ms-border-radius:$radius;
+  -o-border-radius:$radius;
+  border-radius:$radius;
+}
+
+
+
+
+/*===============================================
+
+  Time: 2016.03.24
+
+  Explain: 动画
+
+==============================================*/
+
+@mixin transition($transition){
+  -webkit-transition:all $transition linear;
+  -moz-transition:all $transition linear;
+  -o-transition:all $transition linear;
+  -ms-transition:all $transition linear;
+  transition:all $transition linear;
+}
+
+
+
+
+/*===============================================
+
+  Time: 2016.03.24
+
+  Explain: 背景渐变
+
+==============================================*/
+
+@mixin linear-gradient($direction, $color1, $color2){
+  background:linear-gradient(to $direction, $color1, $color2);
+  -webkit-background:linear-gradient(to $direction, $color1, $color2);
+  -moz-background:linear-gradient(to $direction, $color1, $color2);
+  -o-background:linear-gradient(to $direction, $color1, $color2);
+  -ms-background:linear-gradient(to $direction, $color1, $color2);
+  background-color:#{$color2}\9;
+}
+
+@mixin linearGradient($direction, $color1, $pos1, $color2, $pos2){
+  background:linear-gradient(to $direction, $color1 $pos1, $color2 $pos2);
+  -webkit-background:linear-gradient(to $direction, $color1 $pos1, $color2 $pos2);
+  -moz-background:linear-gradient(to $direction, $color1 $pos1, $color2 $pos2);
+  -o-background:linear-gradient(to $direction, $color1 $pos1, $color2 $pos2);
+  -ms-background:linear-gradient(to $direction, $color1 $pos1, $color2 $pos2);
+  background-color:#{$color2}\9;
+}
+
+
+
+
+/*===============================================
+
+  Time: 2016.03.24
+
+  Explain: position定位
+
+==============================================*/
+
+@mixin position($position, $top, $right, $bottom, $left, $z-index){
+  @if $position != null{
+    position:$position;
+  }
+  @if $top != null {
+    top:$top;
+  }
+  @if $bottom != null {
+    bottom:$bottom;
+  }
+  @if $left != null {
+    left:$left;
+  }
+  @if $right != null {
+    right:$right;
+  }
+  @if $z-index != null{
+    z-index:$z-index;
+  }
+}
+
+
+
+
+/*===============================================
+
+  Time: 2016.03.24
+
+  Explain: padding
+
+==============================================*/
+
+@mixin padding($top, $right, $bottom , $left){
+  @if $top != null {
+    padding-top:$top;
+  }
+  @if $right != null {
+    padding-right:$right;
+  }
+  @if $bottom != null {
+    padding-bottom:$bottom;
+  }
+  @if $left != null {
+    padding-left:$left;
+  }
+}
+
+
+
+
+/*===============================================
+
+  Time: 2016.03.24
+
+  Explain: margin
+
+==============================================*/
+
+@mixin margin($top, $right, $bottom, $left){
+  @if $top != null{
+    margin-top:$top;
+  }
+  @if $right != null{
+    margin-right:$right;
+  }
+  @if $bottom != null{
+    margin-bottom:$bottom;
+  }
+  @if $left != null{
+    margin-left:$left;
+  }
+}
+
+
+
+
+/*===============================================
+
+  Time: 2016.03.24
+
+  Explain: 宽高
+
+==============================================*/
+
+@mixin rec($width, $height){
+  @if $height != null {
+    height:$height;
+  }
+  @if $width != null{
+    width:$width;
+  }
+}
+
+
+
+
+/*===============================================
+
+  Time: 2016.03.25
+
+  Explain: Public Shadow type 1
+
+==============================================*/
+
+
+@mixin box-shadow1(){
+  box-shadow: 0 2px 2px rgba(190, 190, 191, 0.4),
+              5px 0 5px rgba(190, 190, 191, 0.6),
+              0 8px 8px rgba(0, 0, 0, 0.5),
+              -5px 0 5px rgba(190, 190, 191, 0.6);
+}
+@mixin box-shadow2(){
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2),
+  3px 0 3px rgba(0, 0, 0, 0.2),
+  0 8px 8px rgba(0, 0, 0, 0.4),
+  -3px 0 3px rgba(0, 0, 0, 0.2);
+}
+@mixin box-shadow3(){
+  -webkit-box-shadow: 0px 0px 5px 2px rgba(208,208,210,1);
+  -moz-box-shadow: 0px 0px 5px 2px rgba(208,208,210,1);
+  box-shadow: 0px 0px 5px 2px rgba(208,208,210,1);
+}
+
+
+
+
+/*===============================================
+
+  Time: 2016.04.6
+
+  Explain: Public Tree
+
+==============================================*/
+
+
+
+@mixin publicTree($key){
+  @if $key == 1{
+    .public-select-style1{@include border-radius(5px, 5px, 5px, 5px);position:absolute;background:$global-white;@include box-shadow2();width:70px;padding:15px 5px;top:120%;line-height:20px;text-align: left;}
+    .public-select-style1 li{padding-left:5px;border:1px solid $global-white;@include transition(.2s);cursor: pointer;}
+    .public-select-style1 li:hover{background:$P-draw-curr-bg;@include border-radius(5px, 5px, 5px, 5px);color:$global-white;}
+  }
+  @else if $key == 2{
+    .company-left-list{padding-left:0;padding-right:0;}
+    .company-left-list span{display: block;font-size:14px;color:$global-color;text-align: center;margin-right:9px;margin-top:10px;}
+    .public-select-style2{@include border-radius(5px, 5px, 5px, 5px);position:absolute;background:$global-white;@include box-shadow1();padding:10px 6px 10px;line-height:20px;text-align: left;width:350px;top:30px;}
+    .public-select-style2 li{padding:3px;border-radius:5px;margin-bottom:0;border:1px solid $global-white; @include transition(.2s);}
+    .public-select-style2 li:hover{border-color:rgba(35, 117, 156, .5);background:rgba(204, 232, 246, .5);}
+    .public-select-style2 li a{display: inline-block;background:$P-draw-curr-bg;border-radius:5px;color:$global-white;padding-left:7px;padding-right:7px;font-size:14px;}
+  }
+  @else if $key == 3{
+    .check-ppl{width:100%;height:350px;padding-top:10px;overflow-y:scroll;margin-top:6px;}
+    .public-check{display:none;}
+    .public-check{background:$global-white;@include box-shadow1();}
+    .company-pmi-title{font-size:12px;position:relative;margin-bottom:4px;margin-left:5px;}
+    .company-pmi-title span{background:$global-white;padding-right:4px;display:inline-block;position: relative;z-index: 1;}
+    .company-pmi-title::after{position:absolute;display:block;content:'';left:0;top:8px;width:100%;border-top:1px solid $P-line-color;}
+    .check-ppl-con{margin-left:5px;}
+    .company-pmi-list{border:1px solid $global-white;border-radius:5px;margin-bottom:6px;cursor:pointer;}
+    .company-pmi-list:hover{border-color:$company-pmi-list-border;background:$company-pmi-list-bg;}
+    .company-pmi-list img{float:left;border-radius:5px;margin:2px;}
+    .check-ppl-con-right{width:270px;padding-left:8px;margin-top:4px;float:left;line-height:1em;}
+    .check-ppl-con-right span{font-size:14px;color:$box-font-color;}
+    .check-ppl-con-right p{color:$box-font-color;font-size:12px;}
+  }
+}
+
+/*===============================================
+
+  Time: 2016.04.21
+
+  Explain: 滚动条样式,color1滚动条颜色，color2滚动条背景色
+
+==============================================*/
+
+@mixin scrollbar($color1, $color2){
+    &::-webkit-scrollbar{
+      width:0;
+      height:0;
+      top:0;
+      background-color: #F5F5F5;
+    }
+    &::-webkit-scrollbar-thumb{
+      background:$color1;
+      border-radius:3px;
+    }
+    &::-webkit-scrollbar-button{
+      width:0;
+      height:0;
+      background:transparent;
+    }
+    &::-webkit-scrollbar-track{
+      background-color:$color2;
+      border-radius:3px;
+    }
+}
+
+
+/*===============================================
+
+  Time: 2016.06.14
+
+  Explain: 行间距 仅限 5 的倍数
+
+==============================================*/
+
+
+@mixin distance($distance, $num) {
+  @if $num != 0 {
+    #{$distance}: 5px * $num;
+  }
+}
+
+
+/*===============================================
+
+  Time: 2016.06.16
+
+  Explain: 背景图片调用
+
+==============================================*/
+
+
+
+@mixin img-bg($img: 'icon.png', $repeat: no-repeat, $left: 0, $top: 0){
+  @if $img == 1 {
+    $img: 'icon.png';
+  }
+  @if $repeat == 0 {
+    $repeat: no-repeat;
+  }@else if $repeat == 1 {
+    $repeat: repeat;
+  }
+  @if $left == 0 {
+    $left: left;
+  }
+  @if $top == 0 {
+    $top: top;
+  }
+  background:url('#{$img-url}#{$img}') $repeat $left $top;
+}
+
+
+/*===============================================
+
+  Time: 2016.06.21
+
+  Explain: 谷歌文字小于 12号 字体
+
+==============================================*/
+
+
+//鼠标经过
+@mixin chromeScaleHover($anName, $scale, $valT) {
+  @-webkit-keyframes #{$anName} {
+    0%{top: 0; transform: scale(1);-webkit-transform-origin:left center;}
+    100%{top: #{$valT}px; transform: scale($scale);-webkit-transform-origin:left center}
+  }
+}
+
+//鼠标离开
+@mixin chromeScaleOut($anName, $scale, $valT) {
+  @-webkit-keyframes #{$anName} {
+    0%{top: #{$valT}px; transform: scale($scale);-webkit-transform-origin:left center}
+    100%{top: 0; transform: scale(1);-webkit-transform-origin:left center}
+  }
+}
+
+
+/*===============================================
+
+  Time: 2016.06.21
+
+  Explain: 谷歌文字小于 12号 字体
+
+==============================================*/
+
+@mixin loadingStrip($name) {
+  @keyframes #{$name} {
+    0%{opacity: 0}
+    100%{opacity: 1}
+  }
+}
+
+
+/*===============================================
+
+  Time: 2016.11.23
+
+  Explain: 计算 （只适用于 2 - 3 个值运算）
+           attribute 显示属性
+           val1 计算的第一个值
+           val2 计算的第二个值
+           operator 操作符
+           half 第五个参数等于half取当前值的一半
+           注：操作符建议使用引号
+
+==============================================*/
+
+@mixin calc($attribute, $val1, $val2, $operator, $half){
+
+  $res: #{$val1} #{$operator} #{$val2};
+  @if $half == 'half' {
+    #{$attribute}:calc((#{$res})/2);
+  }@else{
+    #{$attribute}:calc(#{$res});
+  }
+
+}
+
+
+/*===============================================
+
+  Time: 2016.011.30
+
+  Explain: 下拉列表高度
+
+==============================================*/
+
+
+@mixin selectHeight($attr, $height, $multiple){
+  #{$attr}:calc(#{$height}px * #{$multiple});
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

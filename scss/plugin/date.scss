@@ -1,0 +1,967 @@
+@charset "UTF-8";
+@import '../public';
+
+/*===============================================
+
+  Time: 2016.1.17
+
+  Explain: 时间选择框
+
+==============================================*/
+.date {
+  position: relative;
+  top: 1px;
+  border: 1px solid rgba($c17-c-6, .5);
+  width: 248px;
+  margin: 0 auto;
+  z-index: 10;
+  background: $bottom-c;
+  border-bottom: none;
+  .but-select-done {
+    width: auto;
+  }
+}
+.currentDate{
+  color: $b3-c;
+}
+.multiDate {
+  border-bottom: 1px solid rgba(208, 209, 219, .5) !important;
+  width: 410px;
+  .date-list {
+    padding: 0 17px 14px;
+  }
+  .isStartSelected {
+    width: calc(14.28% - 9px);
+    margin-left: 9px;
+    span {
+      float: left;
+    }
+  }
+  .period {
+    width: 120px;
+    height: 30px;
+    margin-top: -4px;
+    input {
+      margin-top: 3px;
+    }
+    .d-select {
+      z-index: 20;
+    }
+  }
+  .link-name {
+    width: 110px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .beforeToday {
+    background: $c18-c-8 ;
+    color: $c18-c-9 ;
+    span {
+      border: 1px solid $c18-c-8 ;
+    }
+  }
+}
+.calendar-repeat-init{
+  position: absolute;
+  top: 46px;
+  left: auto!important;
+  right: 0;
+  width: 410px;
+  z-index: 21;
+}
+.calendar-fix-init{
+  position: absolute;
+  top: 55px;
+  left: auto;
+  right: 0;
+  z-index: 21;
+}
+
+.date-left {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.date-right {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.done-background {
+  background-color: rgba(160, 165, 230, 1) !important;
+}
+
+.todo-background {
+  background-color: rgba(239, 240, 251, 1) !important;
+}
+
+.gray-background {
+  background-color: $bottom-c !important;
+}
+
+.no-background {
+  background-color: $write !important;
+}
+
+.add-margin {
+  margin-bottom: 115px;
+}
+
+.icon-date-time::before {
+  content: '\e95a';
+}
+
+.date-top {
+  margin: 10px 20px;
+  position: relative;
+  .date-top-warp {
+    position: absolute;
+    right: 16px;
+    left: 16px;
+    top: 0;
+    text-align: center;
+    font-family: HelveticaNeueregular;
+    color: $b7-c;
+    font-size: 14px;
+    .data-top-month {
+      margin-right: 7px;
+      cursor: pointer;
+      .d-select {
+        //left:-15px!important;
+        li {
+          &:hover {
+            color: $write !important;
+          }
+        }
+      }
+    }
+    .data-top-month, .data-top-year {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      .d-select {
+        width: 80px;
+        min-width: 80px;
+        position: absolute;
+        top: -87px;
+        left: 0;
+        z-index: 15;
+        ul {
+          min-height: 308px;
+          font-size: 12px;
+          text-align: left;
+        }
+      }
+    }
+  }
+  .date-top-but {
+    display: block;
+    width: 16px;
+    height: 16px;
+    color: $c17-c-8;
+    font-size: 16px;
+    @include newRadius(16);
+    @include newTransition($time);
+    &:hover {
+      color: $b2-c;
+    }
+  }
+  .date-top-next {
+    float: right !important;
+    @include rotate(180);
+  }
+}
+
+.date-week-wrap {
+  position: relative;
+  .date-week-btn {
+    font-size: 12px;
+    transform: scale(.4);
+  }
+  .date-week-left {
+
+  }
+  .date-week-right {
+
+  }
+}
+
+.date-week {
+  border-bottom: 1px solid $c9-c;
+  line-height: 14px;
+  text-align: center;
+  padding-bottom: 9px;
+  li {
+    width: 14.28%;
+    float: left;
+  }
+
+}
+
+.date-list-new {
+  padding: 0 !important;
+  li {
+    span {
+      width: 29px !important;
+      height: 29px !important;
+    }
+  }
+}
+
+.date-list {
+  background-color: $write;
+  text-align: center;
+  border-bottom: 1px solid $c9-c;
+  li {
+    width: 14.28%;
+    float: left;
+    cursor: pointer;
+    line-height: 35px;
+    position: relative;
+    &:nth-last-child(1n) {
+      margin-top: 2px;
+    }
+    em {
+      width: 4px;
+      height: 4px;
+      @include newRadius(100);
+      background: $c5-c-1;
+      position: absolute;
+      top: 72%;
+      left: 46%;
+      display: none;
+    }
+    span {
+      display: block;
+      width: 33px;
+      height: 33px;
+      border: 1px solid $write;
+      line-height: 35px;
+      @include newRadius(31);
+      @include newTransition($time);
+      margin: 0 auto;
+      position: relative;
+      z-index: 10;
+    }
+    &.date-list-gray {
+      background-color: $bottom-c;
+      color: $c10-c;
+      span {
+        border-color: $bottom-c;
+      }
+      &:hover {
+        span {
+          border-color: $bottom-c;
+        }
+      }
+    }
+    &.date-list-gray-end {
+      background-color: rgba($b3-c, .05);
+      span {
+        border-color: rgba($b3-c, .05);
+      }
+      &:hover {
+        span {
+          border-color: rgba($b3-c, .05);
+        }
+      }
+    }
+    &.current span {
+      border: 1px solid $b3-c !important;
+      color: $b8-c !important;
+    }
+    &.enddate {
+      em {
+        background: $write;
+      }
+      span {
+        background-color: $b7-c !important;
+        border-color: $b7-c;
+        color: $write !important;
+        &:hover {
+          border-color: $b7-c;
+        }
+      }
+    }
+    &.todo { /*选中背景色变成#5e66d1 透明0.1*/
+      background-color: rgba($b3-c, .1);
+      span {
+        border-color: rgba($b3-c, 0);
+        background-color: rgba(239, 240, 251, 1);
+        color: $b8-c;
+      }
+      &:hover {
+        span {
+          border-color: $b3-c;
+        }
+      }
+    }
+    &.hasdone { /*选中背景色变成#5e66d1 透明0.6*/
+      background-color: rgba($b3-c, .6);
+      span {
+        border-color: rgba($b3-c, 0);
+        background-color: rgba(160, 165, 230, 1);
+        color: $b8-c;
+      }
+      em {
+        background: $write;
+      }
+      &:hover {
+        span {
+          border-color: $b3-c;
+        }
+      }
+    }
+    &.haveTask {
+      em {
+        display: inline-block;
+        z-index: 11;
+      }
+    }
+    &.date-list-left { /*左边圆角*/
+      border-top-left-radius: 31px;
+      border-bottom-left-radius: 31px;
+      -webkit-border-top-left-radius: 31px;
+      -webkit-border-bottom-left-radius: 31px;
+      -ms-border-top-left-radius: 31px;
+      -ms-border-bottom-left-radius: 31px;
+      -o-border-top-left-radius: 31px;
+      -o-border-bottom-left-radius: 31px;
+      -moz-border-top-left-radius: 31px;
+      -moz-border-bottom-left-radius: 31px;
+
+    }
+    &.date-list-right { /*右边圆角*/
+      -webkit-border-top-right-radius: 31px;
+      -webkit-border-bottom-right-radius: 31px;
+      -ms-border-top-right-radius: 31px;
+      -ms-border-bottom-right-radius: 31px;
+      -o-border-top-right-radius: 31px;
+      -o-border-bottom-right-radius: 31px;
+      -moz-border-top-right-radius: 31px;
+      -moz-border-bottom-right-radius: 31px;
+
+    }
+    &.date-list-both { /*全部圆角*/
+      @include newRadius(31);
+    }
+    &.selected {
+      span {
+        background-color: $b3-c !important;
+        color: $write !important;
+      }
+      em {
+        background: $write;
+      }
+      &:hover {
+        span {
+          border-color: $b3-c !important;
+        }
+      }
+    }
+    &:hover span {
+      border-color: $b3-c;
+    }
+  }
+
+}
+
+.date-time {
+  background-color: $bottom-c;
+  border-bottom: 1px solid $c2-c-1;
+  border-top: 1px solid $c2-c-1;
+  position: relative;
+  i {
+    font-size: 18px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    @include newTranslate(50%, 50%);
+    &::before {
+      color: $b2-c;
+    }
+  }
+}
+
+.date-curr-time {
+  width: 130px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 20px;
+  .f49-f {
+    line-height: .8em;
+  }
+  span {
+    display: block;
+  }
+  .date-t {
+    float: left;
+    margin-left: 2px;
+    line-height: 1em;
+  }
+  .date-curr-conf {
+    line-height: 1.1em;
+  }
+}
+
+.date-pins {
+  //height:165px;
+  background: $write;
+  /* position: absolute;
+   bottom:0;
+   left:0;*/
+  width: 100%;
+  border-top: 1px solid rgba($c17-c-6, .5);
+  padding-top: 10px;
+  .date-pins-list {
+    height: 100%;
+    .date-pins-item {
+      background: $main-c;
+      padding: 10px;
+      margin-bottom: 10px;
+      @include newBoxShadow(0, 4, 6, $c12-c-1, .64);
+      margin-left: 10px;
+      width: calc(100% - 40px);
+      p {
+        line-height: 24px;
+        position: relative;
+        .date-pins-item-circle {
+          display: inline-block;
+          width: 4px;
+          height: 4px;
+          @include newRadius(100);
+          background: $write;
+          position: relative;
+          top: -2px;
+          margin-right: 10px;
+        }
+        .date-pins-item-circle-start {
+          background: $c17-c-12;
+        }
+        .date-pins-item-start {
+          font-size: 12px;
+          color: $c10-c;
+        }
+        .date-pins-item-line {
+          display: inline-block;
+          width: 1px;
+          height: 20px;
+          background: $c9-c;
+          position: absolute;
+          top: 14px;
+          left: 1px;
+          transform: translateX(50%);
+        }
+        &.date-pins-item-title {
+          width: 120px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          cursor: pointer;
+        }
+      }
+
+    }
+  }
+
+  .date-pins-top {
+    width: calc(100% - 20px);
+    margin-left: 10px;
+    margin-bottom: 5px;
+    @include scrollbar();
+    position: relative;
+    .font-edit1 {
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      left: auto;
+      font-size: 12px;
+      color: $write;
+      cursor: pointer;
+    }
+    .font-remove {
+      position: absolute;
+      right: 5px;
+      top: 22px;
+      left: auto;
+      font-size: 12px;
+      color: $write;
+      cursor: pointer;
+    }
+
+  }
+  .date-pins-bottom {
+    height: 30px;
+    background: $b2-c;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+  }
+  .date-add-pin {
+    max-height: 185px;
+    .date-pins-bottom {
+      background: $b8-c;
+    }
+    .date-pins-bottom-complete {
+      background: $b2-c;
+    }
+    .date-pins-top-wrap {
+      max-height: 155px;
+      @include scrollbar();
+      .date-pins-top {
+        background: $black;
+        .date-add-pin-user {
+          margin: 5px 0 6px 5px;
+          img {
+            width: 30px;
+            height: 30px;
+            @include newRadius(2);
+            margin-right: 7px;
+            border: 1px solid rgba($c17-c-7, .2);
+            cursor: pointer;
+          }
+        }
+        .date-add-pin-con {
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+}
+
+.chat-search-time {
+  padding: 9px 20px;
+  background: $bottom-c;
+  position: relative;
+  border-bottom: 1px solid rgba($c9-c, .5);
+  .chat-search-time-start-bom {
+    font-size: 28px;
+  }
+  .chat-search-time-start {
+    width: 130px;
+    height: 40px;
+    position: relative;
+    cursor: default;
+    padding: 0 10px 10px;
+    @include newTransition($time);
+    border: 1px solid transparent;
+    span {
+      margin-top: 2px !important;
+    }
+    &:hover {
+      .m-a-side-date-icon {
+        display: block;
+      }
+    }
+    .m-a-side-date-icon {
+      display: none;
+      position: absolute;
+      right: 5px;
+      top: 0;
+      left: auto;
+      span {
+        width: auto;
+        font-size: 12px;
+        margin-left: 3px;
+        color: $b2-c;
+        cursor: pointer;
+        transform: scale(.8);
+        &.font-page-esc-small {
+          transform: scale(.7);
+        }
+      }
+
+    }
+    &.click-start {
+      border: 1px solid rgba($b3-c, .5);
+      @include newBoxShadow(0, 4, 4, $c13-c, .5);
+      .m-a-side-date-icon {
+        display: block;
+      }
+    }
+  }
+  .chat-search-time-number {
+    font-size: 28px;
+    color: $c1-c;
+  }
+  .chat-search-time-date {
+    margin-left: 2px;
+    margin-top: -6px;
+    div {
+      line-height: 14px;
+    }
+  }
+  .icon1-Shape-2 {
+    font-size: 18px;
+    color: $b2-c;
+    position: absolute;
+    top: 25px;
+    left: 191px;
+  }
+  .date-year {
+    width: 80px;
+    min-width: 80px;
+    position: absolute;
+    top: -19px;
+    left: 104px;
+    ul {
+      min-height: 284px;
+    }
+  }
+}
+
+.single-date-month, .single-date-year {
+  padding-bottom: 0 !important;
+}
+
+.date-h-m {
+  height: 97px;
+  width: 410px;
+  background-color: rgba(77, 83, 171, .1);
+  padding-top: 10px;
+  @include newBoxShadow(0, 2, 4, $c2-c, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  @include newTransition($time);
+  .date-hour {
+    height: 45px;
+  }
+  .date-minute {
+    position: relative;
+    top: -3px;
+    .date-h-m-content {
+      margin: 0 6px;
+    }
+    .date-minute-line {
+      width:370px;
+      height: 1px;
+      background-color: rgba($c9-c, .5);
+      margin-left: 20px;
+    }
+    .date-h-m-content-nums {
+      width: 100% !important;
+      .date-list {
+        left: 0 !important;
+      }
+    }
+  }
+  .date-h-m-title {
+    padding: 0 0 5px 10px;
+    line-height: 14px;
+  }
+  .date-h-m-content {
+    margin: 0 10px;
+    .date-top-but {
+      display: block;
+      width: 16px;
+      height: 16px;
+      color: $c17-c-8;
+      font-size: 16px;
+      @include newRadius(100);
+      @include newTransition($time);
+      &:hover {
+        color: $b2-c;
+      }
+    }
+    .date-top-prev {
+      float: left;
+    }
+    .date-top-next {
+      float: right;
+      transform: rotate(180deg);
+      position: relative;
+    }
+    .date-h-m-content-nums {
+      width: 352px;
+      height: 35px;
+      position: relative;
+      left: 0;
+      top: -10px;
+      overflow: hidden;
+      .date-list {
+        width: 9999px;
+        position: relative;
+        left: 0;
+        border-top: none !important;
+        border-bottom: none !important;
+        height: 35px;
+        overflow: hidden;
+        background-color: transparent;
+        @include newTransition($time);
+        li {
+          width: 32px;
+          cursor: pointer;
+          span {
+            border-color: transparent;
+            line-height: 31px;
+            &:hover {
+              border-color: $b3-c;
+            }
+          }
+        }
+      }
+
+    }
+  }
+}
+
+.date-h-m-content-nums-hour {
+  left: 3px !important;
+}
+
+.d-select-people {
+  overflow: hidden;
+  .d-select-item-title {
+    margin-left: 10px;
+    line-height: 14px;
+    span {
+      position: relative;
+      top: 0;
+    }
+  }
+  .d-select-day {
+    .d-select-item-line {
+      width: calc(100% - 40px);
+      height: 1px !important;
+      background-color: rgba($c9-c, .5);
+      margin-left: 20px;
+    }
+  }
+
+  .d-select-item-content {
+    margin-top: 6px;
+    line-height: 14px;
+    .d-select-day {
+      margin-left: 17px;
+      overflow: hidden;
+      .day-wrap {
+        width: 5000%;
+        margin-bottom: 9px;
+
+      }
+    }
+    .d-select-week {
+      height:23px;
+      .date-top-but {
+        display: block;
+        width: 16px;
+        height: 16px;
+        color: $c17-c-8;
+        font-size: 16px;
+        @include newTransition($time);
+        &:hover {
+          color: $b2-c;
+        }
+      }
+      .date-top-prev {
+        margin-left: 10px;
+        float: left;
+      }
+      .date-top-next {
+        float: right !important;
+        transform: rotate(180deg);
+        margin-right: 10px;
+      }
+      .d-select-week-num {
+        width: 357px;
+        overflow: hidden;
+        height: 16px;
+        .d-select-week-num-wrap {
+          margin-bottom: 9px;
+          position:relative;
+          @include newTransition($time);
+          span {
+            margin: 0 19px;
+            @include newTransition($time);
+            &:hover{
+              color: $b3-c;
+            }
+            &:nth-child(1) {width: 43px;}
+            &:nth-child(2) {width: 45px;}
+            &:nth-child(3) {width: 63px;}
+            &:nth-child(4) {width: 49px;}
+            &:nth-child(5) {width: 33px;}
+            &:nth-child(6) {width: 48px;}
+            &:nth-child(7) {width: 40px;}
+          }
+        }
+      }
+    }
+    .d-select-month {
+      margin-top:-10px;
+      height: 33px;
+      overflow: hidden;
+      .date-list {
+        li {
+          padding: 0 3px !important;
+          position: relative;
+          span {
+            text-align: center;
+            color: $b2-c;
+          }
+
+          i {
+            position: absolute;
+            right: -8px;
+            top: -4px;
+            left: auto;
+            border: none;
+            display: inline-block;
+            font-size: 12px;
+            transform: scale(.6);
+            color: $b2-c;
+            z-index: 10;
+          }
+          &:hover {
+            span {
+              color: $b2-c;
+            }
+          }
+          &.current {
+            span {
+              color: $b2-c !important;
+            }
+          }
+        }
+        .selected {
+          span {
+            color: $write;
+          }
+          i {
+            color: $write;
+          }
+
+        }
+      }
+    }
+    .d-select-item-con {
+      margin: 20px;
+      cursor: pointer;
+      @include newTransition($time);
+      &:hover {
+        color: $b3-c;
+      }
+    }
+  }
+  .date-h-m {
+    background: $write;
+    position: static !important;
+    @include newBoxShadow(0, 0, 0, $b3-c, 0);
+    .date-list {
+      position: relative;
+      top: -10px !important;
+      height: 39px;
+      border: none;
+      li {
+        height: 34px;
+        width: 31px !important;
+        padding: 0 !important;
+        margin: 0!important;
+        text-indent: 0;
+        border-color: transparent;
+        background: transparent !important;
+        span {
+          width: 29px;
+          color: $b2-c;
+        }
+        &:hover {
+          background: transparent !important;
+          span {
+            color: $b2-c;
+          }
+        }
+        &.current {
+          span {
+            color: $b2-c !important;
+          }
+        }
+      }
+    }
+    .repeat-hour{
+      li{
+        padding:0 3px!important;
+      }
+    }
+  }
+  .date-list-day {
+    li {
+      position: relative;
+      span {
+        em {
+          width: 31px;
+          height: 31px;
+          @include newRadius(0);
+          background: none;
+          position: absolute;
+          top: 0;
+          left: -3px;
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.date-btns {
+  font-size: 12px;
+  position: absolute;
+  z-index: 20;
+  cursor: pointer;
+  color: $b2-c;
+}
+
+.date-btn-left {
+  top: 0;
+  left: 0;
+  transform: rotate(90deg) scale(0.3);
+}
+
+.date-btn-right {
+  top: 0;
+  right: 0;
+  transform: rotate(-90deg) scale(0.3);
+}
+
+.mission-list {
+  height: 122px;
+  @include scrollbar();
+  .m-left-storage-list {
+    height: auto;
+  }
+  li {
+    background: $write;
+    padding: 10px 20px 12px;
+    border-bottom: 1px solid rgba(226, 226, 233, .5);
+    position: relative;
+    @include newTransition($time);
+    overflow: hidden;
+    .mission-left-task-list {
+      h2 {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      p {
+        line-height: 1.2em;
+        margin-top: 2px;
+        margin-bottom: 4px;
+      }
+    }
+    &.current {
+      span {
+        color: $b2-c !important;
+      }
+    }
+  }
+}
+
+

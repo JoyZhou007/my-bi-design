@@ -1,0 +1,78 @@
+@charset "UTF-8";
+@import '../../public';
+
+
+/*===============================================
+
+  Time: 2016.1.17
+
+  Explain: mission header
+
+==============================================*/
+
+.mission-header{
+  min-width:1360px;
+  .m-create-header-title{
+    width:auto;
+    border-right:none;
+    .m-create-line{
+      width:1px;
+      display:block;
+      height:21px;
+      border-right:1px solid $c9-c;
+      margin-left:5px;
+      margin-top:-2px;
+    }
+    .m-create-header-doing{margin-left:8px;}
+    .m-create-header-done{color:$b8-c;margin-left:8px;}
+    .m-create-header-pending{color:$c17-c-2;margin-left:8px;}
+  }
+  .m-create-planning{
+    line-height:1em;
+    margin-top:5px;
+    .m-create-line{
+      margin-left:8px;
+      margin-right:10px;
+      margin-top:-5px;
+    }
+    .icon-checkbox{font-size:10px;}
+    .m-create-table{margin-top:2px;}
+  }
+  .m-list{margin-top:10px;}
+  .m-header-title{
+    height:41px;
+    margin-right:18px;
+    padding-right:66px;
+    span:first-child{margin-right:6px;}
+  }
+  .s-style1{
+    width:400px;
+  }
+  .m-header-select{
+    width:80px;
+    height:16px;
+    background-color:$bottom-c;
+    margin-top:8px;
+    margin-right:2px;
+    position:relative;
+    cursor:pointer;
+    span{
+      display:block;
+      width:65px;
+      text-align: center;
+    }
+    &::after{
+      display:block;
+      content:'';
+      width:0;
+      height:0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 4px solid $b2-c;
+      position:absolute;
+      top:7px;
+      right:5px;
+    }
+  }
+  .m-list-border{border-right:none !important;}
+}

@@ -1,0 +1,26 @@
+@charset "UTF-8";
+@import '../public';
+
+//头部
+@import './component/header';
+
+//底部
+@import './component/footer';
+
+//公司
+@import './component/company-register';
+
+//个人
+@import './component/person-register';
+
+body{
+  height: 100%;
+}
+.r-register-close{
+  font-size:26px;
+  color: $c17-c-23;
+  position: absolute;
+  top:24px;
+  right: 20px;
+  cursor: pointer;
+}

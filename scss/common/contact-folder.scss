@@ -1,0 +1,106 @@
+@charset "UTF-8";
+@import "../public";
+
+
+/*==============================================
+
+    Time：2017.03.10
+
+    Explain：contacts folder
+
+==============================================*/
+
+.ct-permission-folder{
+  width:450px;
+  height:374px;
+  margin-left:auto;
+  margin-right:auto;
+  background-color:$write;
+  margin-bottom:220px;
+  position:relative;
+  @include newBoxShadow(0, 4, 6, $black, .3);
+  ol{
+    height:50px;
+    line-height:50px;
+    background-color:$b7-c;
+    @include newBorderRadius(4, 4, 0, 0);
+    li{
+      width:33.33%;
+      float:left;
+      text-align: center;
+      cursor:pointer;
+      font-size:12px;
+      font-family: HelveticaNeueMedium;
+      span{
+        display:inline-block;
+        height:48px;
+        color:$b2-c;
+        border-bottom:2px solid $b7-c;
+        @include newTransition($time);
+      }
+      &:hover, &.current{
+        span{
+          border-bottom-color:$write;
+          color:$write;
+        }
+      }
+    }
+  }
+  .fo-type1-list{
+    border-top:none;
+    margin-top:0;
+    margin-bottom:0;
+    ul{
+      margin-left:40px;
+      li{
+        &:nth-child(4n){margin-right:0;}
+        &:nth-child(6n){margin-right:35px;}
+      }
+    }
+  }
+  .ct-permission-folder-bottom{
+    margin-left:38px;
+    margin-top:10px;
+    span{
+      margin-right:5px;
+      margin-top:3px;
+    }
+  }
+  .ct-permission-folder-message{
+    position:absolute;
+    width:395px;
+    left:18px;
+    bottom:44px;
+    background-color:$black;
+    opacity:.8;
+    padding-left:5px;
+    padding-right:15px;
+    padding-bottom:10px;
+    z-index:13;
+    @include newRadius(4);
+    @include newBoxShadow(0, 4, 6, $black, .3);
+    .font-page-esc-small{
+      position:absolute;
+      color:$write;
+      font-size:12px;
+      right:5px;
+      top:5px;
+      cursor:pointer;
+      @include scale(.6);
+    }
+  }
+}
+
+.showDialog{
+  right:0!important;
+  opacity:1!important;
+}
+.hideDialog{
+  position: relative;
+  right:-150%!important;
+}
+.wrap-default{
+  right:-150%;
+  @include newTransition($time);
+  opacity:0;
+}

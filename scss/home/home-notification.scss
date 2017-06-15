@@ -1,0 +1,117 @@
+@charset "UTF-8";
+@import '../public';
+
+
+/*==============================================
+
+    Time：2017.02.10
+
+    Explain：notification
+
+==============================================*/
+
+.h-noti-but{
+  li{
+    margin-bottom:40px;
+    padding-left:10px;
+    padding-bottom:1px;
+    padding-top:5px;
+    cursor:pointer;
+    transform: rotateX(0deg);
+    @include newRadius(2);
+    @include newTransition($time);
+    span{
+      margin-bottom:5px;
+      display:block;
+      line-height:1em;
+      @include newTransition($time);
+    }
+    &:hover{
+      background-color:rgba($write, .2);
+    }
+    &.current{
+      background-color:$write;
+      span{
+        &:nth-child(1){
+          @include returnFontChangeV(1,3);
+        }
+        &:nth-child(2){
+          @include returnFontChangeF(1,8);
+        }
+      }
+    }
+  }
+}
+.h-me-noti{
+  position:absolute;
+  left:-200px;
+  top:0;
+  bottom:0;
+  opacity:0;
+  @include newTransition($time);
+  h2{
+    font-weight:normal;
+    line-height:70px;
+    text-indent:20px;
+    border-bottom:1px solid rgba($c9-c, .5);
+  }
+  dl{
+    overflow: hidden;
+    @include newTransition($time);
+    dt{
+      line-height:50px;
+      padding-left:20px;
+      padding-right:20px;
+      background-color:$c11-c;
+      .h-me-noti-but{
+        float:right;
+        cursor:pointer;
+        margin-top:20px;
+        @include newTransition($time);
+        .font-selectbutton-line{
+          color:$write;
+          @include scale(.6);
+        }
+      }
+    }
+    dd{
+      min-height:54px;
+      border-bottom:1px solid rgba($c9-c, .5);
+      position:relative;
+      .n-warp{
+        min-height:54px;
+        margin-bottom:0;
+        padding-bottom:20px;
+        position:static;
+        @include newBoxShadow(0, 0, 0, $write, 0);
+      }
+    }
+  }
+  ul{
+    margin:20px;
+  }
+  .h-clear-notifi{
+    display:block;
+    text-align: center;
+    line-height:80px;
+    background-color:$bottom-c;
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+  }
+}
+.h-me-noti-h{
+  height:52px;
+  .h-me-noti-but{
+    @include newRotate(-90);
+  }
+}
+.h-me-noti-an{
+  left:250px;
+  opacity:1;
+}
+.h-me-noti-height{
+  height: calc(100% - 151px);
+  @include scrollbar();
+}

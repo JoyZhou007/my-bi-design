@@ -1,0 +1,361 @@
+@charset "UTF-8";
+@import '../public';
+
+//collection tab
+@import './component/mission-collection-tab';
+
+
+/*=============================================================
+
+  Time   : 2017.02.07
+
+  Explain: create mission application
+
+=============================================================*/
+
+//create header
+.mission-header{
+  .m-header-application{
+    .m-create-title{
+      position:relative;
+      z-index:5;
+      .d-select{
+        left:0;
+        top:10px;
+      }
+    }
+    .font-selectbutton-line{
+      font-size:12px;
+      color:$b2-c;
+      cursor:pointer;
+      @include scale(.5);
+    }
+    .m-header-edit-type{
+      position:relative;
+      line-height:20px;
+      cursor:pointer;
+      span{
+        display:block;
+        margin-right:0 !important;
+        float:right;
+        margin-left:5px;
+        margin-top:2px;
+        opacity:0;
+        @include newTransition($time);
+        &:hover{color:$b3-c;}
+      }
+      input{
+        width:185px;
+        height:20px;
+        line-height:20px;
+        color:$c2-c;
+        font-style:italic;
+        font-size:12px;
+        border:1px solid rgba($c2-c, .2);
+        padding-right:25px;
+        text-indent: 5px;
+        @include newRadius(2);
+      }
+      &:hover{
+        span{opacity:1;}
+      }
+    }
+    .m-create-line{margin-top:0 !important;}
+    .m-create-table{float:left;}
+    .m-create-table, .m-create-table{margin-top:5px !important;}
+  }
+}
+
+//left period
+.m-a-period{
+  margin:10px 10px 10px 20px;
+  .m-a-side-title span{
+    &:first-child{color:$c17-c-14;}
+  }
+}
+.m-a-side-con{
+  line-height:1.2em;
+  margin-top:2px;
+}
+.m-a-side-title{
+  span{
+    display:block;
+    line-height:1em;
+    &:first-child{margin-right:4px;}
+  }
+}
+
+//left date
+.m-a-side-date{
+  width:248px;
+  border:1px solid $c2-c-1;
+  border-right:none;
+  background-color:$bottom-c;
+  .m-a-side-date-item{
+    height:55px;
+    padding-left:20px;
+    padding-top:10px;
+    position:relative;
+    border-bottom:1px solid $c2-c-1;
+    &:last-child{border-bottom:none;}
+    .v8-f{line-height: 1em;}
+    span{
+      width:100%;
+      display:block;
+      margin-bottom:5px;
+      position:relative;
+      z-index:1;
+    }
+    .m-a-side-date-icon{
+      position:absolute;
+      right:10px;
+      top:5px;
+      opacity:0;
+      @include newTransition($time);
+      span{
+        width:auto;
+        font-size:12px;
+        margin-left:5px;
+        color:$b2-c;
+        cursor:pointer;
+        @include scale(.8);
+      }
+      .font-page-esc-small{
+        color:$b2-c;
+        font-size:12px;
+        opacity:1;
+        @include scale(.7);
+      }
+    }
+    .date-curr-time{
+      span{
+        width:auto;
+        margin-bottom:0;
+      }
+      .date-t {
+        float: left;
+        margin-left: 2px;
+        line-height: 1em;
+        margin-top:-2px;
+      }
+    }
+    &::before{
+      display:block;
+      content:'';
+      position:absolute;
+      left:-1px;
+      top:-1px;
+      bottom:-1px;
+      right:-1px;
+      background-color:$write;
+      border:1px solid $b3-c;
+      opacity:0;
+      @include newBoxShadow(0, 4, 4, $c13-c, .5);
+      @include newTransition($time);
+    }
+    .date-curr-time{
+      padding:0;
+      margin:0;
+    }
+    &:hover{
+      &::before{opacity:1;}
+      .m-a-side-date-icon{opacity:1;}
+    }
+  }
+  .m-a-side-date-start{
+    height:126px;
+    @include scrollbar();
+  }
+  .mission-left-task-list{
+    padding:12px 20px;
+    background-color:$write;
+    border-bottom:1px solid $c2-c-1;
+    @include newTransition($time);
+    &:hover{
+      background: none;
+    }
+  }
+}
+
+//left function
+.m-a-side-fun{
+  margin-top:10px;
+  margin-left:20px;
+  margin-right:20px;
+  padding-top:10px;
+  border-top:1px solid rgba($c9-c, .5);
+  span:first-child{color:$c17-c-15;}
+  ul{
+    margin-top:10px;
+    li{
+      margin-bottom:5px;
+      opacity:.5;
+      span{
+        line-height:1em;
+      }
+      div{
+        span{
+          display:block;
+          &:first-child{
+            width:8px;
+            height:8px;
+            float:left;
+            margin-right:9px;
+            @include scale(1);
+            &::before{
+              @include scale(.6);
+              color:$write;
+              margin-left:-3px;
+              margin-top:-2px;
+            }
+          }
+        }
+      }
+      &.current{opacity:1;}
+    }
+  }
+}
+
+
+/*=============================================================
+
+  Time   : 2017.02.07
+
+  Explain: create mission assignment
+
+=============================================================*/
+
+.m-r-c-tab-common{
+  position:relative;
+  margin-bottom:10px;
+  input{
+    margin-right:100px;
+    text-indent: calc(100% - 110px);
+  }
+  .m-r-c-tab-common-people{
+    width:140px;
+    padding-left:10px;
+    padding-top:4px;
+    position:absolute;
+    left:1px;
+    top:1px;
+    bottom:1px;
+    background-color:$bottom-c;
+    img{
+      width:18px;
+      height:18px;
+      border:1px solid rgba($c17-c-7, .5);
+      @include newBorderRadius(2, 0, 0, 2);
+    }
+    span{
+      display:inline-block;
+      float:left;
+      line-height:20px;
+      padding-left:5px;
+      padding-right:5px;
+      background-color:$main-c;
+      @include newBorderRadius(0, 2, 2, 0);
+    }
+  }
+}
+
+
+/*=============================================================
+
+  Time   : 2017.02.07
+
+  Explain: create mission meeting
+
+=============================================================*/
+
+.m-meeting-memo{
+  width:calc(100% - 7px);
+  height:90px;
+  font-size:13px !important;
+  padding-left:5px;
+  @include returnFontChangeF(1, 20);
+}
+.m-meeting-memo-but{
+  border-top:none;
+  margin-top:0;
+}
+
+
+/*=============================================================
+
+  Time   : 2017.02.07
+
+  Explain: create mission task
+
+=============================================================*/
+
+.m-t-c-tab{
+  ul.m-r-c-tab-list{
+    padding-left:25px;
+    padding-right:25px;
+    @include returnFontChangeF(1, 46);
+    li{
+      width:calc(100%/3);
+      float:left;
+      text-align: center;
+      padding-left:0;
+      padding-right:0;
+      &.current{
+        border-bottom:none;
+        span{
+          height:27px;
+          display:inline-block;
+          border-bottom:2px solid $b3-c;
+          padding-left:15px;
+          padding-right:15px;
+        }
+      }
+    }
+  }
+}
+
+
+/*=============================================================
+
+  Time   : 2017.02.07
+
+  Explain: create mission project
+
+=============================================================*/
+
+.m-p-c-storage{
+  .m-left-storage-list{
+    height:auto;
+    min-height:0;
+    margin-top:5px;
+    margin-left:-20px;
+    position:relative;
+    li{
+      border-bottom:none;
+      &::before{
+        display:block;
+        content:'';
+        height:1px;
+        background-color:rgba($c9-c, .5);
+        bottom:0;
+        position:absolute;
+        left:20px;
+        right:20px;
+      }
+    }
+    &::before{
+      display:block;
+      content:'';
+      height:1px;
+      background-color:rgba($c9-c, .5);
+      position:absolute;
+      top:0;
+      left:20px;
+      right:20px;
+    }
+  }
+  .but-add{
+    width:100%;
+    margin-top:10px;
+  }
+}

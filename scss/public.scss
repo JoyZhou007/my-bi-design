@@ -1,0 +1,850 @@
+@charset "UTF-8";
+
+/*=======================================
+
+  前缀说明：
+
+  c :  c 不变颜色
+  b :  b 可变颜色
+  u :  u 开头路径
+  f :  f 开头文字大小
+
+=======================================*/
+
+//文字大小
+$f-12: 12px;
+$f-13: 13px;
+$f-14: 14px;
+
+//图片路径
+$u-i-path: '/assets/images/';
+
+//字体路径
+$u-f-path: '/assets/font/';
+
+//动画时间
+$time: .2;
+
+//不变颜色
+$write: #fff;
+$black: #000;
+$bottom-c: #F7F7F7;
+$c1-c: #080808;
+$c2-c: #ABABAB;
+$c2-c-1: rgba(#ABABAB, .5);
+$c3-c: #98D2EB;
+$c4-c: #D7BCE8;
+$c5-c: rgba(#EF428D, .6);
+$c5-c-1: #EF428D;
+$c6-c: rgba(#8EE3F5, .05);
+$c6-c-1: #8EE3F5;
+$c7-c: #FBFBFE;
+$c8-c: #5DA8E6;
+$c9-c: #E2E2E9;
+$c10-c: #CECECE;
+$c11-c: #C8C9D5;
+$c12-c-1: #808080;
+$c12-c: rgba($c12-c-1, .64);
+$c13-c: #888;
+$c13-c-1: rgba(#888, .64);
+$c14-c: #7BE0AD;
+$c15-c: #59CD90;
+$c16-c: #EE1919;
+$c17-c: #D0011B;
+
+//未列出的颜色
+$c17-c-1: #A33EFE;
+$c17-c-2: #F5A623;
+$c17-c-3: #F25656;
+$c17-c-4: #414141;
+$c17-c-5: #283845;
+$c17-c-6: #D0D1DB;
+$c17-c-7: #979797;
+$c17-c-8: #D8D8D8;
+$c17-c-9: #4B4C63;
+$c17-c-10: #4D53AB;
+$c17-c-11: #E28989;
+$c17-c-12: #7ED321;
+$c17-c-13: #BFBFBF;
+$c17-c-14: #50E3C2;
+$c17-c-15: #9375AC;
+$c17-c-16: #B8E986;
+$c17-c-17: #0CBDCF;
+$c17-c-18: #11DCA4;
+$c17-c-19: #F35B04;
+$c17-c-20: #3D3488;
+$c17-c-21: #395C6B;
+$c17-c-22: #E6E6E6;
+$c17-c-23: #C5C5C5;
+$c17-c-24: #383838;
+$c17-c-25: #313131;
+$c17-c-26: #462AD9;
+$c17-c-27: #63B4D1;
+$c17-c-28: #9E1946;
+$c17-c-29: #3D518C;
+$c17-c-30: #63458A;
+$c17-c-31: #EE6352;
+$c17-c-32: #F0D06B;
+$c17-c-33: #e9eafb;
+$c17-c-34: #F6F6F9;
+$c17-c-35: #E9EAFB;
+$c17-c-36: #F03363;
+$c17-c-37: #4A4A4A;
+$c17-c-38: #564D80;
+$c17-c-39: #FF0000;
+$c17-c-40: #FFF275;
+$c17-c-41: #F13362;
+$c17-c-42: #2198d0;
+$c17-c-43: #85E11A;
+$c17-c-44: #C2F970;
+$c17-c-45: #F29559;
+$c17-c-46: #50C5B7;
+$c17-c-47: #BD0FE1;
+$c17-c-48: #9012FE;
+$c17-c-49: #4990E2;
+$c17-c-50: #9B9B9B;
+$c17-c-51: #8B572A;
+$c17-c-52: #6AA6B3;
+$c17-c-53: #C1579C;
+$c17-c-54: #454BA5;
+$c17-c-55: #47889F;
+$c17-c-56: #DBCE2C;
+$c17-c-57: #78C0E0;
+$c17-c-58: #FDC747;
+$c17-c-59: #3BB273;
+$c17-c-60: #A280B3;
+$c17-c-61: #3C3C3C;
+$c17-c-62: #FFE7E7;
+$c17-c-63: #E0F6C9;
+$c17-c-64: #59C9B0;
+$c17-c-65: #e6e7f0;
+$c17-c-66: #F6A623;
+$c17-c-67: #F8E81C;
+$c17-c-68: #7beaad;
+$c17-c-69: #4F8CAF;
+
+$c18-c-1: #2094cb;
+$c18-c-2: #aaaaaa;
+$c18-c-3: #f84673;
+$c18-c-4: #5c5c5c;
+$c18-c-5: #e1e1eb;
+$c18-c-6: #f18701;
+$c18-c-7: #EDEDF6;
+$c18-c-8: #DBDBDB;
+$c18-c-9: #A4A4AB;
+$c18-c-10:#7b7f8a;
+$c18-c-11:#417505;
+$c18-c-12:#FBFBFB;
+
+
+$c19-c-1: #ec93ab;
+$c19-c-2: #f1D16B;
+
+//可变颜色
+$main-c: #7078F7;
+$b1-c: #D2D5F7;
+$b2-c: #9193AB;
+$b3-c: #5E66D1;
+$b4-c: #A7ACFB;
+$b5-c: rgba(#7078F7, .6);
+$b6-c: rgba(#7078F7, .05);
+$b7-c: #5D576B;
+$b8-c: #4C4B63;
+$b9-c: #7B7A8A;
+
+//字体-可变颜色
+@mixin changeFont($key) {
+  @if $key == 1 {
+    font-size: 14px;
+    font-family: HelveticaNeueMedium;
+    color: $b1-c;
+  } @else if $key == 2 {
+    font-size: 14px;
+    font-family: HelveticaNeueregular;
+    color: $b1-c;
+  } @else if $key == 3 {
+    font-size: 13px;
+    font-family: HelveticaNeueregular;
+    color: $main-c;
+  } @else if $key == 4 {
+    font-size: 13px;
+    font-family: helveticaNeuelight;
+    color: $b1-c;
+  } @else if $key == 5 {
+    font-family: HelveticaNeueregular;
+    color: $b1-c;
+  } @else if $key == 6 {
+    font-family: HelveticaNeueMedium;
+    color: $b2-c;
+  } @else if $key == 7 {
+    font-family: HelveticaNeueregular;
+    color: $b2-c;
+  } @else if $key == 8 {
+    font-family: HelveticaNeueBold;
+    color: $b3-c;
+  } @else if $key == 9 {
+    font-size: 13px;
+    font-family: HelveticaNeueregular;
+    color: $b3-c;
+    font-style: italic;
+  }
+}
+
+//字体-不变颜色
+@mixin noChangeFont($key) {
+  @if $key == 1 {
+    font-size: 13px;
+    font-family: helveticaNeuelight;
+    color: $bottom-c;
+  } @else if $key == 2 {
+    font-size: 14px;
+    font-family: HelveticaNeueregular;
+    color: $b2-c;
+  } @else if $key == 3 {
+    font-size: 22px;
+    font-family: HelveticaNeueMedium;
+    color: $b2-c;
+  } @else if $key == 4 {
+    font-family: HelveticaNeueMedium;
+    color: $write;
+  } @else if $key == 5 {
+    font-family: HelveticaNeueregular;
+    color: $b2-c;
+  } @else if $key == 6 {
+    font-family: HelveticaNeueregular;
+    color: $write;
+  } @else if $key == 7 {
+    font-size: 14px;
+    font-family: HelveticaNeueMedium;
+    color: $c1-c;
+  } @else if $key == 8 {
+    font-size: 13px;
+    font-family: helveticaNeuelight;
+    color: $c2-c;
+  } @else if $key == 9 {
+    font-family: HelveticaNeueMedium;
+    color: $b9-c;
+  } @else if $key == 10 {
+    font-size: 13px;
+    font-family: helveticaNeuelight;
+    color: $b2-c;
+  } @else if $key == 11 {
+    font-size: 13px;
+    font-family: HelveticaNeueMedium;
+    color: $write;
+  } @else if $key == 12 {
+    font-family: HelveticaNeueBold;
+    color: $write;
+  } @else if $key == 13 {
+    font-family: helveticaNeuelight;
+    color: $c2-c;
+    font-style: italic;
+  } @else if $key == 14 {
+    font-family: helveticaNeuelight;
+    color: $b2-c;
+  } @else if $key == 15 {
+    color: $c1-c;
+    font-style: italic;
+  } @else if $key == 16 {
+    font-size: 16px;
+    font-family: HelveticaNeueregular;
+    color: $b9-c;
+  } @else if $key == 17 {
+    color: $b2-c;
+    font-style: italic;
+  } @else if $key == 18 {
+    font-size: 14px;
+    font-family: HelveticaNeueMedium;
+    color: $b7-c;
+    line-height: 1em;
+  } @else if $key == 19 {
+    font-family: HelveticaNeueBold;
+    color: $b8-c;
+  } @else if $key == 20 {
+    font-size: 13px;
+    font-family: HelveticaNeueregular;
+    color: $b8-c;
+  } @else if $key == 21 {
+    font-size: 13px;
+    font-family: HelveticaNeueBold;
+    color: $c1-c;
+  } @else if $key == 22 {
+    font-size: 16px;
+    font-family: HelveticaNeueregular;
+    color: $write;
+  } @else if $key == 23 {
+    font-size: 13px;
+    font-family: HelveticaNeueBold;
+    color: $write;
+  } @else if $key == 24 {
+    font-size: 14px;
+    font-family: HelveticaNeueregular;
+    color: $write;
+  } @else if $key == 25 {
+    font-family: helveticaNeuelight;
+    color: $write;
+  } @else if $key == 26 {
+    font-size: 13px;
+    font-family: helveticaNeuelight;
+    color: $c10-c;
+  } @else if $key == 27 {
+    font-family: HelveticaNeueregular;
+    color: $b2-c;
+  } @else if $key == 28 {
+    font-size: 14px;
+    font-family: HelveticaNeueMedium;
+    color: $write;
+  } @else if $key == 29 {
+    font-family: HelveticaNeueMedium;
+    color: $b2-c;
+  } @else if $key == 30 {
+    font-size: 28px;
+    font-family: HelveticaNeueThin;
+    color: $c1-c;
+  } @else if $key == 31 {
+    font-family: helveticaNeuelight;
+    color: $b2-c;
+    font-style: italic;
+  } @else if $key == 32 {
+    font-family: HelveticaNeueregular;
+    color: $b9-c;
+  } @else if $key == 33 {
+    font-family: helveticaNeuelight;
+    color: $b2-c;
+  } @else if $key == 34 {
+    font-size: 50px;
+    font-family: HelveticaNeueThin;
+    color: $b2-c;
+    line-height: 1em;
+  } @else if $key == 35 {
+    font-size: 30px;
+    font-family: HelveticaNeueMedium;
+    color: $b8-c;
+  } @else if $key == 36 {
+    font-family: HelveticaNeueMedium;
+    color: $write;
+  } @else if $key == 37 {
+    font-family: HelveticaNeueMedium;
+    color: $c2-c;
+  } @else if $key == 38 {
+    font-family: helveticaNeuelight;
+    color: $c10-c;
+  } @else if $key == 39 {
+    font-family: helveticaNeuelight;
+    color: $b8-c;
+  } @else if $key == 40 {
+    font-size: 13px;
+    font-family: helveticaNeuelight;
+    color: $c10-c;
+  } @else if $key == 41 {
+    font-size: 16px;
+    font-family: HelveticaNeueBold;
+    color: $c9-c;
+  } @else if $key == 42 {
+    font-family: HelveticaNeueregular;
+    color: $c8-c;
+  } @else if $key == 43 {
+    font-family: HelveticaNeueregular;
+    color: $c3-c;
+  } @else if $key == 44 {
+    font-family: HelveticaNeueregular;
+    color: $c4-c;
+  } @else if $key == 45 {
+    font-family: HelveticaNeueBold;
+    color: $c17-c-1;
+  } @else if $key == 46 {
+    font-family: HelveticaNeueMedium;
+    color: $b3-c;
+  } @else if $key == 47 {
+    font-family: HelveticaNeueregular;
+    color: $b3-c;
+  } @else if $key == 48 {
+    font-family: HelveticaNeueBold;
+    color: $c4-c;
+  } @else if $key == 49 {
+    font-size: 28px;
+    font-family: HelveticaNeueThin;
+    color: $c1-c;
+  } @else if $key == 50 {
+    font-family: helveticaNeuelight;
+    color: $write;
+    font-style: italic;
+  } @else if $key == 51 {
+    font-size: 14px;
+    font-family: helveticaNeuelight;
+    color: $c17-c-2;
+    font-style: italic;
+  } @else if $key == 52 {
+    font-size: 18px;
+    font-family: helveticaNeuelight;
+    color: $c2-c;
+  } @else if $key == 53 {
+    font-size: 18px;
+    font-family: HelveticaNeueMedium;
+    color: $c1-c;
+  } @else if $key == 54 {
+    font-size: 13px;
+    font-family: helveticaNeuelight;
+    color: $black;
+  } @else if $key == 55 {
+    font-size: 20px;
+    font-family: HelveticaNeueMedium;
+    color: $write;
+  }
+}
+
+//
+@mixin cChangeFont($key) {
+  @if $key == 1 {
+    font-family: HelveticaNeueMedium;
+    color: $b2-c;
+  } @else if $key == 2 {
+    font-family: HelveticaNeueMedium;
+    color: $write;
+    font-style: italic;
+  } @else if $key == 3 {
+    font-family: HelveticaNeueBold;
+    color: $c1-c;
+    font-size: 16px;
+  } @else if $key == 4 {
+    font-family: HelveticaNeueregular;
+    color: $c17-c-61;
+    font-size: 14px;
+  } @else if $key == 5 {
+    font-family: HelveticaNeueBold;
+    color: $write;
+    font-size: 14px;
+    font-style: italic;
+  }
+}
+
+/*
+ * $mode： 调用方式
+ *    0 => 返回类当前类
+ *    1 => 以变量形式返回
+ * $key： 调用第几个
+ *
+ **/
+//可变颜色
+@mixin returnFontChangeV($mode, $key) {
+  $count: 10;
+  @for $i from 1 through $count {
+    @if $key == $i {
+      @if $mode == 0 {
+        .v#{$key}-f {
+          @include changeFont($key)
+        }
+      ;
+      } @else if $mode == 1 {
+        @include changeFont($key);
+      }
+    }
+  }
+}
+
+//不可变颜色
+@mixin returnFontChangeF($mode, $key) {
+  $count: 55;
+  @for $i from 1 through $count {
+    @if $key == $i {
+      @if $mode == 0 {
+        .f#{$key}-f {
+          @include noChangeFont($key)
+        }
+      ;
+      } @else if $mode == 1 {
+        @include noChangeFont($key);
+      }
+    }
+  }
+}
+
+//不可变颜色
+@mixin returnFontChangeC($mode, $key) {
+  $count: 55;
+  @for $i from 1 through $count {
+    @if $key == $i {
+      @if $mode == 0 {
+        .c#{$key}-f {
+          @include cChangeFont($key)
+        }
+      ;
+      } @else if $mode == 1 {
+        @include cChangeFont($key);
+      }
+    }
+  }
+}
+
+/*===============================================
+
+  Time: 2017.1.11
+
+  Explain: 生成网页字体
+
+==============================================*/
+
+@mixin f-family($f, $p, $n) {
+  font-family: '#{$f}';
+  src: url('#{$u-f-path}#{$p}#{$n}.eot');
+  src: url('#{$u-f-path}#{$p}#{$n}.eot?#iefix') format('embedded-opentype'),
+  url('#{$u-f-path}#{$p}#{$n}.woff') format('woff'),
+  url('#{$u-f-path}#{$p}#{$n}.ttf') format('truetype'),
+  url('#{$u-f-path}#{$p}#{$n}.svg##{$f}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*===============================================
+
+  Time: 2016.1.13
+
+  Explain: 角度旋转
+
+==============================================*/
+
+@mixin rotate($rotate) {
+  -webkit-transform: rotate(#{$rotate}deg);
+  -moz-transform: rotate(#{$rotate}deg);
+  -o-transform: rotate(#{$rotate}deg);
+  -ms-transform: rotate(#{$rotate}deg);
+  transform: rotate(#{$rotate}deg);
+}
+
+/*===============================================
+
+  Time: 2016.1.13
+
+  Explain: 缩放
+
+==============================================*/
+
+@mixin scale($scale) {
+  -webkit-transform: scale($scale);
+  -moz-transform: scale($scale);
+  -o-transform: scale($scale);
+  -ms-transform: scale($scale);
+  transform: scale($scale);
+}
+
+/*===============================================
+
+  Time: 2016.1.13
+
+  Explain: 圆角
+
+==============================================*/
+
+@mixin newBorderRadius($radius1, $radius2, $radius3, $radius4) {
+  -moz-border-radius: #{$radius1}px #{$radius2}px #{$radius3}px #{$radius4}px;
+  -webkit-border-radius: #{$radius1}px #{$radius2}px #{$radius3}px #{$radius4}px;
+  -ms-border-radius: #{$radius1}px #{$radius2}px #{$radius3}px #{$radius4}px;
+  -o-border-radius: #{$radius1}px #{$radius2}px #{$radius3}px #{$radius4}px;
+  border-radius: #{$radius1}px #{$radius2}px #{$radius3}px #{$radius4}px;
+}
+
+@mixin newRadius($radius) {
+  -moz-border-radius: #{$radius}px;
+  -webkit-border-radius: #{$radius}px;
+  -ms-border-radius: #{$radius}px;
+  -o-border-radius: #{$radius}px;
+  border-radius: #{$radius}px;
+}
+
+/*===============================================
+
+  Time: 2016.1.13
+
+  Explain: 动画
+
+==============================================*/
+
+@mixin newTransition($transition) {
+  @if $transition == 0 {
+    $transition: .2;
+  }
+  transition: all #{$transition}s linear;
+  -webkit-transition: all #{$transition}s linear;
+  -moz-transition: all #{$transition}s linear;
+  -o-transition: all #{$transition}s linear;
+  -ms-transition: all #{$transition}s linear;
+}
+
+@mixin newTransitionDelay($transition, $delay) {
+  @if $transition == 0 {
+    $transition: .2;
+  }
+  transition: all #{$transition}s linear;
+  -webkit-transition: all #{$transition}s linear #{$delay}s;
+  -moz-transition: all #{$transition}s linear #{$delay}s;
+  -o-transition: all #{$transition}s linear #{$delay}s;
+  -ms-transition: all #{$transition}s linear #{$delay}s;
+}
+
+/*===============================================
+
+  Time: 2016.1.13
+
+  Explain: Shadow
+
+==============================================*/
+
+@mixin newBoxShadow($x, $y, $b, $c, $a) {
+  @if $x != 0 {
+    $x: #{$x}px;
+  }
+  @if $y != 0 {
+    $y: #{$y}px;
+  }
+  @if $b != 0 {
+    $b: #{$b}px;
+  }
+  box-shadow: $x $y $b rgba($c, $a), $x $y $b rgba($c, $a), $x $y $b rgba($c, $a), $x $y $b rgba($c, $a);
+  -webkit-box-shadow: $x $y $b rgba($c, $a), $x $y $b rgba($c, $a), $x $y $b rgba($c, $a), $x $y $b rgba($c, $a);
+  -moz-box-shadow: $x $y $b rgba($c, $a), $x $y $b rgba($c, $a), $x $y $b rgba($c, $a), $x $y $b rgba($c, $a);
+  -o-box-shadow: $x $y $b rgba($c, $a), $x $y $b rgba($c, $a), $x $y $b rgba($c, $a), $x $y $b rgba($c, $a);
+  -ms-box-shadow: $x $y $b rgba($c, $a), $x $y $b rgba($c, $a), $x $y $b rgba($c, $a), $x $y $b rgba($c, $a);
+}
+
+/*===============================================
+
+  Time: 2016.1.13
+
+  Explain: 滚动条样式,color1滚动条颜色，color2滚动条背景色
+
+==============================================*/
+
+@mixin scrollbar() {
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    top: 0;
+    background-color: #F5F5F5;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: none;
+    border-radius: 0;
+  }
+  &::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+    background: transparent;
+  }
+  &::-webkit-scrollbar-track {
+    background: none;
+    border-radius: 0;
+  }
+  -ms-overflow-style: none;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+@mixin scrollBar($color1, $color2) {
+  &::-webkit-scrollbar {
+    width: 10px;
+    height: 0;
+    top: 0;
+    background-color: #F5F5F5;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $color1;
+    @include newRadius(5);
+  }
+  &::-webkit-scrollbar-button {
+    width: 10px;
+    height: 0;
+    background: transparent;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: $color2;
+    @include newRadius(5);
+  }
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/*===============================================
+
+  Time: 2016.1.13
+
+  Explain: 行间距 仅限 5 的倍数
+
+==============================================*/
+
+@mixin distance($distance, $num) {
+  @if $num != 0 {
+    #{$distance}: 5px * $num;
+  }
+}
+
+/*===============================================
+
+  Time: 2016.06.16
+
+  Explain: 背景图片调用
+
+==============================================*/
+
+@mixin newBgPath($img: 'icon.png', $repeat: no-repeat, $left: 0, $top: 0) {
+  @if $img == 1 {
+    $img: 'icon.png';
+  }
+  @if $repeat == 0 {
+    $repeat: no-repeat;
+  } @else if $repeat == 1 {
+    $repeat: repeat;
+  }
+  @if $left == 0 {
+    $left: left;
+  }
+  @if $top == 0 {
+    $top: top;
+  }
+  background: url('#{$u-i-path}#{$img}') $repeat $left $top;
+}
+
+@mixin newImgPath($img, $repeat: no-repeat, $left: 0, $top: 0,$cover: cover) {
+  background-image: url('#{$u-i-path}#{$img}');
+  @if $repeat == 0 {
+    $repeat: no-repeat;
+  } @else if $repeat == 1 {
+    $repeat: repeat;
+  }
+  @if $left == 0 {
+    $left: left;
+  }
+  @if $top == 0 {
+    $top: top;
+  }
+  background-repeat: $repeat;
+  background-position: $left $top;
+  background-size: $cover;
+}
+
+/*===============================================
+
+  Time: 2016.1.13
+
+  Explain: 下拉列表高度
+
+==============================================*/
+
+@mixin selectHeight($attr, $height, $multiple) {
+  #{$attr}: calc(#{$height}px * #{$multiple});
+}
+
+/*===============================================
+
+  Time: 2016.1.16
+
+  Explain: 下拉菜单投影newBoxShadow($x, $y, $b, $c, $a)
+
+==============================================*/
+
+@mixin selectShadow() {
+  @include newBoxShadow(0, 4, 6, $c12-c-1, .64);
+}
+
+/*===============================================
+
+  Time: 2016.1.16
+
+  Explain: 位移
+
+==============================================*/
+
+@mixin newTranslate($x, $y) {
+  transform: translate(-$x, -$y);
+  -webkit-transform: translate(-$x, -$y);
+  -moz-transform: translate(-$x, -$y);
+  -o-transform: translate(-$x, -$y);
+  -ms-transform: translate(-$x, -$y);
+}
+
+/*===============================================
+
+  Time: 2016.1.22
+
+  Explain: 位移
+
+==============================================*/
+
+@mixin newColumns($columns) {
+  columns: #{$columns}px 6;
+  -webkit-columns: #{$columns}px 6;
+  -moz-columns: #{$columns}px 6;
+}
+
+/*===============================================
+
+  Time: 2016.1.22
+
+  Explain: 字体图标
+
+==============================================*/
+
+@mixin iconFont($icon) {
+  font-family: #{$icon} !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  float: left;
+  font-size: 14px;
+  color: $b7-c;
+  position: relative;
+  em {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+}
+
+/*===============================================
+
+  Time: 2016.02.04
+
+  Explain: 角度旋转
+
+==============================================*/
+
+@mixin newRotate($rotate) {
+  -webkit-transform: rotate(#{$rotate}deg);
+  -moz-transform: rotate(#{$rotate}deg);
+  -o-transform: rotate(#{$rotate}deg);
+  -ms-transform: rotate(#{$rotate}deg);
+  transform: rotate(#{$rotate}deg);
+}
+
+/*===============================================
+
+  Time: 2016.03.07
+
+  Explain: 角度旋转 缩放
+
+==============================================*/
+
+@mixin newRotateScale($rotate, $scale) {
+  -webkit-transform: rotate(#{$rotate}deg) scale($scale);
+  -moz-transform: rotate(#{$rotate}deg) scale($scale);
+  -o-transform: rotate(#{$rotate}deg) scale($scale);
+  -ms-transform: rotate(#{$rotate}deg) scale($scale);
+  transform: rotate(#{$rotate}deg) scale($scale);
+}
+
+/*===============================================
+
+  Time: 2016.03.14
+
+  Explain: 盒子模型
+
+==============================================*/
+@mixin box-sizing($sizing : content-box) {
+  -moz-box-sizing: $sizing; /* Firefox */
+  -webkit-box-sizing: $sizing; /* Safari */
+  box-sizing: $sizing;
+}
